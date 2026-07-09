@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://dn5au5subkbf1"]
+
+[ext_resource type="Theme" uid="uid://cb13qrpgbp3w4" path="res://themes/background.tres" id="1_0xm2m"]
+[ext_resource type="Theme" uid="uid://ikmol1ng66eu" path="res://themes/nav_bar.tres" id="1_ig7tw"]
+
+[node name="Main" type="Control" unique_id=1765879044]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="PanelContainer" parent="." unique_id=832667754]
+layout_mode = 0
+offset_right = 669.0
+offset_bottom = 367.0
+theme = ExtResource("1_0xm2m")
+
+[node name="MarginContainer" type="MarginContainer" parent="Background" unique_id=2028719103]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_bottom = 20
+
+[node name="NavBarContainer" type="PanelContainer" parent="Background/MarginContainer" unique_id=706361051]
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("1_ig7tw")
+
+[node name="MarginContainer" type="MarginContainer" parent="Background/MarginContainer/NavBarContainer" unique_id=2015897875]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Background/MarginContainer/NavBarContainer/MarginContainer" unique_id=1201172156]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Accueil" type="Button" parent="Background/MarginContainer/NavBarContainer/MarginContainer/VBoxContainer" unique_id=2014535132]
+layout_mode = 2
+theme = ExtResource("1_ig7tw")
+text = "Accueil
+"
+
+[node name="Reception" type="Button" parent="Background/MarginContainer/NavBarContainer/MarginContainer/VBoxContainer" unique_id=1373611170]
+layout_mode = 2
+theme = ExtResource("1_ig7tw")
+text = "Réception
+
+"
+
+[node name="Trempage" type="Button" parent="Background/MarginContainer/NavBarContainer/MarginContainer/VBoxContainer" unique_id=2021543349]
+layout_mode = 2
+theme = ExtResource("1_ig7tw")
+text = "Trempage
+"
+
+[node name="Deshydratage" type="Button" parent="Background/MarginContainer/NavBarContainer/MarginContainer/VBoxContainer" unique_id=908443404]
+layout_mode = 2
+theme = ExtResource("1_ig7tw")
+text = "Déshydratage
+"
+
+[node name="Stock deshydrate" type="Button" parent="Background/MarginContainer/NavBarContainer/MarginContainer/VBoxContainer" unique_id=804978529]
+layout_mode = 2
+theme = ExtResource("1_ig7tw")
+text = "Stock déshydraté"
+
+[node name="Ensachage" type="Button" parent="Background/MarginContainer/NavBarContainer/MarginContainer/VBoxContainer" unique_id=1613882901]
+layout_mode = 2
+theme = ExtResource("1_ig7tw")
+text = "Transformation
+"
+
+[node name="Inventaire" type="Button" parent="Background/MarginContainer/NavBarContainer/MarginContainer/VBoxContainer" unique_id=1917313536]
+layout_mode = 2
+theme = ExtResource("1_ig7tw")
+text = "Ensachage
+"
+
+[node name="Historique" type="Button" parent="Background/MarginContainer/NavBarContainer/MarginContainer/VBoxContainer" unique_id=1281685113]
+layout_mode = 2
+theme = ExtResource("1_ig7tw")
+text = "Historique
+"
+
+[node name="Nom de l\'app" type="Label" parent="Background" unique_id=1976068236]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Application traçabilité"
