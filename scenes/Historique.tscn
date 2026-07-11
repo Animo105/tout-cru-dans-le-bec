@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://dmo0elifwre2w"]
+
+[ext_resource type="Theme" uid="uid://dn5qgfk13nyr8" path="res://themes/backgroundScenes.tres" id="1_cowwb"]
+[ext_resource type="Theme" uid="uid://cf4ja7b5l4dtb" path="res://themes/Labels.tres" id="2_kws1s"]
+
+[node name="Historique" type="Control" unique_id=615198526]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1249300174]
+layout_mode = 0
+offset_right = 1898.0
+offset_bottom = 1354.0
+theme = ExtResource("1_cowwb")
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer" unique_id=1299035258]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/PanelContainer" unique_id=286847859]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("2_kws1s")
+text = "Historique"

@@ -2,8 +2,9 @@
 
 [ext_resource type="Theme" uid="uid://dn5qgfk13nyr8" path="res://themes/backgroundScenes.tres" id="1_jtat4"]
 [ext_resource type="Theme" uid="uid://cf4ja7b5l4dtb" path="res://themes/Labels.tres" id="2_qnfjh"]
+[ext_resource type="Theme" uid="uid://bc43x7gm0wgsv" path="res://themes/dropDown.tres" id="3_7bru7"]
 
-[node name="Control" type="Control" unique_id=950256363]
+[node name="Accueil" type="Control" unique_id=950256363]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -27,3 +28,14 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 theme = ExtResource("2_qnfjh")
 text = "Accueil"
+
+[node name="OptionButton" type="OptionButton" parent="PanelContainer" unique_id=554746335]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("3_7bru7")
+item_count = 2
+popup/item_0/text = "patate"
+popup/item_0/id = 0
+popup/item_1/text = "brocoli"
+popup/item_1/id = 1

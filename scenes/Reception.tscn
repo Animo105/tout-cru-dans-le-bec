@@ -1,5 +1,8 @@
 [gd_scene format=3 uid="uid://cs1ohgrur8u8d"]
 
+[ext_resource type="Theme" uid="uid://dn5qgfk13nyr8" path="res://themes/backgroundScenes.tres" id="1_52y0n"]
+[ext_resource type="Theme" uid="uid://cf4ja7b5l4dtb" path="res://themes/Labels.tres" id="2_ll5ql"]
+
 [node name="Reception" type="Control" unique_id=388938240]
 layout_mode = 3
 anchors_preset = 15
@@ -7,3 +10,19 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1409017971]
+layout_mode = 0
+offset_right = 1898.0
+offset_bottom = 1354.0
+theme = ExtResource("1_52y0n")
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer" unique_id=1579197959]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/PanelContainer" unique_id=1512895805]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("2_ll5ql")
+text = "Reception"

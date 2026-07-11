@@ -5,6 +5,12 @@
 [ext_resource type="Script" uid="uid://bxibuisxjk37j" path="res://main.gd" id="1_lquwl"]
 [ext_resource type="PackedScene" uid="uid://gk3umo4mao5w" path="res://scenes/Accueil.tscn" id="4_7mycd"]
 [ext_resource type="PackedScene" uid="uid://daq6bwyqxr7wr" path="res://scenes/Deshydratage.tscn" id="5_272bh"]
+[ext_resource type="PackedScene" uid="uid://670l234tn18h" path="res://scenes/Ensachage.tscn" id="6_efxa6"]
+[ext_resource type="PackedScene" uid="uid://dmo0elifwre2w" path="res://scenes/Historique.tscn" id="7_dg77c"]
+[ext_resource type="PackedScene" uid="uid://cs1ohgrur8u8d" path="res://scenes/Reception.tscn" id="8_ycdy4"]
+[ext_resource type="PackedScene" uid="uid://b0l45878o5ckr" path="res://scenes/StockDeshydrate.tscn" id="9_w48qg"]
+[ext_resource type="PackedScene" uid="uid://btbsibkhf616m" path="res://scenes/Transformation.tscn" id="10_vivmo"]
+[ext_resource type="PackedScene" uid="uid://b8shh4tfv0o53" path="res://scenes/Trempage.tscn" id="11_2cqfq"]
 
 [node name="Main" type="Control" unique_id=1765879044]
 layout_mode = 3
@@ -88,13 +94,13 @@ layout_mode = 2
 theme = ExtResource("1_ig7tw")
 text = "Stock déshydraté"
 
-[node name="Ensachage" type="Button" parent="Background/VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer" unique_id=1613882901]
+[node name="transformation" type="Button" parent="Background/VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer" unique_id=1613882901]
 layout_mode = 2
 theme = ExtResource("1_ig7tw")
 text = "Transformation
 "
 
-[node name="Inventaire" type="Button" parent="Background/VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer" unique_id=1917313536]
+[node name="Ensachage" type="Button" parent="Background/VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer" unique_id=1917313536]
 layout_mode = 2
 theme = ExtResource("1_ig7tw")
 text = "Ensachage
@@ -115,12 +121,42 @@ size_flags_vertical = 0
 layout_mode = 2
 theme_override_constants/margin_left = 20
 
-[node name="Control" parent="Background/VBoxContainer/MarginContainer/HBoxContainer/SceneContainer/MarginContainer" unique_id=950256363 instance=ExtResource("4_7mycd")]
+[node name="Accueil" parent="Background/VBoxContainer/MarginContainer/HBoxContainer/SceneContainer/MarginContainer" unique_id=950256363 instance=ExtResource("4_7mycd")]
 layout_mode = 2
 
 [node name="Deshydratage" parent="Background/VBoxContainer/MarginContainer/HBoxContainer/SceneContainer/MarginContainer" unique_id=1615760622 instance=ExtResource("5_272bh")]
 visible = false
 layout_mode = 2
 
+[node name="Ensachage" parent="Background/VBoxContainer/MarginContainer/HBoxContainer/SceneContainer/MarginContainer" unique_id=1544240026 instance=ExtResource("6_efxa6")]
+visible = false
+layout_mode = 2
+
+[node name="Historique" parent="Background/VBoxContainer/MarginContainer/HBoxContainer/SceneContainer/MarginContainer" unique_id=615198526 instance=ExtResource("7_dg77c")]
+visible = false
+layout_mode = 2
+
+[node name="Reception" parent="Background/VBoxContainer/MarginContainer/HBoxContainer/SceneContainer/MarginContainer" unique_id=388938240 instance=ExtResource("8_ycdy4")]
+visible = false
+layout_mode = 2
+
+[node name="StockDeshydrate" parent="Background/VBoxContainer/MarginContainer/HBoxContainer/SceneContainer/MarginContainer" unique_id=1760376167 instance=ExtResource("9_w48qg")]
+visible = false
+layout_mode = 2
+
+[node name="Transformation" parent="Background/VBoxContainer/MarginContainer/HBoxContainer/SceneContainer/MarginContainer" unique_id=1222127248 instance=ExtResource("10_vivmo")]
+visible = false
+layout_mode = 2
+
+[node name="Trempage" parent="Background/VBoxContainer/MarginContainer/HBoxContainer/SceneContainer/MarginContainer" unique_id=1520563989 instance=ExtResource("11_2cqfq")]
+visible = false
+layout_mode = 2
+
 [connection signal="pressed" from="Background/VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer/Accueil" to="." method="_on_accueil_pressed"]
+[connection signal="pressed" from="Background/VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer/Reception" to="." method="_on_reception_pressed"]
+[connection signal="pressed" from="Background/VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer/Trempage" to="." method="_on_trempage_pressed"]
 [connection signal="pressed" from="Background/VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer/Deshydratage" to="." method="_on_deshydratage_pressed"]
+[connection signal="pressed" from="Background/VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer/Stock deshydrate" to="." method="_on_stock_deshydrate_pressed"]
+[connection signal="pressed" from="Background/VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer/transformation" to="." method="_on_transformation_pressed"]
+[connection signal="pressed" from="Background/VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer/Ensachage" to="." method="_on_ensachage_pressed"]
+[connection signal="pressed" from="Background/VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer/Historique" to="." method="_on_historique_pressed"]
