@@ -3,8 +3,9 @@
 public enum ActivityType {
     Soaking = 0,
     Dehydrating = 1,
-    Transformation = 2,
-    Bagging = 3
+    StockingMaterial = 2,
+    Transformation = 3,
+    Bagging = 4
 }
 public enum ItemDirection
 {
@@ -420,7 +421,7 @@ liste des activités
       "Id" : "int",
       "UserId" : "int",
       "Date" : "??? string je pense? DateTime?",
-      "ActivityType" : "int", //0 = Soaking, 1 = Dehydrating, 2 = Transformation, 3 = Bagging
+      "ActivityType" : "int", //0 = Soaking, 1 = Dehydrating, 2 = StockingMaterial, 3 = Transformation, 4 = Bagging
       "Items" :
       [
          {
@@ -449,7 +450,7 @@ retourne l'activité avec l'id
    "Id" : "int",
    "UserId" : "int",
    "Date" : "??? string je pense? DateTime?",
-   "ActivityType" : "int", //0 = Soaking, 1 = Dehydrating, 2 = Transformation, 3 = Bagging
+   "ActivityType" : "int", //0 = Soaking, 1 = Dehydrating, 2 = StockingMaterial, 3 = Transformation, 4 = Bagging
    "Items" :
    [
       {
@@ -498,7 +499,7 @@ créer une activité
       "Id" : "int",
       "UserId" : "int",
       "Date" : "??? string je pense? DateTime?",
-      "ActivityType" : "int", //0 = Soaking, 1 = Dehydrating, 2 = Transformation, 3 = Bagging
+      "ActivityType" : "int", //0 = Soaking, 1 = Dehydrating, 2 = StockingMaterial, 3 = Transformation, 4 = Bagging
       "Items" :
       [
          {
