@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dmo0elifwre2w"]
 
-[ext_resource type="Theme" uid="uid://dn5qgfk13nyr8" path="res://themes/backgroundScenes.tres" id="1_cowwb"]
-[ext_resource type="Theme" uid="uid://cf4ja7b5l4dtb" path="res://themes/Labels.tres" id="2_kws1s"]
+[ext_resource type="Theme" uid="uid://dn5qgfk13nyr8" path="res://assets/themes/backgroundScenes.tres" id="1_cowwb"]
+[ext_resource type="Theme" uid="uid://cf4ja7b5l4dtb" path="res://assets/themes/Labels.tres" id="2_kws1s"]
 
 [node name="Historique" type="Control" unique_id=615198526]
 layout_mode = 3

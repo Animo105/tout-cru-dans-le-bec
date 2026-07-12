@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dn5au5subkbf1"]
 
-[ext_resource type="Theme" uid="uid://cb13qrpgbp3w4" path="res://themes/background.tres" id="1_0xm2m"]
-[ext_resource type="Theme" uid="uid://ikmol1ng66eu" path="res://themes/nav_bar.tres" id="1_ig7tw"]
-[ext_resource type="Script" uid="uid://bxibuisxjk37j" path="res://main.gd" id="1_lquwl"]
+[ext_resource type="Theme" uid="uid://cb13qrpgbp3w4" path="res://assets/themes/background.tres" id="1_0xm2m"]
+[ext_resource type="Theme" uid="uid://ikmol1ng66eu" path="res://assets/themes/nav_bar.tres" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://bxibuisxjk37j" path="res://main_app/main.gd" id="1_lquwl"]
 [ext_resource type="PackedScene" uid="uid://gk3umo4mao5w" path="res://scenes/Accueil.tscn" id="4_7mycd"]
 [ext_resource type="PackedScene" uid="uid://daq6bwyqxr7wr" path="res://scenes/Deshydratage.tscn" id="5_272bh"]
 [ext_resource type="PackedScene" uid="uid://670l234tn18h" path="res://scenes/Ensachage.tscn" id="6_efxa6"]

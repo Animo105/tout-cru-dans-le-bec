@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b0l45878o5ckr"]
 
-[ext_resource type="Theme" uid="uid://dn5qgfk13nyr8" path="res://themes/backgroundScenes.tres" id="1_4tvxq"]
-[ext_resource type="Theme" uid="uid://cf4ja7b5l4dtb" path="res://themes/Labels.tres" id="2_g5xos"]
+[ext_resource type="Theme" uid="uid://dn5qgfk13nyr8" path="res://assets/themes/backgroundScenes.tres" id="1_4tvxq"]
+[ext_resource type="Theme" uid="uid://cf4ja7b5l4dtb" path="res://assets/themes/Labels.tres" id="2_g5xos"]
 
 [node name="StockDeshydrate" type="Control" unique_id=1760376167]
 layout_mode = 3

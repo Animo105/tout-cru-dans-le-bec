@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://670l234tn18h"]
 
-[ext_resource type="Theme" uid="uid://dn5qgfk13nyr8" path="res://themes/backgroundScenes.tres" id="1_bwo7o"]
-[ext_resource type="Theme" uid="uid://cf4ja7b5l4dtb" path="res://themes/Labels.tres" id="2_oe3kh"]
+[ext_resource type="Theme" uid="uid://dn5qgfk13nyr8" path="res://assets/themes/backgroundScenes.tres" id="1_bwo7o"]
+[ext_resource type="Theme" uid="uid://cf4ja7b5l4dtb" path="res://assets/themes/Labels.tres" id="2_oe3kh"]
 
 [node name="Ensachage" type="Control" unique_id=1544240026]
 layout_mode = 3

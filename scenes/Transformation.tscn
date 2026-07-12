@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://btbsibkhf616m"]
 
-[ext_resource type="Theme" uid="uid://dn5qgfk13nyr8" path="res://themes/backgroundScenes.tres" id="1_uh7oi"]
-[ext_resource type="Theme" uid="uid://cf4ja7b5l4dtb" path="res://themes/Labels.tres" id="2_aapcj"]
+[ext_resource type="Theme" uid="uid://dn5qgfk13nyr8" path="res://assets/themes/backgroundScenes.tres" id="1_uh7oi"]
+[ext_resource type="Theme" uid="uid://cf4ja7b5l4dtb" path="res://assets/themes/Labels.tres" id="2_aapcj"]
 
 [node name="Transformation" type="Control" unique_id=1222127248]
 layout_mode = 3

@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://gk3umo4mao5w"]
 
-[ext_resource type="Theme" uid="uid://dn5qgfk13nyr8" path="res://themes/backgroundScenes.tres" id="1_jtat4"]
-[ext_resource type="Theme" uid="uid://cf4ja7b5l4dtb" path="res://themes/Labels.tres" id="2_qnfjh"]
-[ext_resource type="Theme" uid="uid://bc43x7gm0wgsv" path="res://themes/dropDown.tres" id="3_7bru7"]
+[ext_resource type="Theme" uid="uid://dn5qgfk13nyr8" path="res://assets/themes/backgroundScenes.tres" id="1_jtat4"]
+[ext_resource type="Theme" uid="uid://cf4ja7b5l4dtb" path="res://assets/themes/Labels.tres" id="2_qnfjh"]
+[ext_resource type="Theme" uid="uid://bc43x7gm0wgsv" path="res://assets/themes/dropDown.tres" id="3_7bru7"]
 
 [node name="Accueil" type="Control" unique_id=950256363]
 layout_mode = 3
