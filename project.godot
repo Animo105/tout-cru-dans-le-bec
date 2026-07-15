@@ -36,6 +36,11 @@ folder_colors={
 "res://assets/themes/": "yellow"
 }
 
+[gui]
+
+theme/custom="uid://d0o2whuhbsw6p"
+theme/custom_font="uid://cmjioqhrud5iq"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
@@ -43,3 +48,4 @@ folder_colors={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+environment/defaults/default_clear_color=Color(0.22745098, 0.42745098, 0.30588236, 1)
