@@ -11,9 +11,14 @@
 ##[br]
 ## Example usage:[br]
 ## [codeblock]
-## var res : HTTPHelper.RequestResult = await HTTPHelper.request("users", HTTPClient.METHOD_GET)
+## HTTPHelper.BASE_URL = "localhost/"
+## var body : Dictionary = { "UserName" : "SuperUser" , "Password" : "User123" }
+## var data = JSON.stringify(body).to_utf8_buffer()
+## var res : HTTPHelper.RequestResult = await HTTPHelper.request("api/login", HTTPClient.METHOD_POST, data)
 ##
-## if res.result == OK and res.response_code == 200:
+## if res.result != OK
+##     print("Didn't find server")
+## res.response_code == 200:
 ##     print(res.body)
 ## [/codeblock][br]
 ##[br]
