@@ -112,6 +112,10 @@ theme = ExtResource("1_ig7tw")
 text = "Historique
 "
 
+[node name="Deconexion" type="Button" parent="Background/VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer" unique_id=406435515]
+layout_mode = 2
+text = "Disconnect"
+
 [node name="SceneContainer" type="PanelContainer" parent="Background/VBoxContainer/MarginContainer/HBoxContainer" unique_id=492438488]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -160,3 +164,4 @@ layout_mode = 2
 [connection signal="pressed" from="Background/VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer/transformation" to="." method="_on_transformation_pressed"]
 [connection signal="pressed" from="Background/VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer/Ensachage" to="." method="_on_ensachage_pressed"]
 [connection signal="pressed" from="Background/VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer/Historique" to="." method="_on_historique_pressed"]
+[connection signal="pressed" from="Background/VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer/Deconexion" to="." method="_on_deconexion_pressed"]

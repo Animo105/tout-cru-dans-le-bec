@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://bnf3bro3rneuv"]
+
+[ext_resource type="Theme" uid="uid://dn5qgfk13nyr8" path="res://assets/themes/backgroundScenes.tres" id="1_3n56f"]
+[ext_resource type="Script" uid="uid://cy1dno2g5wc8c" path="res://login.gd" id="1_bvvwm"]
+[ext_resource type="Theme" uid="uid://cf4ja7b5l4dtb" path="res://assets/themes/Labels.tres" id="2_xlo4h"]
+[ext_resource type="Theme" uid="uid://co7vw0m62m2lh" path="res://assets/themes/LoginTheme.tres" id="3_xlo4h"]
+
+[node name="Login" type="Control" unique_id=714780450]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bvvwm")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=867842851]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_3n56f")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1141614200]
+layout_mode = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 100
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=351972407]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1532886740]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_xlo4h")
+text = "APPLICATION TRACABILITÉ"
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1845409839]
+layout_mode = 2
+theme = ExtResource("2_xlo4h")
+text = "ENTRE LE NOM D'UTILISATEUR:"
+
+[node name="Username" type="LineEdit" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=152133546]
+layout_mode = 2
+theme = ExtResource("3_xlo4h")
+
+[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1115849090]
+layout_mode = 2
+theme = ExtResource("2_xlo4h")
+text = "ENTRE LE MOT DE PASSE:"
+
+[node name="MotDePasse" type="LineEdit" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1695032410]
+layout_mode = 2
+theme = ExtResource("3_xlo4h")
+secret = true
+secret_character = "*"
+
+[node name="LoginButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=2110950482]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("3_xlo4h")
+text = "Log In"
+
+[node name="Label4" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1664376420]
+layout_mode = 2
+theme = ExtResource("2_xlo4h")
+text = "ENTRE LA NOUVELLE ADRESSE:"
+
+[node name="NouvelleIP" type="LineEdit" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=421422773]
+layout_mode = 2
+theme = ExtResource("3_xlo4h")
+secret_character = "*"
+
+[node name="ChangeIp" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=262227749]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("3_xlo4h")
+text = "Changer l'ip"
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/LoginButton" to="." method="_on_login_button_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/ChangeIp" to="." method="_on_change_ip_pressed"]

@@ -68,3 +68,7 @@ func _on_transformation_pressed() -> void:
 func _on_historique_pressed() -> void:
 	hideAll()
 	historique.show()
+
+
+func _on_deconexion_pressed() -> void:
+	SceneManager.load_previous_scene()
