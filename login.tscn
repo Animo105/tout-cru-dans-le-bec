@@ -83,5 +83,11 @@ size_flags_vertical = 4
 theme = ExtResource("3_xlo4h")
 text = "Changer l'ip"
 
+[node name="ErrorMsg" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1949663019]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.99215686, 0, 0, 1)
+text = "WTF QUESKISPASSE"
+
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/LoginButton" to="." method="_on_login_button_pressed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/ChangeIp" to="." method="_on_change_ip_pressed"]
