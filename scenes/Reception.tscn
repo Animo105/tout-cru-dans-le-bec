@@ -1,11 +1,8 @@
 [gd_scene format=3 uid="uid://cs1ohgrur8u8d"]
 
-[ext_resource type="Theme" uid="uid://dn5qgfk13nyr8" path="res://assets/themes/backgroundScenes.tres" id="1_52y0n"]
-[ext_resource type="Script" uid="uid://btv7hxdsqar6k" path="res://scenes/reception.gd" id="1_ll5ql"]
-[ext_resource type="Theme" uid="uid://cf4ja7b5l4dtb" path="res://assets/themes/Labels.tres" id="2_ll5ql"]
+[ext_resource type="Script" uid="uid://btv7hxdsqar6k" path="res://scenes/scene_scripts/reception.gd" id="1_ll5ql"]
 
-[node name="Reception" type="Control" unique_id=388938240]
-layout_mode = 3
+[node name="Reception" type="PanelContainer" unique_id=1092432812]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -13,84 +10,88 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ll5ql")
 
-[node name="Label" type="Label" parent="." unique_id=1512895805]
+[node name="PanelContainer_PanelContainer#VBoxContainer" type="VBoxContainer" parent="." unique_id=841701159]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/PanelContainer" unique_id=841701159]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="PanelContainer/PanelContainer/VBoxContainer" unique_id=1512895805]
+[node name="NomScene" type="Label" parent="PanelContainer_PanelContainer#VBoxContainer" unique_id=1949330014]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 text = "Reception"
 
-[node name="Label2" type="Label" parent="PanelContainer/PanelContainer/VBoxContainer" unique_id=1931811240]
+[node name="VarieteLabel" type="Label" parent="PanelContainer_PanelContainer#VBoxContainer" unique_id=1931811240]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-theme = ExtResource("2_ll5ql")
 text = "Variété"
 
-[node name="Variete" type="OptionButton" parent="PanelContainer/PanelContainer/VBoxContainer" unique_id=1306849345]
+[node name="Variete" type="OptionButton" parent="PanelContainer_PanelContainer#VBoxContainer" unique_id=1306849345]
+unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Label3" type="Label" parent="PanelContainer/PanelContainer/VBoxContainer" unique_id=1122793278]
+[node name="NumeroFournisseurLabel" type="Label" parent="PanelContainer_PanelContainer#VBoxContainer" unique_id=1122793278]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-theme = ExtResource("2_ll5ql")
 text = "Numéro de fournisseur"
 
-[node name="NumFournisseur" type="LineEdit" parent="PanelContainer/PanelContainer/VBoxContainer" unique_id=1496459665]
+[node name="NumeroFournisseur" type="LineEdit" parent="PanelContainer_PanelContainer#VBoxContainer" unique_id=1496459665]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="Label6" type="Label" parent="PanelContainer/PanelContainer/VBoxContainer" unique_id=1445778120]
+[node name="PoidRecusLabel" type="Label" parent="PanelContainer_PanelContainer#VBoxContainer" unique_id=1445778120]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-theme = ExtResource("2_ll5ql")
-text = "KG reçus"
+text = "Poid reçus"
 
-[node name="KgRecus" type="SpinBox" parent="PanelContainer/PanelContainer/VBoxContainer" unique_id=1752183178]
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer_PanelContainer#VBoxContainer" unique_id=73745517]
+layout_mode = 2
+
+[node name="PoidRecus" type="SpinBox" parent="PanelContainer_PanelContainer#VBoxContainer/HBoxContainer" unique_id=1752183178]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 0
+max_value = 1000.0
 
-[node name="Label4" type="Label" parent="PanelContainer/PanelContainer/VBoxContainer" unique_id=2028734945]
+[node name="TypePoid" type="OptionButton" parent="PanelContainer_PanelContainer#VBoxContainer/HBoxContainer" unique_id=808948628]
+unique_name_in_owner = true
 layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-theme = ExtResource("2_ll5ql")
-text = "Quantité reçus"
 
-[node name="QuantiteRecus" type="SpinBox" parent="PanelContainer/PanelContainer/VBoxContainer" unique_id=429030660]
-layout_mode = 2
-size_flags_vertical = 0
-
-[node name="Label5" type="Label" parent="PanelContainer/PanelContainer/VBoxContainer" unique_id=1989443905]
+[node name="QuantiteRecusLabel" type="Label" parent="PanelContainer_PanelContainer#VBoxContainer" unique_id=2028734945]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-theme = ExtResource("2_ll5ql")
+text = "Combien reçus"
+
+[node name="QuantiteRecus" type="SpinBox" parent="PanelContainer_PanelContainer#VBoxContainer" unique_id=429030660]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 0
+max_value = 500.0
+
+[node name="PackageTypeLabel" type="Label" parent="PanelContainer_PanelContainer#VBoxContainer" unique_id=345449846]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
 text = "Type de package"
 
-[node name="PackageType" type="OptionButton" parent="PanelContainer/PanelContainer/VBoxContainer" unique_id=532919821]
+[node name="PackageType" type="OptionButton" parent="PanelContainer_PanelContainer#VBoxContainer" unique_id=1086313335]
+unique_name_in_owner = true
 layout_mode = 2
+size_flags_vertical = 0
 
-[node name="Label7" type="Label" parent="PanelContainer/PanelContainer/VBoxContainer" unique_id=345449846]
+[node name="BatchNumberLabel" type="Label" parent="PanelContainer_PanelContainer#VBoxContainer" unique_id=1989443905]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-theme = ExtResource("2_ll5ql")
-text = "Type de package"
+text = "Batch Number"
 
-[node name="BatchNumber" type="LineEdit" parent="PanelContainer/PanelContainer/VBoxContainer" unique_id=1987973088]
+[node name="BatchNumber" type="LineEdit" parent="PanelContainer_PanelContainer#VBoxContainer" unique_id=1288160821]
+unique_name_in_owner = true
 layout_mode = 2
-size_flags_vertical = 0
 
-[node name="Envoyer" type="Button" parent="PanelContainer/PanelContainer/VBoxContainer" unique_id=509646637]
+[node name="PanelContainer_PanelContainer_VBoxContainer#Envoyer" type="Button" parent="PanelContainer_PanelContainer#VBoxContainer" unique_id=509646637]
 layout_mode = 2
 text = "Envoyer"
-
-[connection signal="pressed" from="PanelContainer/PanelContainer/VBoxContainer/Envoyer" to="." method="_on_envoyer_pressed"]

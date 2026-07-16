@@ -1,10 +1,10 @@
 extends Control
-@onready var variete: OptionButton = $PanelContainer/PanelContainer/VBoxContainer/Variete
-@onready var num_fournisseur: LineEdit = $PanelContainer/PanelContainer/VBoxContainer/NumFournisseur
-@onready var quantite_recus: SpinBox = $PanelContainer/PanelContainer/VBoxContainer/QuantiteRecus
+@onready var variete: OptionButton = %Variete
+@onready var num_fournisseur: LineEdit = %NumeroFournisseur
+@onready var quantite_recus: SpinBox = %QuantiteRecus
 @onready var kg_recus: SpinBox = $PanelContainer/PanelContainer/VBoxContainer/KgRecus
-@onready var package_type: OptionButton = $PanelContainer/PanelContainer/VBoxContainer/PackageType
-@onready var batch_number: LineEdit = $PanelContainer/PanelContainer/VBoxContainer/BatchNumber
+@onready var package_type: OptionButton = %PackageType
+@onready var batch_number: LineEdit = %BatchNumber
 
 
 # Called when the node enters the scene tree for the first time.
