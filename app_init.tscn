@@ -1,9 +1,6 @@
 [gd_scene format=3 uid="uid://xfpilgocxijw"]
 
 [ext_resource type="Script" uid="uid://baqnorxwnwsnp" path="res://app_init.gd" id="1_n5gwl"]
-[ext_resource type="Theme" uid="uid://dn5qgfk13nyr8" path="res://assets/themes/backgroundScenes.tres" id="2_5ib5h"]
-[ext_resource type="Theme" uid="uid://cf4ja7b5l4dtb" path="res://assets/themes/Labels.tres" id="3_teisc"]
-[ext_resource type="Theme" uid="uid://co7vw0m62m2lh" path="res://assets/themes/LoginTheme.tres" id="4_rcvp8"]
 [ext_resource type="Script" uid="uid://bnb7n2tjsy3mr" path="res://globals/notice_label.gd" id="5_teisc"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5ib5h"]
@@ -28,7 +25,6 @@ grow_vertical = 2
 [node name="PanelContainer" type="PanelContainer" parent="Login" unique_id=1430800581]
 custom_minimum_size = Vector2(1200, 800)
 layout_mode = 2
-theme = ExtResource("2_5ib5h")
 
 [node name="MarginContainer" type="MarginContainer" parent="Login/PanelContainer" unique_id=1083656183]
 layout_mode = 2
@@ -42,23 +38,17 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="Login/PanelContainer/MarginContainer/VBoxContainer" unique_id=1402807484]
 layout_mode = 2
-theme = ExtResource("3_teisc")
 text = "ENTRE LE NOM D'UTILISATEUR:"
 
 [node name="UsernameLineEdit" type="LineEdit" parent="Login/PanelContainer/MarginContainer/VBoxContainer" unique_id=2143621977]
 layout_mode = 2
-theme = ExtResource("4_rcvp8")
-theme_override_font_sizes/font_size = 75
 
 [node name="Label2" type="Label" parent="Login/PanelContainer/MarginContainer/VBoxContainer" unique_id=346813308]
 layout_mode = 2
-theme = ExtResource("3_teisc")
 text = "ENTRE LE MOT DE PASSE:"
 
 [node name="MotDePasseLineEdit" type="LineEdit" parent="Login/PanelContainer/MarginContainer/VBoxContainer" unique_id=142031500]
 layout_mode = 2
-theme = ExtResource("4_rcvp8")
-theme_override_font_sizes/font_size = 75
 secret = true
 secret_character = "*"
 
@@ -72,8 +62,6 @@ custom_minimum_size = Vector2(400, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme = ExtResource("4_rcvp8")
-theme_override_font_sizes/font_size = 50
 text = "Se connecter"
 
 [node name="ErrorMsg" type="Label" parent="Login/PanelContainer/MarginContainer/VBoxContainer" unique_id=1539251558]
