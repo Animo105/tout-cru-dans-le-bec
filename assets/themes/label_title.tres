@@ -1,0 +1,15 @@
+[gd_resource type="Theme" format=3 uid="uid://cbrmgvtgi1by7"]
+
+[ext_resource type="FontFile" uid="uid://d040xuhd706he" path="res://assets/fonts/Roboto-Bold.ttf" id="1_jy71s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q24ba"]
+content_margin_left = 30.0
+content_margin_top = 30.0
+content_margin_right = 30.0
+content_margin_bottom = 50.0
+
+[resource]
+Label/colors/font_color = Color(0, 0.19215687, 0, 1)
+Label/font_sizes/font_size = 75
+Label/fonts/font = ExtResource("1_jy71s")
+Label/styles/normal = SubResource("StyleBoxEmpty_q24ba")

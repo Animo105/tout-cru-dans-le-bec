@@ -7,11 +7,16 @@ extends Control
 @onready var stock_deshydrate: Control = $VBoxContainer/MarginContainer/HBoxContainer/MarginContainer/StockDeshydrate
 @onready var transformation: Control = $VBoxContainer/MarginContainer/HBoxContainer/MarginContainer/Transformation
 @onready var trempage: Control = $VBoxContainer/MarginContainer/HBoxContainer/MarginContainer/Trempage
+@onready var admin_panel: PanelContainer = $VBoxContainer/MarginContainer/HBoxContainer/MarginContainer/AdminPanel
+
+
+@onready var admin_button: Button = $VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer/AdminButton
 
 var scenes: Array[Control]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	admin_button.visible = Globals.is_admin
 	scenes = [
 		accueil,
 		deshydratage,
@@ -20,12 +25,9 @@ func _ready() -> void:
 		reception,
 		stock_deshydrate,
 		transformation,
-		trempage
+		trempage,
+		admin_panel
 	]
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 
 func hideAll() -> void:
 	for x in scenes:
@@ -68,6 +70,9 @@ func _on_historique_pressed() -> void:
 	hideAll()
 	historique.show()
 
+func _on_admin_button_pressed() -> void:
+	hideAll()
+	admin_panel.show()
 
 func _on_deconexion_pressed() -> void:
 	SceneManager.load_previous_scene()

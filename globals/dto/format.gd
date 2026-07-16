@@ -18,3 +18,7 @@ static func from_response_list(a : Array[Dictionary]) -> Array[Format]:
 
 func to_request() -> Dictionary:
 	return {"format" : format}
+
+func to_byte_array() -> PackedByteArray:
+	var d = to_request()
+	return JSON.stringify(d).to_utf8_buffer()

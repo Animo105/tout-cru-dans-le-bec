@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://b7mqutog2g2li"]
+
+[ext_resource type="Script" uid="uid://bi367alqve6qq" path="res://globals/autoloads/error_service/error_service.gd" id="1_et5tc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_et5tc"]
+content_margin_left = 20.0
+content_margin_top = 10.0
+content_margin_right = 20.0
+content_margin_bottom = 10.0
+bg_color = Color(0.827451, 0.9098039, 0.827451, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.14901961, 0.32156864, 0.21568628, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="ErrorService" type="CanvasLayer" unique_id=1002230466]
+layer = 15
+script = ExtResource("1_et5tc")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=248882557]
+visible = false
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = -95.0
+offset_right = 369.0
+offset_bottom = -15.0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_et5tc")
+
+[node name="Label" type="Label" parent="PanelContainer" unique_id=1028355508]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9898438, 3.946722e-06, 7.70092e-07, 1)
+text = "ERROR LABEL"
+
+[node name="Timer" type="Timer" parent="." unique_id=208800745]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://b5kw1d6r8tm0e"]
+
+[ext_resource type="Script" uid="uid://be3arpmh76r8m" path="res://scenes/admin_panel/field.gd" id="1_68k0w"]
+
+[node name="Field" type="HBoxContainer" unique_id=2135590530]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 60.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+script = ExtResource("1_68k0w")
+
+[node name="Label" type="Label" parent="." unique_id=588506070]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "AAAA"
+
+[node name="EditButton" type="Button" parent="." unique_id=810741842]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Modifier"
+
+[node name="DelButton" type="Button" parent="." unique_id=1314763147]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Supprimer"
+
+[connection signal="pressed" from="EditButton" to="." method="_on_edit_button_pressed"]
+[connection signal="pressed" from="DelButton" to="." method="_on_del_button_pressed"]

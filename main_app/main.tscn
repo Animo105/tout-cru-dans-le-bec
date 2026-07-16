@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://b0l45878o5ckr" path="res://scenes/StockDeshydrate.tscn" id="9_w48qg"]
 [ext_resource type="PackedScene" uid="uid://btbsibkhf616m" path="res://scenes/Transformation.tscn" id="10_vivmo"]
 [ext_resource type="PackedScene" uid="uid://b8shh4tfv0o53" path="res://scenes/Trempage.tscn" id="11_2cqfq"]
+[ext_resource type="PackedScene" uid="uid://c1bkkovv8oj5q" path="res://scenes/admin_panel/admin_panel.tscn" id="11_4myji"]
 
 [node name="Main" type="Control" unique_id=1765879044]
 layout_mode = 3
@@ -109,6 +110,10 @@ text = "Historique
 "
 alignment = 0
 
+[node name="AdminButton" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer" unique_id=720671242]
+layout_mode = 2
+text = "Panel admin"
+
 [node name="Deconexion" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer" unique_id=406435515]
 layout_mode = 2
 text = "Disconnect"
@@ -123,6 +128,7 @@ theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
 [node name="Accueil" parent="VBoxContainer/MarginContainer/HBoxContainer/MarginContainer" unique_id=950256363 instance=ExtResource("4_7mycd")]
+visible = false
 layout_mode = 2
 
 [node name="Deshydratage" parent="VBoxContainer/MarginContainer/HBoxContainer/MarginContainer" unique_id=1615760622 instance=ExtResource("5_272bh")]
@@ -153,6 +159,9 @@ layout_mode = 2
 visible = false
 layout_mode = 2
 
+[node name="AdminPanel" parent="VBoxContainer/MarginContainer/HBoxContainer/MarginContainer" unique_id=1385802005 instance=ExtResource("11_4myji")]
+layout_mode = 2
+
 [connection signal="pressed" from="VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer/Accueil" to="." method="_on_accueil_pressed"]
 [connection signal="pressed" from="VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer/Reception" to="." method="_on_reception_pressed"]
 [connection signal="pressed" from="VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer/Trempage" to="." method="_on_trempage_pressed"]
@@ -161,4 +170,5 @@ layout_mode = 2
 [connection signal="pressed" from="VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer/transformation" to="." method="_on_transformation_pressed"]
 [connection signal="pressed" from="VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer/Ensachage" to="." method="_on_ensachage_pressed"]
 [connection signal="pressed" from="VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer/Historique" to="." method="_on_historique_pressed"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer/AdminButton" to="." method="_on_admin_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer/Deconexion" to="." method="_on_deconexion_pressed"]

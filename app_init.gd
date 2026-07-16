@@ -16,6 +16,12 @@ const FILE_IP_PATH = "user://ip.txt"
 @onready var login_button: Button = $Login/PanelContainer/MarginContainer/VBoxContainer/LoginButton
 @onready var error_login_label: Label = $Login/PanelContainer/MarginContainer/VBoxContainer/ErrorMsg
 
+func clear() -> void:
+	username_line_edit.text = ""
+	mot_de_passe_line_edit.text = ""
+	error_login_label.text = ""
+	url_option_button.button_pressed = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# check si l'adresse par défaut existe
@@ -31,6 +37,7 @@ func _ready() -> void:
 	file.close()
 	url_textline.text = ip
 	HttpHelper.BASE_URL = ip
+	clear()
 
 
 func _on_set_url_button_pressed() -> void:
@@ -47,7 +54,6 @@ func _on_set_url_button_pressed() -> void:
 
 func _on_button_toggled(toggled_on: bool) -> void:
 	url_option_panel.visible = toggled_on
-
 
 func _on_login_button_pressed() -> void:
 	login_button.disabled = true
@@ -75,5 +81,6 @@ func _on_login_button_pressed() -> void:
 	Globals.is_admin = result_data.get("isAdmin", false)
 	HttpHelper.add_headers("Authorization: Bearer %s" % token)
 	# load some stuff up
+	clear()
 	SceneManager.load_from_file("res://main_app/main.tscn", false)
 		
