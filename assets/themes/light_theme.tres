@@ -5,6 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://ol2s07kc44te" path="res://assets/images/arrow_dropdown.png" id="3_11dqm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_11dqm"]
+content_margin_left = 20.0
+content_margin_top = 10.0
+content_margin_right = 20.0
+content_margin_bottom = 10.0
 bg_color = Color(0.73584604, 0.8568362, 0.7380739, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
@@ -16,6 +20,10 @@ expand_margin_right = 5.0
 expand_margin_bottom = 5.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k5m2u"]
+content_margin_left = 20.0
+content_margin_top = 10.0
+content_margin_right = 20.0
+content_margin_bottom = 10.0
 bg_color = Color(0.41387525, 0.69912285, 0.5226579, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
@@ -23,6 +31,10 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2p8en"]
+content_margin_left = 20.0
+content_margin_top = 10.0
+content_margin_right = 20.0
+content_margin_bottom = 10.0
 bg_color = Color(0.22745098, 0.42745098, 0.30588236, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
@@ -30,6 +42,10 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s00xe"]
+content_margin_left = 20.0
+content_margin_top = 10.0
+content_margin_right = 20.0
+content_margin_bottom = 10.0
 bg_color = Color(0.16306716, 0.3206462, 0.22510019, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
@@ -37,6 +53,10 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m3354"]
+content_margin_left = 15.0
+content_margin_top = 25.0
+content_margin_right = 15.0
+content_margin_bottom = 25.0
 bg_color = Color(1, 1, 1, 1)
 border_width_left = 5
 border_width_top = 5
@@ -47,12 +67,12 @@ corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
-expand_margin_left = 5.0
-expand_margin_top = 5.0
-expand_margin_right = 5.0
-expand_margin_bottom = 5.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8xkgr"]
+content_margin_left = 15.0
+content_margin_top = 25.0
+content_margin_right = 15.0
+content_margin_bottom = 25.0
 bg_color = Color(0.82884866, 0.9090162, 0.825966, 1)
 border_width_left = 5
 border_width_top = 5
@@ -63,10 +83,6 @@ corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
-expand_margin_left = 5.0
-expand_margin_top = 5.0
-expand_margin_right = 5.0
-expand_margin_bottom = 5.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g3sna"]
 bg_color = Color(0.83553237, 0.9579311, 0.87412536, 1)

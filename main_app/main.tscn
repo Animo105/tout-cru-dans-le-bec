@@ -65,45 +65,54 @@ theme_override_constants/separation = 30
 layout_mode = 2
 text = "Accueil
 "
+alignment = 0
 
 [node name="Reception" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer" unique_id=1373611170]
 layout_mode = 2
 text = "Réception
 
 "
+alignment = 0
 
 [node name="Trempage" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer" unique_id=2021543349]
 layout_mode = 2
 text = "Trempage
 "
+alignment = 0
 
 [node name="Deshydratage" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer" unique_id=908443404]
 layout_mode = 2
 text = "Déshydratage
 "
+alignment = 0
 
 [node name="Stock deshydrate" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer" unique_id=804978529]
 layout_mode = 2
 text = "Stock déshydraté"
+alignment = 0
 
 [node name="transformation" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer" unique_id=1613882901]
 layout_mode = 2
 text = "Transformation
 "
+alignment = 0
 
 [node name="Ensachage" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer" unique_id=1917313536]
 layout_mode = 2
 text = "Ensachage
 "
+alignment = 0
 
 [node name="Historique" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer" unique_id=1281685113]
 layout_mode = 2
 text = "Historique
 "
+alignment = 0
 
 [node name="Deconexion" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer" unique_id=406435515]
 layout_mode = 2
 text = "Disconnect"
+alignment = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer/HBoxContainer" unique_id=1345419648]
 layout_mode = 2
@@ -114,7 +123,6 @@ theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
 [node name="Accueil" parent="VBoxContainer/MarginContainer/HBoxContainer/MarginContainer" unique_id=950256363 instance=ExtResource("4_7mycd")]
-visible = false
 layout_mode = 2
 
 [node name="Deshydratage" parent="VBoxContainer/MarginContainer/HBoxContainer/MarginContainer" unique_id=1615760622 instance=ExtResource("5_272bh")]
@@ -134,6 +142,7 @@ visible = false
 layout_mode = 2
 
 [node name="StockDeshydrate" parent="VBoxContainer/MarginContainer/HBoxContainer/MarginContainer" unique_id=1760376167 instance=ExtResource("9_w48qg")]
+visible = false
 layout_mode = 2
 
 [node name="Transformation" parent="VBoxContainer/MarginContainer/HBoxContainer/MarginContainer" unique_id=1222127248 instance=ExtResource("10_vivmo")]

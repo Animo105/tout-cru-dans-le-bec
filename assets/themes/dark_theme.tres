@@ -5,13 +5,21 @@
 [ext_resource type="Texture2D" uid="uid://ol2s07kc44te" path="res://assets/images/arrow_dropdown.png" id="3_uy3ht"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uy3ht"]
-bg_color = Color(0.2426528, 0.44901204, 0.3221817, 1)
+content_margin_left = 20.0
+content_margin_top = 10.0
+content_margin_right = 20.0
+content_margin_bottom = 10.0
+bg_color = Color(0.22745098, 0.42745098, 0.30588236, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3vv08"]
+content_margin_left = 20.0
+content_margin_top = 10.0
+content_margin_right = 20.0
+content_margin_bottom = 10.0
 bg_color = Color(0.6686674, 0.882802, 0.6833933, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
@@ -19,6 +27,10 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qsr63"]
+content_margin_left = 20.0
+content_margin_top = 10.0
+content_margin_right = 20.0
+content_margin_bottom = 10.0
 bg_color = Color(0.9098039, 0.9490196, 0.91764706, 1)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
@@ -26,13 +38,21 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_18hei"]
-bg_color = Color(0.5058824, 0.79607844, 0.6117647, 1)
+content_margin_left = 20.0
+content_margin_top = 10.0
+content_margin_right = 20.0
+content_margin_bottom = 10.0
+bg_color = Color(0.34830108, 0.6023843, 0.44233373, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iypxx"]
+content_margin_left = 20.0
+content_margin_top = 10.0
+content_margin_right = 20.0
+content_margin_bottom = 10.0
 bg_color = Color(0.82884866, 0.9090162, 0.825966, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
@@ -40,6 +60,10 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nx574"]
+content_margin_left = 20.0
+content_margin_top = 10.0
+content_margin_right = 20.0
+content_margin_bottom = 10.0
 bg_color = Color(0.24313726, 0.44705883, 0.32156864, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
