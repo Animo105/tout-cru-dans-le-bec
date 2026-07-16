@@ -29,7 +29,6 @@ static func from_response(d : Dictionary) -> Delivery:
 
 func to_request() -> Dictionary:
 	var d : Dictionary = {}
-	d["id"] = id
 	d["supplierName"] = supplier_name
 	d["packageType"] = package_type
 	d["packageWeightKg"] = package_weight_kg
