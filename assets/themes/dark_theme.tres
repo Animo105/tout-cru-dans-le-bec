@@ -12,18 +12,18 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3vv08"]
-bg_color = Color(0.5544491, 0.7956655, 0.5740784, 1)
+bg_color = Color(0.6686674, 0.882802, 0.6833933, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qsr63"]
-bg_color = Color(0.827451, 0.9098039, 0.827451, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
+bg_color = Color(0.9098039, 0.9490196, 0.91764706, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_18hei"]
 bg_color = Color(0.5058824, 0.79607844, 0.6117647, 1)
@@ -110,9 +110,9 @@ color = Color(0.22745098, 0.42745098, 0.30588236, 1)
 thickness = 5
 
 [resource]
-Button/colors/font_color = Color(0.22745098, 0.42745098, 0.30588236, 1)
+Button/colors/font_color = Color(0.14901961, 0.32156864, 0.21568628, 1)
 Button/colors/font_disabled_color = Color(0.40392157, 0.68235296, 0.50980395, 1)
-Button/colors/font_hover_color = Color(0.14901961, 0.32156864, 0.21568628, 1)
+Button/colors/font_hover_color = Color(0.18944034, 0.39430994, 0.26844525, 1)
 Button/colors/font_hover_pressed_color = Color(0.14901961, 0.32156864, 0.21568628, 1)
 Button/colors/font_pressed_color = Color(0.22745098, 0.42745098, 0.30588236, 1)
 Button/font_sizes/font_size = 50

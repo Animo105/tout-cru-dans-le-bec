@@ -1,13 +1,12 @@
 extends Control
-@onready var accueil: Control = $Background/VBoxContainer/MarginContainer/HBoxContainer/SceneContainer/MarginContainer/Accueil
-@onready var deshydratage: Control = $Background/VBoxContainer/MarginContainer/HBoxContainer/SceneContainer/MarginContainer/Deshydratage
-@onready var ensachage: Control = $Background/VBoxContainer/MarginContainer/HBoxContainer/SceneContainer/MarginContainer/Ensachage
-@onready var historique: Control = $Background/VBoxContainer/MarginContainer/HBoxContainer/SceneContainer/MarginContainer/Historique
-@onready var reception: Control = $Background/VBoxContainer/MarginContainer/HBoxContainer/SceneContainer/MarginContainer/Reception
-@onready var stock_deshydrate: Control = $Background/VBoxContainer/MarginContainer/HBoxContainer/SceneContainer/MarginContainer/StockDeshydrate
-@onready var transformation: Control = $Background/VBoxContainer/MarginContainer/HBoxContainer/SceneContainer/MarginContainer/Transformation
-@onready var trempage: Control = $Background/VBoxContainer/MarginContainer/HBoxContainer/SceneContainer/MarginContainer/Trempage
-
+@onready var accueil: Control = $VBoxContainer/MarginContainer/HBoxContainer/MarginContainer/Accueil
+@onready var deshydratage: Control = $VBoxContainer/MarginContainer/HBoxContainer/MarginContainer/Deshydratage
+@onready var ensachage: Control = $VBoxContainer/MarginContainer/HBoxContainer/MarginContainer/Ensachage
+@onready var historique: Control = $VBoxContainer/MarginContainer/HBoxContainer/MarginContainer/Historique
+@onready var reception: Control = $VBoxContainer/MarginContainer/HBoxContainer/MarginContainer/Reception
+@onready var stock_deshydrate: Control = $VBoxContainer/MarginContainer/HBoxContainer/MarginContainer/StockDeshydrate
+@onready var transformation: Control = $VBoxContainer/MarginContainer/HBoxContainer/MarginContainer/Transformation
+@onready var trempage: Control = $VBoxContainer/MarginContainer/HBoxContainer/MarginContainer/Trempage
 
 var scenes: Array[Control]
 

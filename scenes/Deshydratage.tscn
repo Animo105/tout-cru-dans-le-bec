@@ -1,28 +1,14 @@
 [gd_scene format=3 uid="uid://daq6bwyqxr7wr"]
 
-[ext_resource type="Theme" uid="uid://dn5qgfk13nyr8" path="res://assets/themes/backgroundScenes.tres" id="1_4yd17"]
-[ext_resource type="Theme" uid="uid://cf4ja7b5l4dtb" path="res://assets/themes/Labels.tres" id="2_5xqqy"]
-
-[node name="Deshydratage" type="Control" unique_id=1615760622]
-layout_mode = 3
+[node name="Deshydratage" type="PanelContainer" unique_id=1185823632]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=247383949]
-layout_mode = 0
-offset_right = 1898.0
-offset_bottom = 1354.0
-theme = ExtResource("1_4yd17")
-
-[node name="PanelContainer" type="PanelContainer" parent="PanelContainer" unique_id=927877148]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="PanelContainer/PanelContainer" unique_id=1303277102]
+[node name="Label" type="Label" parent="." unique_id=1303277102]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-theme = ExtResource("2_5xqqy")
 text = "Deshydratage"
