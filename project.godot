@@ -17,6 +17,7 @@ config/icon="res://assets/icon.svg"
 
 [autoload]
 
+ErrorService="*uid://b7mqutog2g2li"
 Globals="*uid://bhx8xslkr1rai"
 HttpHelper="*uid://6pkaepxleanj"
 SceneManager="*uid://dn6g4v4scg00s"

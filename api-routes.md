@@ -1,5 +1,10 @@
 # Enums
 ```c#
+public enum ActivityStatus
+{
+    InProcess,
+    Completed,
+}
 public enum ActivityType {
     Soaking = 0,
     Dehydrating = 1,
@@ -7,23 +12,13 @@ public enum ActivityType {
     Transformation = 3,
     Bagging = 4
 }
-public enum ItemDirection
-{
-    Input = 0,
-    Output = 1,
-}
-public enum ItemType
-{
-    Material = 0,
-    FinishedProduct = 1
-}
 public enum LogAction
 {
     Create = 0,
     Update = 1,
     Delete = 2
 }
-public enum MaterialType
+public enum StockType
 {
     Raw = 0,
     Soaked = 1,
@@ -43,15 +38,14 @@ public enum UserType
 }
 ```
 
-# Controllers
 
-## AuthController
+# AuthController
 login
 
-### ``POST api/login``
+## ``POST api/login``
 get un token de connexion
 
-**Body:**
+### Body
 ```json
 {
    "UserName" : "string",
@@ -59,459 +53,929 @@ get un token de connexion
 }
 ```
 
-**Returns:**
+### Returns
 - ``OK (200)`` retourne un token dans le body 
    ```json
-   { "token": "string" }
+   {
+      "token": "string",
+      "isAdmin" : "bool" 
+   }
    ```
 - ``Bad Request (400)`` : Mot de passe ou username invalide
 
 
-## UsersController
+# UsersController
 
-### ``POST api/users/register`` (SuperUser)
-register un nouveau user
+Toutes les routes de ce contrôleur nécessitent un token JWT valide.
 
-**Body:**
-```json
-{
-   "Name" : "string"
-   "UserName" : "string"
-   "Password" : "string"
-   "UserType" : "int"
-}
-```
+---
 
-**Returns:**
-- ``NoContent (204)`` : utilisateur créé
-- ``BadRequest (400)`` : champs manquant, mauvais format, etc.
-- ``Unauthorized (401)`` : pas connecter en super us
+## `GET api/users`
 
+Retourne la liste de tous les utilisateurs.
 
-## ProductsController
+### Autorisation
 
-### ``GET api/products``
-retourne tout les produits
+Authentification requise (JWT). **Administrateur uniquement.**
 
-**Returns:**
-- liste des produits
+### Returns
+
+* `200 OK`
+
 ```json
 [
-   {
-      "Id" : "int",
-      "Name" : "string"
-   },
-   ...
+  {
+    "Id": "int",
+    "Name": "string",
+    "UserType": "UserType (enum)"
+  }
 ]
 ```
 
-### ``GET api/products/{id}``
-prend le produit avec un certain id
+---
 
-**Returns:**
-- ``Ok (200)`` : le produit don't l'id match
+## `POST api/users`
+
+Crée un nouvel utilisateur.
+
+### Autorisation
+
+Authentification requise (JWT). **Administrateur uniquement.**
+
+### Body
+
 ```json
 {
-   "Id" : "int",
-   "Name" : "string"
-}
-```
-- ``NotFound (404)`` : l'id match aucun produit
-
-### ``POST api/products`` (SuperUser)
-créer un nouveau produit
-
-**Body:**
-```json
-{
-   "Name" : "string"
-}
-```
-**Returns:**
-- ``Ok (200)`` : le produit créé avec son Id
-```json
-{
-   "Id" : "int",
-   "Name" : "string"
+  "Name": "string",
+  "UserName": "string",
+  "Password": "string",
+  "UserType": "UserType (enum)"
 }
 ```
 
-## MaterialsController
+### Returns
 
-``GET api/materials``
-returns tout les matériaux
+* `204 No Content` : Utilisateur créé avec succès.
 
-**Returns:**
-- ``OK (200)`` : array des matériaux
+### Erreurs possibles
+
+* `400 Bad Request` : Corps de la requête invalide ou données manquantes.
+* `401 Unauthorized` : Token JWT absent ou invalide.
+* `403 Forbidden` : L'utilisateur n'est pas administrateur.
+
+
+# ProtocolsController
+
+Toutes les routes de ce contrôleur nécessitent un token JWT valide.
+
+---
+
+## `GET api/protocols`
+
+Retourne la liste de tous les protocoles.
+
+### Autorisation
+
+Authentification requise (JWT).
+
+### Returns
+
+* `200 OK`
+
 ```json
 [
-   {
-      "Id" : "int",
-      "DeliveryId" : "int",
-      "BatchNumber" : "string",
-      "VarietyName" : "string",
-      "QuantityKg" : "float",
-      "MaterialType" : "int" //0 = cru, 1 = trempé, 2 = en déshydratage, 3 = déshydraté
-   }
+  {
+    "VarietyId": "int",
+    "Description": "string",
+    "ActivityType": "ActivityType (enum)"
+  }
 ]
 ```
 
+---
 
-### ``Get api/materials/batch/{batchNumber}``
-returns tout les matériaux avec un certain batch number
+## `POST api/protocols`
+
+Crée un nouveau protocole.
+
+### Autorisation
+
+Authentification requise (JWT). **Administrateur uniquement.**
+
+### Body
+
+```json
+{
+  "VarietyId": "int",
+  "ActivityType": "ActivityType (enum)",
+  "Description": "string"
+}
+```
+
+### Returns
+
+* `200 OK`
+
+```json
+{
+  "VarietyId": "int",
+  "Description": "string",
+  "ActivityType": "ActivityType (enum)"
+}
+```
+
+### Erreurs possibles
+
+* `400 Bad Request` : Corps de la requête invalide ou données manquantes.
+* `401 Unauthorized` : Token JWT absent ou invalide.
+* `403 Forbidden` : L'utilisateur n'est pas administrateur.
+
+
+
+# VarietiesController
+
+Toutes les routes de ce contrôleur nécessitent un token JWT valide.
+
+---
+
+## `GET api/varieties`
+
+Retourne la liste de toutes les variétés.
+
+### Autorisation
+
+Authentification requise (JWT).
+
+### Returns
+
+* `200 OK`
+
 ```json
 [
-   {
-      "Id" : "int",
-      "DeliveryId" : "int",
-      "BatchNumber" : "string",
-      "VarietyName" : "string",
-      "QuantityKg" : "float",
-      "MaterialType" : "int" //0 = cru, 1 = trempé, 2 = en déshydratage, 3 = déshydraté
-   }
-]
-```
-
-
-**returns**
-- ``Ok (200)`` : avec la liste
-
-
-### ``PATCH api/materials``
-update le materiel
-
-**Body:**
-```json
-{
-   "Id" : "int",
-   "DeliveryId" : "int",
-   "QuantityKg" : "float",
-      "MaterialType" : "int" //0 = cru, 1 = trempé, 2 = en déshydratage, 3 = déshydraté
-}
-```
-
-**Returns:**
-- ``NoContent (204)`` : updated
-- ``NotFound (404)`` : mauvais Id ou delivery Id
-
-
-### ``POST api/materials``
-crée un materiel
-
-**Body:**
-```json
-{
-   "DeliveryId" : "int",
-   "QuantityKg" : "float",
-   "MaterialType" : "int" //0 = cru, 1 = trempé, 2 = en déshydratage, 3 = déshydraté
-}
-```
-
-**Returns:**
-- ``Ok (200)`` : le matériel créer
-```json
-   {
-      "Id" : "int",
-      "DeliveryId" : "int",
-      "BatchNumber" : "string",
-      "VarietyName" : "string",
-      "QuantityKg" : "float",
-      "MaterialType" : "int" //0 = cru, 1 = trempé, 2 = en déshydratage, 3 = déshydraté
-   }
-```
-- ``NotFound (404)`` : l'id delivery est incorrect
-
-
-### ``DELETE api/materials/{id}``
-supprime un matériel
-
-**Returns:**
-- ``NoContent (204)`` : supprimé
-- ``NotFound (404)`` : id match pas
-
-
-## DeliveryController
-
-### ``GET api/deliveries``
-return tout les delivies
-
-**returns**
-- ``Ok (200)``
-```json
-[
-   {
-      "Id" : "int",
-      "BatchNumber" : "string",
-      "QuantityKg" : "float",
-      "DeliveryDate" : "??? string je pense? DateTime?",
-      "Supplier" : "string",
-      "VarietyId" : "int",
-      "VarietyName" : "string"
-   }
-]
-```
-
-### ``GET api/deliveries/{id}``
-return le delivery avec l'id
-
-**returns**
-- ``Ok (200)``
-```json
-{
-   "Id" : "int",
-   "BatchNumber" : "string",
-   "QuantityKg" : "float",
-   "DeliveryDate" : "??? string je pense? DateTime?",
-   "Supplier" : "string",
-   "VarietyId" : "int",
-   "VarietyName" : "string"
-}
-```
-
-### ``POST api/deliveries``
-crée un delivery
-
-**Body**
-```json
-{
-   "BatchNumber" : "string",
-   "QuantityKg" : "float",
-   "DeliveryDate" : "??? string je pense? DateTime?",
-   "Supplier" : "string",
-   "VarietyId" : "int"
-}
-```
-
-**returns**
-- ``Ok (200)``
-```json
-{
-   "Id" : "int",
-   "BatchNumber" : "string",
-   "QuantityKg" : "float",
-   "DeliveryDate" : "??? string je pense? DateTime?",
-   "Supplier" : "string",
-   "VarietyId" : "int",
-   "VarietyName" : "string"
-}
-```
-
-
-## FinishedProductController
-
-### ``GET api/finishedproduct``
-liste des produits terminées
-
-**Returns**
-- ``Ok (200)``
-```json
-[
-   {
-      "Id" : "int",
-      "ProductName" : "string",
-      "DateProduction" : "??? string je pense? DateTime?",
-      "ProductType" : "int", //0 = Jar, 1 = Bag
-      "QuantityG" : "float",
-      "AmountProduced" : "int",
-      "ProductUniqueId" : "string",
-      "ActivityId" : "int"
-   }
-]
-```
-
-### ``POST api/finishedproduct``
-crée un produit terminer
- 
- **Body**
- ```json
-{
-   "ProductId" : "int",
-   "DateProduction" : "??? string je pense? DateTime?",
-   "ProductionType" : "int", //0 = Jar, 1 = Bag
-   "QuantityG" : "float",
-   "AmountProduced" : "int",
-   "ProductUniqueId" : "int",
-   "ActivityId" : "int"
-
-}
- ```
-
- **returns**
- - ``NotFound (404)`` : product ou activity id match pas
- - ``Ok (200)`` : produit fini créé
- ```json
- {
-   "Id" : "int",
-   "ProductName" : "string",
-   "DateProduction" : "??? string je pense? DateTime?",
-   "ProductionType" : "int", //0 = Jar, 1 = Bag
-   "QuantityG" : "float",
-   "AmountProduced" : "int",
-   "ProductUniqueId" : "int",
-   "ActivityId" : "int"
- }
- ```
-## VarietiesController
-
-### ``GET api/varieties``
-retourne la liste des variétées
-
-**Returns**
-```json
-[
-   {
-      "Id" : "int",
-      "Name" : "string",
-      "IsActive" : "bool",
-      "Protocol" : "string"
-   }
-]
-```
-
-### ``POST api/varieties`` (SuperUser)
-crée une variété
-
-**Body**
-```json
-{
-   "Name" : "string",
-   "IsActive" : "bool",
-   "Protocol" : "string"
-}
-```
-
-**Returns**
-- ``OK (200)`` : Créé
-```json
-{
-   "Id" : "int",
-   "Name" : "string",
-   "IsActive" : "bool",
-   "Protocol" : "string"
-}
-```
-
-### ``PATCH api/varieties`` (SuperUser)
-update la variété
-
-**Body**
-```json
-{
-   "Name" : "string",
-   "IsActive" : "bool",
-   "Protocol" : "string"
-}
-```
-
-**Returns**
-- ``NotFound (404)`` : variété non trouvé
-- ``NoContent (204)`` : updated
-
-## ActivitiesController
-une activité est la transformation d'un matériel (trempage, déshydratage, transformation, ensachage).
-
-### ``GET api/activities``
-liste des activités
-
-**Returns**
-- ``Ok (200)`` : liste
-```json
-[
-   {
-      "Id" : "int",
-      "UserId" : "int",
-      "Date" : "??? string je pense? DateTime?",
-      "ActivityType" : "int", //0 = Soaking, 1 = Dehydrating, 2 = StockingMaterial, 3 = Transformation, 4 = Bagging
-      "Items" :
-      [
-         {
-            "Id" : "int",
-            "ActivityId" : "int",
-            "ItemId" : "int",
-            "ItemType" : "int", // 0 = Material, 1 = FinishedProduct
-            "ItemQuantityKg" : "float",
-            "ItemName" : "string",
-            "ItemBatchNumber" : "string",
-            "Direction" : "int", //0 = Input, 1 = Output
-         }
-      ]
-   }
-]
-```
-
-### ``GET api/activities/{id}``
-retourne l'activité avec l'id
-
-**Returns**
-- ``NotFound (404)`` : l'id ne match pas
-- ``Ok (200)`` : retourne l'activité
-```json
-{
-   "Id" : "int",
-   "UserId" : "int",
-   "Date" : "??? string je pense? DateTime?",
-   "ActivityType" : "int", //0 = Soaking, 1 = Dehydrating, 2 = StockingMaterial, 3 = Transformation, 4 = Bagging
-   "Items" :
-   [
+  {
+    "Id": "int",
+    "Name": "string",
+    "Protocols": [
       {
-         "Id" : "int",
-         "ActivityId" : "int",
-         "ItemId" : "int",
-         "ItemType" : "int", // 0 = Material, 1 = FinishedProduct
-         "ItemQuantityKg" : "float",
-         "ItemName" : "string",
-         "ItemBatchNumber" : "string",
-         "Direction" : "int", //0 = Input, 1 = Output
+        "Description": "string",
+        "ActivityType": "ActivityType (enum)"
       }
-   ]
+    ]
+  }
+]
+```
+
+---
+
+## `POST api/varieties`
+
+Crée une nouvelle variété.
+
+### Autorisation
+
+Authentification requise (JWT).
+
+### Body
+
+```json
+{
+  "Name": "string"
 }
 ```
 
-### ``POST api/activities``
-créer une activité
+### Returns
 
-**Body**
+* `200 OK`
+
 ```json
 {
-   "Date" : "??? string je pense? DateTime?",
-   "ActivityType" : "int",
-   "Data" : {
-      "FieldName" : "Info en plus selon l'activité"
-   },
-   "Items" : 
-   [
-      {
-         "ItemId" : "",
-         "ItemType" : "int", // 0 = Material, 1 = FinishedProduct
-         "ItemQuantityKg" : "float",
-         "ItemBatchNumber" : "string",
-         "ItemName" : "string",
-         "Direction" : "int", //0 = Input, 1 = Output
-      }
-   ]
+  "Id": "int",
+  "Name": "string",
+  "Protocols": [
+    {
+      "VarietyId" : "int"
+      "Description": "string",
+      "ActivityType": "ActivityType (enum)"
+    }
+  ]
 }
 ```
 
-**Returns**
-- ``Ok (200)`` : créer
+### Erreurs possibles
+
+* `400 Bad Request` : Corps de la requête invalide ou données manquantes.
+* `401 Unauthorized` : Token JWT absent ou invalide.
+
+---
+
+## `PATCH api/varieties`
+
+Modifie le nom d'une variété existante.
+
+### Autorisation
+
+Authentification requise (JWT). **Administrateur uniquement.**
+
+### Body
+
 ```json
 {
-      "Id" : "int",
-      "UserId" : "int",
-      "Date" : "??? string je pense? DateTime?",
-      "ActivityType" : "int", //0 = Soaking, 1 = Dehydrating, 2 = StockingMaterial, 3 = Transformation, 4 = Bagging
-      "Items" :
-      [
-         {
-            "Id" : "int",
-            "ActivityId" : "int",
-            "ItemId" : "int",
-            "ItemType" : "int", // 0 = Material, 1 = FinishedProduct
-            "ItemQuantityKg" : "float",
-            "ItemName" : "string",
-            "ItemBatchNumber" : "string",
-            "Direction" : "int", //0 = Input, 1 = Output
-         }
+  "Id": "int",
+  "Name": "string"
+}
+```
+
+### Returns
+
+* `204 No Content` : Variété modifiée avec succès.
+
+### Erreurs possibles
+
+* `400 Bad Request` : Corps de la requête invalide ou données manquantes.
+* `401 Unauthorized` : Token JWT absent ou invalide.
+* `403 Forbidden` : L'utilisateur n'est pas administrateur.
+* `404 Not Found` : Aucune variété ne correspond à l'identifiant fourni.
+
+
+# DeliveriesController
+
+Toutes les routes de ce contrôleur nécessitent un token JWT valide.
+
+---
+
+## `GET api/deliveries`
+
+Retourne la liste de toutes les livraisons.
+
+### Autorisation
+
+Authentification requise (JWT).
+
+### Returns
+
+* `200 OK`
+
+```json
+[
+  {
+    "Id": "int",
+    "SupplierName": "string",
+    "PackageType": "DeliveryPackageType (enum)",
+    "PackageWeightKg": "float",
+    "PackageQuantity": "int",
+    "VarietyName": "string",
+    "BatchNumber": "string",
+    "DeliveryDate": "string (ISO 8601)"
+  }
+]
+```
+
+---
+
+## `GET api/deliveries/{id}`
+
+Retourne une livraison à partir de son identifiant.
+
+### Autorisation
+
+Authentification requise (JWT).
+
+### Paramètres
+
+| Nom | Type | Description                  |
+| --- | ---- | ---------------------------- |
+| id  | int  | Identifiant de la livraison. |
+
+### Returns
+
+* `200 OK`
+
+```json
+{
+  "Id": "int",
+  "SupplierName": "string",
+  "PackageType": "DeliveryPackageType (enum)",
+  "PackageWeightKg": "float",
+  "PackageQuantity": "int",
+  "VarietyName": "string",
+  "BatchNumber": "string",
+  "DeliveryDate": "string (ISO 8601)"
+}
+```
+
+### Erreurs possibles
+
+* `401 Unauthorized` : Token JWT absent ou invalide.
+* `404 Not Found` : Aucune livraison ne correspond à l'identifiant fourni.
+
+---
+
+## `POST api/deliveries`
+
+Crée une nouvelle livraison.
+
+### Autorisation
+
+Authentification requise (JWT).
+
+### Body
+
+```json
+{
+  "SupplierName": "string",
+  "PackageType": "DeliveryPackageType (enum)",
+  "PackageWeightKg": "float",
+  "PackageQuantity": "int",
+  "VarietyId": "int",
+  "BatchNumber": "string"
+}
+```
+
+### Returns
+
+* `200 OK`
+
+```json
+{
+  "Id": "int",
+  "SupplierName": "string",
+  "PackageType": "DeliveryPackageType (enum)",
+  "PackageWeightKg": "float",
+  "PackageQuantity": "int",
+  "VarietyName": "string",
+  "BatchNumber": "string",
+  "DeliveryDate": "string (ISO 8601)"
+}
+```
+
+### Erreurs possibles
+
+* `400 Bad Request` : Corps de la requête invalide ou données manquantes.
+* `401 Unauthorized` : Token JWT absent ou invalide.
+* `404 Not Found` : La variété demandée n'existe pas.
+
+
+# StocksController
+
+Toutes les routes de ce contrôleur nécessitent un token JWT valide.
+
+---
+
+## `GET api/stocks`
+
+Retourne la liste de tous les stocks.
+
+### Autorisation
+
+Authentification requise (JWT).
+
+### Returns
+
+* `200 OK`
+
+```json
+[
+  {
+    "Id": "int",
+    "Variety": {
+      "Id": "int",
+      "Name": "string",
+      "Protocols": [
+        {
+          "Description": "string",
+          "ActivityType": "ActivityType (enum)"
+        }
       ]
-   }
+    },
+    "BatchNumber": "string",
+    "QuantityKg": "float",
+    "StockType": "StockType (enum)"
+  }
+]
 ```
+
+---
+
+## `GET api/stocks/batch/{batchNumber}`
+
+Retourne tous les stocks associés à un numéro de lot.
+
+### Autorisation
+
+Authentification requise (JWT).
+
+### Paramètres
+
+| Nom         | Type   | Description              |
+| ----------- | ------ | ------------------------ |
+| batchNumber | string | Numéro de lot recherché. |
+
+### Returns
+
+* `200 OK`
+
+```json
+[
+  {
+    "Id": "int",
+    "Variety": {
+      "Id": "int",
+      "Name": "string",
+      "Protocols": [
+        {
+          "Description": "string",
+          "ActivityType": "ActivityType (enum)"
+        }
+      ]
+    },
+    "BatchNumber": "string",
+    "QuantityKg": "float",
+    "StockType": "StockType (enum)"
+  }
+]
+```
+
+### Erreurs possibles
+
+* `401 Unauthorized` : Token JWT absent ou invalide.
+
+---
+
+## `POST api/stocks`
+
+Crée un nouveau stock.
+
+### Autorisation
+
+Authentification requise (JWT).
+
+### Body
+
+```json
+{
+  "VarietyId": "int",
+  "BatchNumber": "string",
+  "QuantityKg": "float",
+  "StockType": "StockType (enum)"
+}
+```
+
+### Returns
+
+* `200 OK`
+
+```json
+{
+  "Id": "int",
+  "Variety": {
+    "Id": "int",
+    "Name": "string",
+    "Protocols": [
+      {
+        "Description": "string",
+        "ActivityType": "ActivityType (enum)"
+      }
+    ]
+  },
+  "BatchNumber": "string",
+  "QuantityKg": "float",
+  "StockType": "StockType (enum)"
+}
+```
+
+### Erreurs possibles
+
+* `400 Bad Request` : Corps de la requête invalide ou données manquantes.
+* `401 Unauthorized` : Token JWT absent ou invalide.
+
+---
+
+## `PATCH api/stocks`
+
+Modifie un stock existant.
+
+### Autorisation
+
+Authentification requise (JWT).
+
+### Body
+
+```json
+{
+  "Id": "int",
+  "VarietyId": "int",
+  "BatchNumber": "string",
+  "QuantityKg": "float",
+  "StockType": "StockType (enum)"
+}
+```
+
+### Returns
+
+* `204 No Content` : Stock modifié avec succès.
+
+### Erreurs possibles
+
+* `400 Bad Request` : Corps de la requête invalide ou données manquantes.
+* `401 Unauthorized` : Token JWT absent ou invalide.
+* `404 Not Found` : Aucun stock ne correspond à l'identifiant fourni.
+
+---
+
+## `DELETE api/stocks/{id}`
+
+Supprime un stock.
+
+### Autorisation
+
+Authentification requise (JWT).
+
+### Paramètres
+
+| Nom | Type | Description                       |
+| --- | ---- | --------------------------------- |
+| id  | int  | Identifiant du stock à supprimer. |
+
+### Returns
+
+* `204 No Content` : Stock supprimé avec succès.
+
+### Erreurs possibles
+
+* `401 Unauthorized` : Token JWT absent ou invalide.
+* `404 Not Found` : Aucun stock ne correspond à l'identifiant fourni.
+
+
+# FormatsController
+
+Toutes les routes de ce contrôleur nécessitent un token JWT valide.
+
+---
+
+## `GET api/formats`
+
+Retourne la liste de tous les formats de produits.
+
+### Autorisation
+
+Authentification requise (JWT).
+
+### Returns
+
+* `200 OK`
+
+```json
+[
+  {
+    "Id": "int",
+    "Format": "string"
+  }
+]
+```
+
+---
+
+## `POST api/formats`
+
+Crée un nouveau format de produit.
+
+### Autorisation
+
+Authentification requise (JWT). **Administrateur uniquement.**
+
+### Body
+
+```json
+{
+  "Format": "string"
+}
+```
+
+### Returns
+
+* `200 OK`
+
+```json
+{
+  "Id": "int",
+  "Format": "string"
+}
+```
+
+### Erreurs possibles
+
+* `400 Bad Request` : Corps de la requête invalide ou données manquantes.
+* `401 Unauthorized` : Token JWT absent ou invalide.
+* `403 Forbidden` : L'utilisateur n'est pas administrateur.
+
+
+# ActivityController
+
+> **⚠️ Warning**
+>
+> **Ce contrôleur est encore en développement.** Les routes, les paramètres, les réponses et le comportement peuvent être modifiés dans les prochaines versions de l'API.
+
+Toutes les routes de ce contrôleur nécessitent un token JWT valide.
+
+---
+
+## `GET api/activity`
+
+Retourne la liste de toutes les activités.
+
+### Autorisation
+
+Authentification requise (JWT).
+
+### Returns
+
+* `200 OK`
+
+```json
+[
+  {
+    "Id": "int",
+    "ActivityType": "ActivityType (enum)",
+    "ActivityStatus": "ActivityStatus (enum)",
+    "StartedByUserName": "string",
+    "CompletedByUserName": "string",
+    "StartedDate": "string (ISO 8601)",
+    "CompletedDate": "string (ISO 8601)",
+    "BatchNumber": "string",
+    "Data": "object"
+  }
+]
+```
+
+---
+
+## `GET api/activity/{id}`
+
+Retourne une activité à partir de son identifiant.
+
+### Autorisation
+
+Authentification requise (JWT).
+
+### Paramètres
+
+| Nom | Type | Description                |
+| --- | ---- | -------------------------- |
+| id  | int  | Identifiant de l'activité. |
+
+### Returns
+
+* `200 OK`
+
+```json
+{
+  "Id": "int",
+  "ActivityType": "ActivityType (enum)",
+  "ActivityStatus": "ActivityStatus (enum)",
+  "StartedByUserName": "string",
+  "CompletedByUserName": "string",
+  "StartedDate": "string (ISO 8601)",
+  "CompletedDate": "string (ISO 8601)",
+  "BatchNumber": "string",
+  "Data": "object"
+}
+```
+
+### Erreurs possibles
+
+* `401 Unauthorized` : Token JWT absent ou invalide.
+* `404 Not Found` : Aucune activité ne correspond à l'identifiant fourni.
+
+---
+
+## `GET api/activity/user/{userId}`
+
+Retourne les activités associées à un utilisateur.
+
+> **⚠️ Cette route n'est pas encore complètement implémentée.** Elle retourne actuellement toutes les activités au lieu de filtrer par utilisateur.
+
+### Autorisation
+
+Authentification requise (JWT). **Administrateur uniquement.**
+
+### Paramètres
+
+| Nom    | Type | Description                   |
+| ------ | ---- | ----------------------------- |
+| userId | int  | Identifiant de l'utilisateur. |
+
+### Returns
+
+* `200 OK`
+
+```json
+[
+  {
+    "Id": "int",
+    "ActivityType": "ActivityType (enum)",
+    "ActivityStatus": "ActivityStatus (enum)",
+    "StartedByUserName": "string",
+    "CompletedByUserName": "string",
+    "StartedDate": "string (ISO 8601)",
+    "CompletedDate": "string (ISO 8601)",
+    "BatchNumber": "string",
+    "Data": "object"
+  }
+]
+```
+
+### Erreurs possibles
+
+* `401 Unauthorized` : Token JWT absent ou invalide.
+* `403 Forbidden` : L'utilisateur n'est pas administrateur.
+
+---
+
+## `POST api/activity/start`
+
+Démarre une nouvelle activité.
+
+### Autorisation
+
+Authentification requise (JWT).
+
+### Body
+
+```json
+{
+  "ActivityType": "ActivityType (enum)",
+  "StartedByUser": "User",
+  "BatchNumber": "string",
+  "Data": "object"
+}
+```
+
+### Returns
+
+* `200 OK`
+
+```json
+{
+  "Id": "int",
+  "ActivityType": "ActivityType (enum)",
+  "ActivityStatus": "ActivityStatus (enum)",
+  "StartedByUserName": "string",
+  "CompletedByUserName": "string",
+  "StartedDate": "string (ISO 8601)",
+  "CompletedDate": "string (ISO 8601)",
+  "BatchNumber": "string",
+  "Data": "object"
+}
+```
+
+### Erreurs possibles
+
+* `400 Bad Request` : Corps de la requête invalide ou données manquantes.
+* `401 Unauthorized` : Token JWT absent ou invalide.
+
+
+
+# FinishedProductsController
+
+Toutes les routes de ce contrôleur nécessitent un token JWT valide.
+
+---
+
+## `GET api/finishedproducts`
+
+Retourne la liste de tous les produits finis.
+
+### Autorisation
+
+Authentification requise (JWT).
+
+### Returns
+
+* `200 OK`
+
+```json
+[
+  {
+    "Id": "int",
+    "Format": "string",
+    "BatchNumber": "string",
+    "ProductType": "ProductType (enum)",
+    "QuantityUsedKg": "float",
+    "Quantity": "int",
+    "DateProduction": "string (ISO 8601)",
+    "ProductsUniqueId": "string"
+  }
+]
+```
+
+---
+
+## `POST api/finishedproducts`
+
+Crée un nouveau produit fini.
+
+### Autorisation
+
+Authentification requise (JWT).
+
+### Body
+
+```json
+{
+  "FormatId": "int",
+  "BatchNumber": "string",
+  "ProductType": "ProductType (enum)",
+  "QuantityUsedKg": "float",
+  "Quantity": "int",
+  "ProductsUniqueId": "string"
+}
+```
+
+### Returns
+
+* `200 OK`
+
+```json
+{
+  "Id": "int",
+  "Format": "string",
+  "BatchNumber": "string",
+  "ProductType": "ProductType (enum)",
+  "QuantityUsedKg": "float",
+  "Quantity": "int",
+  "DateProduction": "string (ISO 8601)",
+  "ProductsUniqueId": "string"
+}
+```
+
+### Erreurs possibles
+
+* `400 Bad Request` : Corps de la requête invalide ou données manquantes.
+* `401 Unauthorized` : Token JWT absent ou invalide.
+
+
+# ProtocolsController
+
+Toutes les routes de ce contrôleur nécessitent un token JWT valide.
+
+---
+
+## `GET api/protocols`
+
+Retourne la liste de tous les protocoles.
+
+### Autorisation
+
+Authentification requise (JWT).
+
+### Returns
+
+* `200 OK`
+
+```json
+[
+  {
+    "VarietyId": "int",
+    "Description": "string",
+    "ActivityType": "ActivityType (enum)"
+  }
+]
+```
+
+---
+
+## `POST api/protocols`
+
+Crée un nouveau protocole.
+
+### Autorisation
+
+Authentification requise (JWT). **Administrateur uniquement.**
+
+### Body
+
+```json
+{
+  "VarietyId": "int",
+  "ActivityType": "ActivityType (enum)",
+  "Description": "string"
+}
+```
+
+### Returns
+
+* `200 OK`
+
+```json
+{
+  "VarietyId": "int",
+  "Description": "string",
+  "ActivityType": "ActivityType (enum)"
+}
+```
+
+### Erreurs possibles
+
+* `400 Bad Request` : Corps de la requête invalide ou données manquantes.
+* `401 Unauthorized` : Token JWT absent ou invalide.
+* `403 Forbidden` : L'utilisateur n'est pas administrateur.
