@@ -17,8 +17,9 @@ config/icon="res://assets/icon.svg"
 
 [autoload]
 
-SceneManager="*uid://dn6g4v4scg00s"
+Globals="*uid://bhx8xslkr1rai"
 HttpHelper="*uid://6pkaepxleanj"
+SceneManager="*uid://dn6g4v4scg00s"
 
 [display]
 
@@ -33,8 +34,14 @@ window/stretch/aspect="expand"
 
 folder_colors={
 "res://assets/": "yellow",
-"res://assets/themes/": "yellow"
+"res://assets/themes/": "yellow",
+"res://globals/": "purple"
 }
+
+[gui]
+
+theme/custom="uid://d0o2whuhbsw6p"
+theme/custom_font="uid://cmjioqhrud5iq"
 
 [physics]
 
@@ -43,3 +50,4 @@ folder_colors={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+environment/defaults/default_clear_color=Color(0.22745098, 0.42745098, 0.30588236, 1)

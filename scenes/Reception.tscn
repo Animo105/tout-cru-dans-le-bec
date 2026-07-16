@@ -13,13 +13,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ll5ql")
 
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1409017971]
-layout_mode = 0
-offset_right = 1898.0
-offset_bottom = 1354.0
-theme = ExtResource("1_52y0n")
-
-[node name="PanelContainer" type="PanelContainer" parent="PanelContainer" unique_id=1579197959]
+[node name="Label" type="Label" parent="." unique_id=1512895805]
 layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/PanelContainer" unique_id=841701159]
@@ -29,7 +23,6 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-theme = ExtResource("2_ll5ql")
 text = "Reception"
 
 [node name="Label2" type="Label" parent="PanelContainer/PanelContainer/VBoxContainer" unique_id=1931811240]

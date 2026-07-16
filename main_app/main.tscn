@@ -1,8 +1,7 @@
 [gd_scene format=3 uid="uid://dn5au5subkbf1"]
 
-[ext_resource type="Theme" uid="uid://cb13qrpgbp3w4" path="res://assets/themes/background.tres" id="1_0xm2m"]
-[ext_resource type="Theme" uid="uid://ikmol1ng66eu" path="res://assets/themes/nav_bar.tres" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://bxibuisxjk37j" path="res://main_app/main.gd" id="1_lquwl"]
+[ext_resource type="Theme" uid="uid://baf6xmff37gsi" path="res://assets/themes/dark_theme.tres" id="2_ikebo"]
 [ext_resource type="PackedScene" uid="uid://gk3umo4mao5w" path="res://scenes/Accueil.tscn" id="4_7mycd"]
 [ext_resource type="PackedScene" uid="uid://daq6bwyqxr7wr" path="res://scenes/Deshydratage.tscn" id="5_272bh"]
 [ext_resource type="PackedScene" uid="uid://670l234tn18h" path="res://scenes/Ensachage.tscn" id="6_efxa6"]
@@ -21,147 +20,145 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_lquwl")
 
-[node name="Background" type="PanelContainer" parent="." unique_id=832667754]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=808657159]
 layout_mode = 0
-anchor_right = 1.003125
-anchor_bottom = 0.99625
-theme = ExtResource("1_0xm2m")
-metadata/_edit_use_anchors_ = true
+offset_right = 2568.0
+offset_bottom = 1594.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Background" unique_id=808657159]
-layout_mode = 2
-
-[node name="Nom de l\'app" type="Label" parent="Background/VBoxContainer" unique_id=1976068236]
+[node name="Nom de l\'app" type="Label" parent="VBoxContainer" unique_id=1976068236]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
+theme = ExtResource("2_ikebo")
 theme_override_font_sizes/font_size = 100
 text = "Application traçabilité"
 
-[node name="MarginContainer" type="MarginContainer" parent="Background/VBoxContainer" unique_id=2028719103]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" unique_id=2028719103]
 layout_mode = 2
-theme_override_constants/margin_left = 10
+size_flags_vertical = 3
+theme_override_constants/margin_left = 30
 theme_override_constants/margin_top = 30
-theme_override_constants/margin_bottom = 20
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Background/VBoxContainer/MarginContainer" unique_id=158935937]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer" unique_id=158935937]
 layout_mode = 2
 
-[node name="NavBarContainer" type="PanelContainer" parent="Background/VBoxContainer/MarginContainer/HBoxContainer" unique_id=706361051]
+[node name="NavBarContainer" type="PanelContainer" parent="VBoxContainer/MarginContainer/HBoxContainer" unique_id=706361051]
 layout_mode = 2
 size_flags_horizontal = 0
-theme = ExtResource("1_ig7tw")
+theme = ExtResource("2_ikebo")
 
-[node name="MarginContainer" type="MarginContainer" parent="Background/VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer" unique_id=2015897875]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer" unique_id=2015897875]
 layout_mode = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 50
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Background/VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer" unique_id=1201172156]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer" unique_id=1201172156]
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_constants/separation = 30
 
-[node name="Accueil" type="Button" parent="Background/VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer" unique_id=2014535132]
+[node name="Accueil" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer" unique_id=2014535132]
 layout_mode = 2
-theme = ExtResource("1_ig7tw")
 text = "Accueil
 "
+alignment = 0
 
-[node name="Reception" type="Button" parent="Background/VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer" unique_id=1373611170]
+[node name="Reception" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer" unique_id=1373611170]
 layout_mode = 2
-theme = ExtResource("1_ig7tw")
 text = "Réception
 
 "
+alignment = 0
 
-[node name="Trempage" type="Button" parent="Background/VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer" unique_id=2021543349]
+[node name="Trempage" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer" unique_id=2021543349]
 layout_mode = 2
-theme = ExtResource("1_ig7tw")
 text = "Trempage
 "
+alignment = 0
 
-[node name="Deshydratage" type="Button" parent="Background/VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer" unique_id=908443404]
+[node name="Deshydratage" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer" unique_id=908443404]
 layout_mode = 2
-theme = ExtResource("1_ig7tw")
 text = "Déshydratage
 "
+alignment = 0
 
-[node name="Stock deshydrate" type="Button" parent="Background/VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer" unique_id=804978529]
+[node name="Stock deshydrate" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer" unique_id=804978529]
 layout_mode = 2
-theme = ExtResource("1_ig7tw")
 text = "Stock déshydraté"
+alignment = 0
 
-[node name="transformation" type="Button" parent="Background/VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer" unique_id=1613882901]
+[node name="transformation" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer" unique_id=1613882901]
 layout_mode = 2
-theme = ExtResource("1_ig7tw")
 text = "Transformation
 "
+alignment = 0
 
-[node name="Ensachage" type="Button" parent="Background/VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer" unique_id=1917313536]
+[node name="Ensachage" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer" unique_id=1917313536]
 layout_mode = 2
-theme = ExtResource("1_ig7tw")
 text = "Ensachage
 "
+alignment = 0
 
-[node name="Historique" type="Button" parent="Background/VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer" unique_id=1281685113]
+[node name="Historique" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer" unique_id=1281685113]
 layout_mode = 2
-theme = ExtResource("1_ig7tw")
 text = "Historique
 "
+alignment = 0
 
-[node name="Deconexion" type="Button" parent="Background/VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer" unique_id=406435515]
+[node name="Deconexion" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer" unique_id=406435515]
 layout_mode = 2
 text = "Disconnect"
+alignment = 0
 
-[node name="SceneContainer" type="PanelContainer" parent="Background/VBoxContainer/MarginContainer/HBoxContainer" unique_id=492438488]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer/HBoxContainer" unique_id=1345419648]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-
-[node name="MarginContainer" type="MarginContainer" parent="Background/VBoxContainer/MarginContainer/HBoxContainer/SceneContainer" unique_id=1023769421]
-layout_mode = 2
+size_flags_horizontal = 3
 theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
 
-[node name="Accueil" parent="Background/VBoxContainer/MarginContainer/HBoxContainer/SceneContainer/MarginContainer" unique_id=950256363 instance=ExtResource("4_7mycd")]
+[node name="Accueil" parent="VBoxContainer/MarginContainer/HBoxContainer/MarginContainer" unique_id=950256363 instance=ExtResource("4_7mycd")]
 layout_mode = 2
 
-[node name="Deshydratage" parent="Background/VBoxContainer/MarginContainer/HBoxContainer/SceneContainer/MarginContainer" unique_id=1615760622 instance=ExtResource("5_272bh")]
+[node name="Deshydratage" parent="VBoxContainer/MarginContainer/HBoxContainer/MarginContainer" unique_id=1615760622 instance=ExtResource("5_272bh")]
 visible = false
 layout_mode = 2
 
-[node name="Ensachage" parent="Background/VBoxContainer/MarginContainer/HBoxContainer/SceneContainer/MarginContainer" unique_id=1544240026 instance=ExtResource("6_efxa6")]
+[node name="Ensachage" parent="VBoxContainer/MarginContainer/HBoxContainer/MarginContainer" unique_id=1544240026 instance=ExtResource("6_efxa6")]
 visible = false
 layout_mode = 2
 
-[node name="Historique" parent="Background/VBoxContainer/MarginContainer/HBoxContainer/SceneContainer/MarginContainer" unique_id=615198526 instance=ExtResource("7_dg77c")]
+[node name="Historique" parent="VBoxContainer/MarginContainer/HBoxContainer/MarginContainer" unique_id=615198526 instance=ExtResource("7_dg77c")]
 visible = false
 layout_mode = 2
 
-[node name="Reception" parent="Background/VBoxContainer/MarginContainer/HBoxContainer/SceneContainer/MarginContainer" unique_id=388938240 instance=ExtResource("8_ycdy4")]
+[node name="Reception" parent="VBoxContainer/MarginContainer/HBoxContainer/MarginContainer" unique_id=388938240 instance=ExtResource("8_ycdy4")]
 visible = false
 layout_mode = 2
 
-[node name="StockDeshydrate" parent="Background/VBoxContainer/MarginContainer/HBoxContainer/SceneContainer/MarginContainer" unique_id=1760376167 instance=ExtResource("9_w48qg")]
+[node name="StockDeshydrate" parent="VBoxContainer/MarginContainer/HBoxContainer/MarginContainer" unique_id=1760376167 instance=ExtResource("9_w48qg")]
 visible = false
 layout_mode = 2
 
-[node name="Transformation" parent="Background/VBoxContainer/MarginContainer/HBoxContainer/SceneContainer/MarginContainer" unique_id=1222127248 instance=ExtResource("10_vivmo")]
+[node name="Transformation" parent="VBoxContainer/MarginContainer/HBoxContainer/MarginContainer" unique_id=1222127248 instance=ExtResource("10_vivmo")]
 visible = false
 layout_mode = 2
 
-[node name="Trempage" parent="Background/VBoxContainer/MarginContainer/HBoxContainer/SceneContainer/MarginContainer" unique_id=1520563989 instance=ExtResource("11_2cqfq")]
+[node name="Trempage" parent="VBoxContainer/MarginContainer/HBoxContainer/MarginContainer" unique_id=1520563989 instance=ExtResource("11_2cqfq")]
 visible = false
 layout_mode = 2
 
-[connection signal="pressed" from="Background/VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer/Accueil" to="." method="_on_accueil_pressed"]
-[connection signal="pressed" from="Background/VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer/Reception" to="." method="_on_reception_pressed"]
-[connection signal="pressed" from="Background/VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer/Trempage" to="." method="_on_trempage_pressed"]
-[connection signal="pressed" from="Background/VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer/Deshydratage" to="." method="_on_deshydratage_pressed"]
-[connection signal="pressed" from="Background/VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer/Stock deshydrate" to="." method="_on_stock_deshydrate_pressed"]
-[connection signal="pressed" from="Background/VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer/transformation" to="." method="_on_transformation_pressed"]
-[connection signal="pressed" from="Background/VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer/Ensachage" to="." method="_on_ensachage_pressed"]
-[connection signal="pressed" from="Background/VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer/Historique" to="." method="_on_historique_pressed"]
-[connection signal="pressed" from="Background/VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer/Deconexion" to="." method="_on_deconexion_pressed"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer/Accueil" to="." method="_on_accueil_pressed"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer/Reception" to="." method="_on_reception_pressed"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer/Trempage" to="." method="_on_trempage_pressed"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer/Deshydratage" to="." method="_on_deshydratage_pressed"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer/Stock deshydrate" to="." method="_on_stock_deshydrate_pressed"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer/transformation" to="." method="_on_transformation_pressed"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer/Ensachage" to="." method="_on_ensachage_pressed"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer/Historique" to="." method="_on_historique_pressed"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer/Deconexion" to="." method="_on_deconexion_pressed"]

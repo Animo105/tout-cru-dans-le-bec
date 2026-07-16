@@ -1,28 +1,14 @@
 [gd_scene format=3 uid="uid://b0l45878o5ckr"]
 
-[ext_resource type="Theme" uid="uid://dn5qgfk13nyr8" path="res://assets/themes/backgroundScenes.tres" id="1_4tvxq"]
-[ext_resource type="Theme" uid="uid://cf4ja7b5l4dtb" path="res://assets/themes/Labels.tres" id="2_g5xos"]
-
-[node name="StockDeshydrate" type="Control" unique_id=1760376167]
-layout_mode = 3
+[node name="StockDeshydrate" type="PanelContainer" unique_id=1029227698]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1815867126]
-layout_mode = 0
-offset_right = 1898.0
-offset_bottom = 1354.0
-theme = ExtResource("1_4tvxq")
-
-[node name="PanelContainer" type="PanelContainer" parent="PanelContainer" unique_id=799342853]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="PanelContainer/PanelContainer" unique_id=2030358147]
+[node name="Label" type="Label" parent="." unique_id=2030358147]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-theme = ExtResource("2_g5xos")
 text = "StockDeshydrate"
