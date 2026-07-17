@@ -94,7 +94,6 @@ func _on_login_button_pressed() -> void:
 	HttpHelper.add_headers("Authorization: Bearer %s" % token)
 	# load some stuff up
 	await load_some_stuff_up()
-	prints("Erreurlabel text", erreurs_label.text)
 	if erreurs_label.text != "":
 		title_label.text = "Erreur(s) détecté. Continuer?"
 		proceed_button.show()
@@ -131,7 +130,6 @@ func load_some_stuff_up():
 	data = parse_array_response(res, "Variétés")
 	if data != null and not data == []:
 		Globals.varieties = Variety.from_response_list(data)
-		print(Globals.varieties)
 	
 	res = await HttpHelper.request("/api/formats", HTTPClient.METHOD_GET)
 	data = parse_array_response(res, "Formats")

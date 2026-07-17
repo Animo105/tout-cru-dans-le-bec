@@ -38,6 +38,7 @@ func to_request() -> Dictionary:
 	d["packageType"] = package_type
 	d["packageWeightKg"] = package_weight_kg
 	d["packageQuantity"] = quantity
+	d["batchNumber"] = batch_number
 	if variety: d["varietyid"] = variety.id
 	return d
 
