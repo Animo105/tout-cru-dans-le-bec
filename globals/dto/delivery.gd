@@ -16,6 +16,11 @@ var variety : Variety = null
 var batch_number : String = ""
 var delivery_date : String = ""
 
+func variety_id_setter(value : int):
+	if not variety:
+		variety = Variety.new()
+	variety.id = value 
+
 static func from_response(d : Dictionary) -> Delivery:
 	var e = Delivery.new()
 	e.id = d.get("id", 0)
@@ -35,4 +40,7 @@ func to_request() -> Dictionary:
 	d["packageQuantity"] = quantity
 	if variety: d["varietyid"] = variety.id
 	return d
-	
+
+func to_byte_array() -> PackedByteArray:
+	var d = to_request()
+	return JSON.stringify(d).to_utf8_buffer()
