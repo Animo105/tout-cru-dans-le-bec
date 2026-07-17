@@ -93,12 +93,13 @@ func _on_login_button_pressed() -> void:
 	Globals.is_admin = result_data.get("isAdmin", false)
 	HttpHelper.add_headers("Authorization: Bearer %s" % token)
 	# load some stuff up
-	load_some_stuff_up()
-	clear()
+	await load_some_stuff_up()
+	prints("Erreurlabel text", erreurs_label.text)
 	if erreurs_label.text != "":
 		title_label.text = "Erreur(s) détecté. Continuer?"
 		proceed_button.show()
 		await proceed_button.pressed
+	clear()
 	SceneManager.load_from_file("res://main_app/main.tscn", false)
 
 func parse_array_response(res, nom: String) -> Variant:
@@ -130,10 +131,9 @@ func load_some_stuff_up():
 	data = parse_array_response(res, "Variétés")
 	if data != null and not data == []:
 		Globals.varieties = Variety.from_response_list(data)
+		print(Globals.varieties)
 	
 	res = await HttpHelper.request("/api/formats", HTTPClient.METHOD_GET)
 	data = parse_array_response(res, "Formats")
 	if data != null and not data == []:
 		Globals.formats = Format.from_response_list(data)
-
-	

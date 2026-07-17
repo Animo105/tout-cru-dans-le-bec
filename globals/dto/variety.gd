@@ -10,10 +10,11 @@ static func from_response(d : Dictionary) -> Variety:
 	v.name = d.get("name", "")
 	return v
 
-static func from_response_list(a : Array[Dictionary]) -> Array[Variety]:
+static func from_response_list(a : Array) -> Array[Variety]:
 	var av : Array[Variety] = []
 	for v in a:
-		av.append(Variety.from_response(v))
+		if v is Dictionary:
+			av.append(Variety.from_response(v))
 	return av
 
 func to_request() -> Dictionary:

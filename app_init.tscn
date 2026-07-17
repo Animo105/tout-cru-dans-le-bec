@@ -43,6 +43,7 @@ ERREURS"
 [node name="ProceedButton" type="Button" parent="Login/VBoxContainer" unique_id=19017409]
 visible = false
 layout_mode = 2
+text = "Continuer"
 
 [node name="PanelContainer" type="PanelContainer" parent="Login" unique_id=1430800581]
 custom_minimum_size = Vector2(1200, 500)
