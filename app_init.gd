@@ -15,12 +15,24 @@ const FILE_IP_PATH = "user://ip.txt"
 @onready var mot_de_passe_line_edit: LineEdit = $Login/PanelContainer/MarginContainer/VBoxContainer/MotDePasseLineEdit
 @onready var login_button: Button = $Login/PanelContainer/MarginContainer/VBoxContainer/LoginButton
 @onready var error_login_label: Label = $Login/PanelContainer/MarginContainer/VBoxContainer/ErrorMsg
+@onready var panel_container: PanelContainer = $Login/PanelContainer
+
+# loading stuff stuff
+@onready var v_box_container: VBoxContainer = $Login/VBoxContainer
+@onready var erreurs_label: Label = $Login/VBoxContainer/ErreursLabel
+@onready var proceed_button: Button = $Login/VBoxContainer/ProceedButton
+@onready var title_label: Label = $Login/VBoxContainer/TitleLabel
 
 func clear() -> void:
 	username_line_edit.text = ""
 	mot_de_passe_line_edit.text = ""
 	error_login_label.text = ""
 	url_option_button.button_pressed = false
+	panel_container.show()
+	title_label.text = "Chargement des données..."
+	v_box_container.hide()
+	erreurs_label.text = ""
+	proceed_button.hide()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -81,6 +93,47 @@ func _on_login_button_pressed() -> void:
 	Globals.is_admin = result_data.get("isAdmin", false)
 	HttpHelper.add_headers("Authorization: Bearer %s" % token)
 	# load some stuff up
+	load_some_stuff_up()
 	clear()
+	if erreurs_label.text != "":
+		title_label.text = "Erreur(s) détecté. Continuer?"
+		proceed_button.show()
+		await proceed_button.pressed
 	SceneManager.load_from_file("res://main_app/main.tscn", false)
-		
+
+func parse_array_response(res, nom: String) -> Variant:
+	if res.result != 0:
+		erreurs_label.text += "%s: Serveur injoignable\n" % nom
+		return null
+
+	if res.response_code != 200:
+		erreurs_label.text += "%s: Erreur (%s)\n" % [nom, res.response_code]
+		return null
+
+	var data = JSON.parse_string(res.body.get_string_from_utf8())
+
+	if data is not Array:
+		erreurs_label.text += "%s: Mauvais type attendu\n" % nom
+		return null
+
+	return data
+
+func load_some_stuff_up():
+	title_label.text = "Chargement des données..."
+	erreurs_label.text = ""
+	proceed_button.hide()
+	panel_container.hide()
+	v_box_container.show()
+	var res : HttpHelper.RequestResult
+	var data = []
+	res = await HttpHelper.request("/api/varieties", HTTPClient.METHOD_GET)
+	data = parse_array_response(res, "Variétés")
+	if data != null and not data == []:
+		Globals.varieties = Variety.from_response_list(data)
+	
+	res = await HttpHelper.request("/api/formats", HTTPClient.METHOD_GET)
+	data = parse_array_response(res, "Formats")
+	if data != null and not data == []:
+		Globals.formats = Format.from_response_list(data)
+
+	

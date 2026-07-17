@@ -24,7 +24,7 @@ func _on_new_format_button_pressed() -> void:
 		var format_name : String = pop_up.edit_line_value
 		var format : Format = Format.new()
 		format.format = format_name
-		var res := await HttpHelper.request("/api/format", HTTPClient.METHOD_POST, format.to_byte_array())
+		var res := await HttpHelper.request("/api/formats", HTTPClient.METHOD_POST, format.to_byte_array())
 		if res.result != 0:
 			ErrorService.display_error("Serveur injoignable.", 5)
 			return
@@ -41,3 +41,7 @@ func on_delete(id : int):
 
 func on_edit(id : int):
 	prints("Edit", id)
+
+
+func _on_variety_button_pressed() -> void:
+	pass # Replace with function body.

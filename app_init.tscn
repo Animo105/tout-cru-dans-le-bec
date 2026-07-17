@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://xfpilgocxijw"]
 
 [ext_resource type="Script" uid="uid://baqnorxwnwsnp" path="res://app_init.gd" id="1_n5gwl"]
+[ext_resource type="Theme" uid="uid://baf6xmff37gsi" path="res://assets/themes/dark_theme.tres" id="2_1tmnr"]
 [ext_resource type="Script" uid="uid://bnb7n2tjsy3mr" path="res://globals/notice_label.gd" id="5_teisc"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5ib5h"]
@@ -21,6 +22,27 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Login" unique_id=1410548019]
+visible = false
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="Login/VBoxContainer" unique_id=1972711334]
+layout_mode = 2
+theme = ExtResource("2_1tmnr")
+theme_override_font_sizes/font_size = 90
+text = "Chargement des données..."
+
+[node name="ErreursLabel" type="Label" parent="Login/VBoxContainer" unique_id=950701257]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.15134397, 0.10833255, 1)
+text = "ERREURS
+ERREURS
+ERREURS"
+
+[node name="ProceedButton" type="Button" parent="Login/VBoxContainer" unique_id=19017409]
+visible = false
+layout_mode = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="Login" unique_id=1430800581]
 custom_minimum_size = Vector2(1200, 500)

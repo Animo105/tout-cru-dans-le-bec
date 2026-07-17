@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://c4wqkti8sbbmt"]
+
+[ext_resource type="Script" uid="uid://cvhy00pd304l0" path="res://scenes/admin_panel/admin_scenes/variety_panel.gd" id="1_hvwgl"]
+[ext_resource type="PackedScene" uid="uid://c512kt248fv6q" path="res://pop_up/pop_up.tscn" id="1_i0bvc"]
+
+[node name="VarietyPanel" type="PanelContainer" unique_id=1328346088]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hvwgl")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=284661901]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="FormatList" type="VBoxContainer" parent="MarginContainer" unique_id=1395687159]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/FormatList" unique_id=527985351]
+layout_mode = 2
+
+[node name="NewVarietyButton" type="Button" parent="MarginContainer/FormatList/HBoxContainer" unique_id=1637744233]
+layout_mode = 2
+text = "Nouvelle variété"
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/FormatList" unique_id=492228363]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="PopUp" parent="." unique_id=1916853674 instance=ExtResource("1_i0bvc")]
+visible = false
