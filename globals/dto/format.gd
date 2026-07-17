@@ -10,10 +10,11 @@ static func from_response(d : Dictionary) -> Format:
 	f.format = d.get("format", "")
 	return f
 
-static func from_response_list(a : Array[Dictionary]) -> Array[Format]:
+static func from_response_list(a : Array) -> Array[Format]:
 	var af : Array[Format] = []
 	for f in a:
-		af.append(Format.from_response(f))
+		if f is Dictionary:
+			af.append(Format.from_response(f))
 	return af
 
 func to_request() -> Dictionary:

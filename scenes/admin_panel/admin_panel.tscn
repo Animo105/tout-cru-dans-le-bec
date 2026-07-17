@@ -66,6 +66,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_et5tc")
 layout_mode = 2
 
 [node name="UserPanel" parent="MarginContainer/VBoxContainer/PanelContainer" unique_id=1238810685 instance=ExtResource("4_g4htw")]
+visible = false
 layout_mode = 2
 
 [node name="PopUp" parent="." unique_id=519498358 instance=ExtResource("5_smfo1")]
