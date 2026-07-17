@@ -26,6 +26,7 @@ var completed_by_user_name : String = ""
 var started_date : String = ""
 var completed_date : String = ""
 
+var variety_id : int = 0
 var batch_number : String = ""
 
 var data : Variant = null
@@ -43,6 +44,7 @@ static func from_response(d : Dictionary) -> Activity:
 	a.started_date = d.get("startedDate", "")
 	a.completed_date = d.get("completedDate", "")
 
+	a.variety_id = d.get("varietyId", 0)
 	a.batch_number = d.get("batchNumber", "")
 	a.data = d.get("data")
 
@@ -58,9 +60,14 @@ func to_request() -> Dictionary:
 	var d : Dictionary = {}
 
 	d["activityType"] = activity_type
+	d["varietyId"] = variety_id
 	d["batchNumber"] = batch_number
 
 	if data != null:
 		d["data"] = data
 
 	return d
+
+func to_byte_array() -> PackedByteArray:
+	var d = to_request()
+	return JSON.stringify(d).to_utf8_buffer()
