@@ -58,6 +58,13 @@ max_value = 1000.0
 [node name="TypePoid" type="OptionButton" parent="PanelContainer_PanelContainer#VBoxContainer/HBoxContainer" unique_id=808948628]
 unique_name_in_owner = true
 layout_mode = 2
+item_count = 3
+popup/item_0/text = "lbs"
+popup/item_0/id = 0
+popup/item_1/text = "Kg"
+popup/item_1/id = 1
+popup/item_2/text = "Bananes par Aigle carré"
+popup/item_2/id = 2
 
 [node name="QuantiteRecusLabel" type="Label" parent="PanelContainer_PanelContainer#VBoxContainer" unique_id=2028734945]
 layout_mode = 2
@@ -81,6 +88,11 @@ text = "Type de package"
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 0
+item_count = 2
+popup/item_0/text = "Boite"
+popup/item_0/id = 0
+popup/item_1/text = "Sac"
+popup/item_1/id = 1
 
 [node name="BatchNumberLabel" type="Label" parent="PanelContainer_PanelContainer#VBoxContainer" unique_id=1989443905]
 layout_mode = 2
@@ -92,6 +104,8 @@ text = "Batch Number"
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="PanelContainer_PanelContainer_VBoxContainer#Envoyer" type="Button" parent="PanelContainer_PanelContainer#VBoxContainer" unique_id=509646637]
+[node name="Envoyer" type="Button" parent="PanelContainer_PanelContainer#VBoxContainer" unique_id=509646637]
 layout_mode = 2
 text = "Envoyer"
+
+[connection signal="pressed" from="PanelContainer_PanelContainer#VBoxContainer/Envoyer" to="." method="_on_envoyer_pressed"]

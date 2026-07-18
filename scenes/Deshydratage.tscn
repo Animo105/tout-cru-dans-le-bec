@@ -1,14 +1,66 @@
 [gd_scene format=3 uid="uid://daq6bwyqxr7wr"]
 
+[ext_resource type="Script" uid="uid://cqer1355u4umt" path="res://scenes/deshydratage.gd" id="1_lfk6l"]
+
 [node name="Deshydratage" type="PanelContainer" unique_id=1185823632]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_lfk6l")
 
-[node name="Label" type="Label" parent="." unique_id=1303277102]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1682690543]
+layout_mode = 2
+
+[node name="NomScene" type="Label" parent="VBoxContainer" unique_id=802769551]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-text = "Deshydratage"
+text = "Déshydratage"
+
+[node name="NumLotLabel" type="Label" parent="VBoxContainer" unique_id=1624480686]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Numéro de lot"
+
+[node name="NumLot" type="OptionButton" parent="VBoxContainer" unique_id=396838546]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="QuantiteDeshydrateLabel" type="Label" parent="VBoxContainer" unique_id=2040678162]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Quantité deshydrate"
+
+[node name="QuantiteDeshydrate" type="SpinBox" parent="VBoxContainer" unique_id=1914321314]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="NombreDeshydrateursLabel" type="Label" parent="VBoxContainer" unique_id=779528200]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "nombre deshydrateurs"
+
+[node name="NombreDeshydrateurs" type="SpinBox" parent="VBoxContainer" unique_id=933131361]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="VarieteLabel" type="Label" parent="VBoxContainer" unique_id=2009841742]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Variété"
+
+[node name="Variete" type="OptionButton" parent="VBoxContainer" unique_id=275259667]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Envoyer" type="Button" parent="VBoxContainer" unique_id=785078132]
+layout_mode = 2
+text = "Envoyer"
+
+[connection signal="pressed" from="VBoxContainer/Envoyer" to="." method="_on_envoyer_pressed"]

@@ -14,6 +14,11 @@ var batch_number : String = ""
 var quantity_kg : float = 0.0
 var stock_type : StockType = StockType.Cru
 
+func variety_id_setter(value : int):
+	if not variety:
+		variety = Variety.new()
+	variety.id = value 
+
 static func from_response(d : Dictionary) -> Stock:
 	var s = Stock.new()
 	s.id = d.get("id", 0)
@@ -31,3 +36,7 @@ func to_request() -> Dictionary:
 	d["quantityKg"] = quantity_kg
 	d["stockType"] = stock_type
 	return d
+
+func to_byte_array() -> PackedByteArray:
+	var d = to_request()
+	return JSON.stringify(d).to_utf8_buffer()
