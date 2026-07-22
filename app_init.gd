@@ -137,3 +137,9 @@ func load_some_stuff_up():
 	data = parse_array_response(res, "Stocks")
 	if data != null and not data == []:
 		Globals.stocks = Stock.from_response_list(data)
+
+
+func _on_button_pressed() -> void:
+	username_line_edit.text = "admin"
+	mot_de_passe_line_edit.text = "user123"
+	_on_login_button_pressed()

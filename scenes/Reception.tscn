@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cs1ohgrur8u8d"]
 
 [ext_resource type="Script" uid="uid://btv7hxdsqar6k" path="res://scenes/scene_scripts/reception.gd" id="1_ll5ql"]
+[ext_resource type="Theme" uid="uid://cbrmgvtgi1by7" path="res://assets/themes/label_title.tres" id="2_52y0n"]
 
 [node name="Reception" type="PanelContainer" unique_id=1092432812]
 anchors_preset = 15
@@ -17,6 +18,7 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
+theme = ExtResource("2_52y0n")
 text = "Reception"
 
 [node name="VarieteLabel" type="Label" parent="PanelContainer_PanelContainer#VBoxContainer" unique_id=1931811240]
