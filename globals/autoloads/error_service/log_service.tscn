@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b7mqutog2g2li"]
 
-[ext_resource type="Script" uid="uid://bi367alqve6qq" path="res://globals/autoloads/error_service/error_service.gd" id="1_et5tc"]
+[ext_resource type="Script" uid="uid://bi367alqve6qq" path="res://globals/autoloads/error_service/log_service.gd" id="1_sd5c5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_et5tc"]
 content_margin_left = 20.0
@@ -18,9 +18,9 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[node name="ErrorService" type="CanvasLayer" unique_id=1002230466]
+[node name="LogService" type="CanvasLayer" unique_id=1002230466]
 layer = 15
-script = ExtResource("1_et5tc")
+script = ExtResource("1_sd5c5")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=248882557]
 visible = false

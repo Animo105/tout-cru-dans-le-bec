@@ -29,6 +29,13 @@ static func from_response(d : Dictionary) -> Stock:
 		s.variety = Variety.from_response(d["variety"])
 	return s
 
+static func from_response_list(arr : Array) -> Array[Stock]:
+	var out : Array[Stock] = []
+	for d in arr:
+		if d is Dictionary:
+			out.append(from_response(d))
+	return out
+
 func to_request() -> Dictionary:
 	var d : Dictionary = {}
 	if variety : d["varietyId"] = variety.id

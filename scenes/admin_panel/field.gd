@@ -5,7 +5,6 @@ const FIELD = preload("uid://b5kw1d6r8tm0e")
 
 static func instantiate() -> Field:
 	return FIELD.instantiate()
-	
 
 @onready var label: Label = $Label
 var text_value : String = "" : set = _set_text

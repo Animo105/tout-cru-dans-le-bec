@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://0mxd8tmv50nd"]
 
 [ext_resource type="Theme" uid="uid://baf6xmff37gsi" path="res://assets/themes/dark_theme.tres" id="1_06gjd"]
+[ext_resource type="Script" uid="uid://c5gd8h52aglb3" path="res://scenes/admin_panel/admin_scenes/user_panel.gd" id="1_wawl8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_06gjd"]
 bg_color = Color(0, 0, 0, 0.12156863)
@@ -13,6 +14,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+script = ExtResource("1_wawl8")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=575034424]
 visible = false
@@ -61,7 +63,7 @@ size_flags_horizontal = 3
 
 [node name="UserNameLabel" type="Label" parent="CanvasLayer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1250243164]
 layout_mode = 2
-text = "Nom d'utilisateur"
+text = "Nom d'utilisateur:"
 
 [node name="UserNameLineEdit" type="LineEdit" parent="CanvasLayer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=121043227]
 custom_minimum_size = Vector2(700, 0)
@@ -69,7 +71,7 @@ layout_mode = 2
 
 [node name="PasswordLabel" type="Label" parent="CanvasLayer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=2108112638]
 layout_mode = 2
-text = "Mot de passe"
+text = "Mot de passe:"
 
 [node name="PasswordLineEdit" type="LineEdit" parent="CanvasLayer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=162136233]
 custom_minimum_size = Vector2(700, 0)
@@ -77,7 +79,7 @@ layout_mode = 2
 
 [node name="PasswordLabel2" type="Label" parent="CanvasLayer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1609801354]
 layout_mode = 2
-text = "Type d'utilisateur"
+text = "Type d'utilisateur:"
 
 [node name="OptionButton" type="OptionButton" parent="CanvasLayer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1281816460]
 layout_mode = 2

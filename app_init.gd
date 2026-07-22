@@ -99,23 +99,20 @@ func _on_login_button_pressed() -> void:
 		proceed_button.show()
 		await proceed_button.pressed
 	clear()
+	login_button.disabled = false
 	SceneManager.load_from_file("res://main_app/main.tscn", false)
 
 func parse_array_response(res, nom: String) -> Variant:
 	if res.result != 0:
 		erreurs_label.text += "%s: Serveur injoignable\n" % nom
 		return null
-
 	if res.response_code != 200:
 		erreurs_label.text += "%s: Erreur (%s)\n" % [nom, res.response_code]
 		return null
-
 	var data = JSON.parse_string(res.body.get_string_from_utf8())
-
 	if data is not Array:
 		erreurs_label.text += "%s: Mauvais type attendu\n" % nom
 		return null
-
 	return data
 
 func load_some_stuff_up():
@@ -135,3 +132,8 @@ func load_some_stuff_up():
 	data = parse_array_response(res, "Formats")
 	if data != null and not data == []:
 		Globals.formats = Format.from_response_list(data)
+	
+	res = await HttpHelper.request("/api/stocks", HTTPClient.METHOD_GET)
+	data = parse_array_response(res, "Stocks")
+	if data != null and not data == []:
+		Globals.stocks = Stock.from_response_list(data)

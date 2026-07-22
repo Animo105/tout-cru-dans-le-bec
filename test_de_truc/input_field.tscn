@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dxwe2b8rycpqi"]
+
+[ext_resource type="Script" uid="uid://cbj23pxa7m21c" path="res://input_field.gd" id="1_ko67i"]
+
+[node name="InputField" type="HBoxContainer" unique_id=1136974086]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_ko67i")
+
+[node name="LineEdit" type="LineEdit" parent="." unique_id=347800640]
+layout_mode = 2
