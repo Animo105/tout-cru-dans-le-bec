@@ -59,6 +59,7 @@ static func from_response_list(arr : Array[Dictionary]) -> Array[Activity]:
 func to_request() -> Dictionary:
 	var d : Dictionary = {}
 
+	d["varietyId"] = variety_id
 	d["activityType"] = activity_type
 	d["varietyId"] = variety_id
 	d["batchNumber"] = batch_number
