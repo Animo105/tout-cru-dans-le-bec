@@ -1,6 +1,8 @@
 extends PanelContainer
 class_name ActivityView
 
+signal pressed
+
 const ACTIVITY_VIEW = preload("uid://bpwcrtgac6qwi")
 
 static func instanciate(a : Activity) -> ActivityView:
@@ -18,3 +20,7 @@ func _ready() -> void:
 	activity_type_label.text = activity.activity_type_as_string()
 	started_by_label.text = "Commencé par %s" % activity.started_by_user_name
 	batch_label.text = "Lot: %s" % activity.batch_number
+
+
+func _on_button_pressed() -> void:
+	pressed.emit()

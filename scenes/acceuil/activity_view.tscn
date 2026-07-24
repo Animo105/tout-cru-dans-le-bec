@@ -45,3 +45,5 @@ custom_maximum_size = Vector2(500, -1)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Compléter"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]

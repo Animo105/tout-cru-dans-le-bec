@@ -3,7 +3,7 @@ class_name Protocol
 
 var variety_id : int = 0
 var activity_type : Activity.ActivityType = Activity.ActivityType.Trempage
-var description : String = "" 
+var description : String = ""
 
 static func from_response(d : Dictionary) -> Protocol:
 	var p = Protocol.new()
