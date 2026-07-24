@@ -51,8 +51,8 @@ func load_from_node(node : Node, free_current_scene : bool = true) -> Error:
 	_pending_node_scene = node
 	_pending_free_current_scene = free_current_scene
 	if not _scene_change_queued:
-		_change_scene.call_deferred()
 		_scene_change_queued = true
+		_change_scene.call_deferred()
 	return Error.OK
 
 ## Instantiates the given [param packed_scene] and loads it as the main scene via [method load_from_node].
@@ -78,7 +78,7 @@ func load_from_packed_scene(packed_scene : PackedScene, free_current_scene : boo
 ## Returns [constant OK] on success, [constant ERR_FILE_BAD_PATH] if the file does not exist,
 ## or [constant ERR_INVALID_PARAMETER] if the loaded file is not a valid PackedScene.
 func load_from_file(path : String, free_current_scene : bool = true) -> Error:
-	if not FileAccess.file_exists(path):
+	if not ResourceLoader.exists(path):
 		return Error.ERR_FILE_BAD_PATH
 	var packed = load(path)
 	if not packed is PackedScene:

@@ -12,7 +12,11 @@ extends Control
 
 @onready var admin_button: Button = $VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer/AdminButton
 
+const ACCUEIL = preload("uid://gk3umo4mao5w")
+
 var scenes: Array[Control]
+
+var current_scene : Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -36,6 +40,8 @@ func hideAll() -> void:
 func _on_accueil_pressed() -> void:
 	hideAll()
 	accueil.show()
+	#current_scene.queue_free()
+	#var new_scene = ACCUEIL.instantiate()
 
 
 func _on_deshydratage_pressed() -> void:
@@ -75,4 +81,5 @@ func _on_admin_button_pressed() -> void:
 	admin_panel.show()
 
 func _on_deconexion_pressed() -> void:
-	SceneManager.load_previous_scene()
+	pass
+	#SceneManager.load_previous_scene()
