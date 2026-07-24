@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://bpwcrtgac6qwi"]
+
+[ext_resource type="Script" uid="uid://5ffvc6sx38in" path="res://scenes/acceuil/activity_view.gd" id="1_hbvbx"]
+
+[node name="ActivityView" type="PanelContainer" unique_id=347333222]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 260.0
+grow_horizontal = 2
+script = ExtResource("1_hbvbx")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1669856019]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1239224422]
+layout_mode = 2
+
+[node name="ActivityTypeLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1493666623]
+layout_mode = 2
+text = "Activity Type"
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer" unique_id=1897168531]
+layout_mode = 2
+
+[node name="HFlowContainer" type="HFlowContainer" parent="MarginContainer/VBoxContainer" unique_id=1789718552]
+layout_mode = 2
+theme_override_constants/h_separation = 25
+
+[node name="StartedByLabel" type="Label" parent="MarginContainer/VBoxContainer/HFlowContainer" unique_id=309838478]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Started By"
+
+[node name="BatchLabel" type="Label" parent="MarginContainer/VBoxContainer/HFlowContainer" unique_id=1234103864]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "BatchNumber"
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1517568316]
+custom_maximum_size = Vector2(500, -1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Compléter"

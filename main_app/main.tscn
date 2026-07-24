@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bxibuisxjk37j" path="res://main_app/main.gd" id="1_lquwl"]
 [ext_resource type="Theme" uid="uid://baf6xmff37gsi" path="res://assets/themes/dark_theme.tres" id="2_ikebo"]
-[ext_resource type="PackedScene" uid="uid://gk3umo4mao5w" path="res://scenes/Accueil.tscn" id="4_7mycd"]
+[ext_resource type="PackedScene" uid="uid://gk3umo4mao5w" path="res://scenes/acceuil/Accueil.tscn" id="4_7mycd"]
 [ext_resource type="PackedScene" uid="uid://daq6bwyqxr7wr" path="res://scenes/Deshydratage.tscn" id="5_272bh"]
 [ext_resource type="PackedScene" uid="uid://670l234tn18h" path="res://scenes/Ensachage.tscn" id="6_efxa6"]
 [ext_resource type="PackedScene" uid="uid://dmo0elifwre2w" path="res://scenes/Historique.tscn" id="7_dg77c"]

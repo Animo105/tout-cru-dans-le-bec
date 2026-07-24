@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://gk3umo4mao5w"]
 
-[ext_resource type="Theme" uid="uid://cbrmgvtgi1by7" path="res://assets/themes/label_title.tres" id="1_jtat4"]
+[ext_resource type="Script" uid="uid://ehd7iy0a2i55" path="res://scenes/acceuil/accueil.gd" id="1_phinh"]
+[ext_resource type="Theme" uid="uid://cbrmgvtgi1by7" path="res://assets/themes/label_title.tres" id="2_me4gc"]
 
 [node name="Accueil" type="PanelContainer" unique_id=828102580]
 anchors_preset = 15
@@ -8,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_phinh")
 metadata/_edit_use_anchors_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=457440968]
@@ -17,7 +19,7 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-theme = ExtResource("1_jtat4")
+theme = ExtResource("2_me4gc")
 text = "Accueil"
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" unique_id=580036139]
@@ -28,5 +30,8 @@ theme_override_constants/margin_top = 30
 theme_override_constants/margin_right = 30
 theme_override_constants/margin_bottom = 30
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer" unique_id=1571335426]
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/MarginContainer" unique_id=1774378954]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/ScrollContainer" unique_id=1571335426]
 layout_mode = 2

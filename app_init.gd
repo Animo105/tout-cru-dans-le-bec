@@ -137,6 +137,12 @@ func load_some_stuff_up():
 	data = parse_array_response(res, "Stocks")
 	if data != null and not data == []:
 		Globals.stocks = Stock.from_response_list(data)
+	
+	res = await HttpHelper.request("/api/activity", HTTPClient.METHOD_GET)
+	data = parse_array_response(res, "Activitées")
+	
+	if data != null and not data == []:
+		Globals.activities = Activity.from_response_list(data)
 
 
 func _on_button_pressed() -> void:
