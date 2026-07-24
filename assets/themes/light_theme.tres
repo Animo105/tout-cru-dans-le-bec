@@ -52,6 +52,10 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_g4v7s"]
+color = Color(0.22745098, 0.42745098, 0.30588236, 1)
+thickness = 3
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m3354"]
 content_margin_left = 15.0
 content_margin_top = 25.0
@@ -149,6 +153,7 @@ Button/styles/focus = SubResource("StyleBoxFlat_k5m2u")
 Button/styles/hover = SubResource("StyleBoxFlat_k5m2u")
 Button/styles/normal = SubResource("StyleBoxFlat_2p8en")
 Button/styles/pressed = SubResource("StyleBoxFlat_s00xe")
+HSeparator/styles/separator = SubResource("StyleBoxLine_g4v7s")
 Label/colors/font_color = Color(0.22745098, 0.42745098, 0.30588236, 1)
 Label/font_sizes/font_size = 50
 Label/fonts/font = ExtResource("2_2c5nv")
