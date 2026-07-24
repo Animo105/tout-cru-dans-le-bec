@@ -100,7 +100,9 @@ func _on_login_button_pressed() -> void:
 		await proceed_button.pressed
 	clear()
 	login_button.disabled = false
-	SceneManager.load_from_file("res://main_app/main.tscn", false)
+	var err = SceneManager.load_from_file("uid://dn5au5subkbf1", false)
+	if err != OK:
+		ErrorService.display_error("Scene error: %s" % err)
 
 func parse_array_response(res, nom: String) -> Variant:
 	if res.result != 0:
