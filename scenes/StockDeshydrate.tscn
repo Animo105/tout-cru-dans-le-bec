@@ -1,14 +1,54 @@
 [gd_scene format=3 uid="uid://b0l45878o5ckr"]
 
+[ext_resource type="Script" uid="uid://jiuckgi3mcew" path="res://scenes/scene_scripts/stock_deshydrate.gd" id="1_57wsa"]
+
 [node name="StockDeshydrate" type="PanelContainer" unique_id=1029227698]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_57wsa")
 
-[node name="Label" type="Label" parent="." unique_id=2030358147]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1508071085]
+layout_mode = 2
+
+[node name="NomScene" type="Label" parent="VBoxContainer" unique_id=211934230]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-text = "StockDeshydrate"
+text = "Stock deshydraté"
+
+[node name="NumLotLabel" type="Label" parent="VBoxContainer" unique_id=2102252633]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Numéro de lot"
+
+[node name="NumLot" type="OptionButton" parent="VBoxContainer" unique_id=476124990]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="QuantiteTrempageLabel" type="Label" parent="VBoxContainer" unique_id=959674507]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Quantité stocké"
+
+[node name="QuantiteTrempage" type="SpinBox" parent="VBoxContainer" unique_id=658012652]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="VarieteLabel" type="Label" parent="VBoxContainer" unique_id=1696202821]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Variété"
+
+[node name="Variete" type="OptionButton" parent="VBoxContainer" unique_id=2082522307]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Envoyer" type="Button" parent="VBoxContainer" unique_id=138291829]
+layout_mode = 2
+text = "Envoyer"

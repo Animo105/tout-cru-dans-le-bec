@@ -32,14 +32,14 @@ func _on_envoyer_pressed() -> void:
 		ErrorService.display_error("Une ou plusieurs entrés sont invalides")
 		return
 	
-	var trempage : Activity = Activity.new()
+	var stock_deshydrate : Activity = Activity.new()
 	
-	trempage.activity_type = Activity.ActivityType.Trempage 
-	trempage.batch_number = num_lot.text
-	trempage.data = { "quantitykg" : quantite_trempage.value }
-	trempage.variety_id = variete.selected
+	stock_deshydrate.activity_type = Activity.ActivityType.StockingMaterial
+	stock_deshydrate.batch_number = num_lot.text
+	stock_deshydrate.data = { "quantitykg" : quantite_trempage.value }
+	stock_deshydrate.variety_id = variete.selected
 	
-	var result : HttpHelper.RequestResult = await HttpHelper.request("/api/activity/start", HTTPClient.METHOD_POST, trempage.to_byte_array())
+	var result : HttpHelper.RequestResult = await HttpHelper.request("/api/activity/start", HTTPClient.METHOD_POST, stock_deshydrate.to_byte_array())
 	if result.result != 0:
 		ErrorService.display_error("Serveur injoignable.")
 		envoyer.disabled = false

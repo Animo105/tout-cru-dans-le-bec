@@ -10,9 +10,9 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	variete.add_item("Sélectionnez")
+	variete.add_item("Sélectionnez", 0)
 	for x : Variety in Globals.varieties:
-		variete.add_item(x.name)
+		variete.add_item(x.name, x.id)
 
 func _on_envoyer_pressed() -> void:
 	envoyer.disabled = true

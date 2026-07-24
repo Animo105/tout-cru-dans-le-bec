@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://daq6bwyqxr7wr"]
 
-[ext_resource type="Script" uid="uid://cqer1355u4umt" path="res://scenes/deshydratage.gd" id="1_lfk6l"]
+[ext_resource type="Script" uid="uid://cqer1355u4umt" path="res://scenes/scene_scripts/deshydratage.gd" id="1_lfk6l"]
 
 [node name="Deshydratage" type="PanelContainer" unique_id=1185823632]
 anchors_preset = 15
@@ -63,4 +63,5 @@ layout_mode = 2
 layout_mode = 2
 text = "Envoyer"
 
+[connection signal="item_selected" from="VBoxContainer/Variete" to="." method="_on_variete_item_selected"]
 [connection signal="pressed" from="VBoxContainer/Envoyer" to="." method="_on_envoyer_pressed"]
