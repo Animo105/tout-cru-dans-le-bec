@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dlcqpc2aaay8f" path="res://scenes/admin_panel/admin_scenes/format_panel.tscn" id="2_cqc4f"]
 [ext_resource type="PackedScene" uid="uid://0mxd8tmv50nd" path="res://scenes/admin_panel/admin_scenes/user_panel.tscn" id="4_g4htw"]
 [ext_resource type="PackedScene" uid="uid://c512kt248fv6q" path="res://pop_up/pop_up.tscn" id="5_smfo1"]
+[ext_resource type="PackedScene" uid="uid://c4wqkti8sbbmt" path="res://scenes/admin_panel/admin_scenes/variety_panel.tscn" id="5_ykh32"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_et5tc"]
 bg_color = Color(1, 1, 1, 1)
@@ -63,9 +64,16 @@ size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_et5tc")
 
 [node name="FormatPanel" parent="MarginContainer/VBoxContainer/PanelContainer" unique_id=1670210616 instance=ExtResource("2_cqc4f")]
+unique_name_in_owner = true
 layout_mode = 2
 
 [node name="UserPanel" parent="MarginContainer/VBoxContainer/PanelContainer" unique_id=1238810685 instance=ExtResource("4_g4htw")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="VarietyPanel" parent="MarginContainer/VBoxContainer/PanelContainer" unique_id=1328346088 instance=ExtResource("5_ykh32")]
+unique_name_in_owner = true
 visible = false
 layout_mode = 2
 

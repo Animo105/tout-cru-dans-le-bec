@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://daq6bwyqxr7wr"]
 
 [ext_resource type="Script" uid="uid://cqer1355u4umt" path="res://scenes/scene_scripts/deshydratage.gd" id="1_lfk6l"]
+[ext_resource type="Theme" uid="uid://d0o2whuhbsw6p" path="res://assets/themes/light_theme.tres" id="2_4yd17"]
 
 [node name="Deshydratage" type="PanelContainer" unique_id=1185823632]
 anchors_preset = 15
@@ -10,7 +11,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_lfk6l")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1682690543]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1300218483]
 layout_mode = 2
 
 [node name="NomScene" type="Label" parent="VBoxContainer" unique_id=802769551]
@@ -19,49 +20,83 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 text = "Déshydratage"
 
-[node name="NumLotLabel" type="Label" parent="VBoxContainer" unique_id=1624480686]
+[node name="Protocol" type="VBoxContainer" parent="VBoxContainer" unique_id=1272339953]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="ProtocolInfos" type="RichTextLabel" parent="VBoxContainer/Protocol" unique_id=810896382]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_4yd17")
+bbcode_enabled = true
+text = "Protocol ici"
+fit_content = true
+
+[node name="Return" type="Button" parent="VBoxContainer/Protocol" unique_id=608080726]
+layout_mode = 2
+text = "retour"
+
+[node name="DeshydratageInfos" type="PanelContainer" parent="VBoxContainer" unique_id=548341421]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/DeshydratageInfos" unique_id=1456492505]
+layout_mode = 2
+
+[node name="NumLotLabel" type="Label" parent="VBoxContainer/DeshydratageInfos/VBoxContainer" unique_id=1624480686]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 text = "Numéro de lot"
 
-[node name="NumLot" type="OptionButton" parent="VBoxContainer" unique_id=396838546]
+[node name="NumLot" type="OptionButton" parent="VBoxContainer/DeshydratageInfos/VBoxContainer" unique_id=396838546]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="QuantiteDeshydrateLabel" type="Label" parent="VBoxContainer" unique_id=2040678162]
+[node name="QuantiteDeshydrateLabel" type="Label" parent="VBoxContainer/DeshydratageInfos/VBoxContainer" unique_id=2040678162]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 text = "Quantité deshydrate"
 
-[node name="QuantiteDeshydrate" type="SpinBox" parent="VBoxContainer" unique_id=1914321314]
+[node name="QuantiteDeshydrate" type="SpinBox" parent="VBoxContainer/DeshydratageInfos/VBoxContainer" unique_id=1914321314]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="NombreDeshydrateursLabel" type="Label" parent="VBoxContainer" unique_id=779528200]
+[node name="NombreDeshydrateursLabel" type="Label" parent="VBoxContainer/DeshydratageInfos/VBoxContainer" unique_id=779528200]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 text = "nombre deshydrateurs"
 
-[node name="NombreDeshydrateurs" type="SpinBox" parent="VBoxContainer" unique_id=933131361]
+[node name="NombreDeshydrateurs" type="SpinBox" parent="VBoxContainer/DeshydratageInfos/VBoxContainer" unique_id=933131361]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="VarieteLabel" type="Label" parent="VBoxContainer" unique_id=2009841742]
+[node name="VarieteLabel" type="Label" parent="VBoxContainer/DeshydratageInfos/VBoxContainer" unique_id=2009841742]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 text = "Variété"
 
-[node name="Variete" type="OptionButton" parent="VBoxContainer" unique_id=275259667]
+[node name="Variete" type="OptionButton" parent="VBoxContainer/DeshydratageInfos/VBoxContainer" unique_id=275259667]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Envoyer" type="Button" parent="VBoxContainer" unique_id=785078132]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/DeshydratageInfos/VBoxContainer" unique_id=1067053477]
+layout_mode = 2
+
+[node name="Protocol" type="Button" parent="VBoxContainer/DeshydratageInfos/VBoxContainer/HBoxContainer" unique_id=1308658038]
+layout_mode = 2
+text = "Protocol"
+
+[node name="Envoyer" type="Button" parent="VBoxContainer/DeshydratageInfos/VBoxContainer/HBoxContainer" unique_id=785078132]
 layout_mode = 2
 text = "Envoyer"
 
-[connection signal="item_selected" from="VBoxContainer/Variete" to="." method="_on_variete_item_selected"]
-[connection signal="pressed" from="VBoxContainer/Envoyer" to="." method="_on_envoyer_pressed"]
+[connection signal="pressed" from="VBoxContainer/Protocol/Return" to="." method="_on_return_pressed"]
+[connection signal="item_selected" from="VBoxContainer/DeshydratageInfos/VBoxContainer/Variete" to="." method="_on_variete_item_selected"]
+[connection signal="pressed" from="VBoxContainer/DeshydratageInfos/VBoxContainer/HBoxContainer/Protocol" to="." method="_on_protocol_pressed"]
+[connection signal="pressed" from="VBoxContainer/DeshydratageInfos/VBoxContainer/HBoxContainer/Envoyer" to="." method="_on_envoyer_pressed"]

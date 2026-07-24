@@ -21,6 +21,13 @@ theme_override_constants/margin_bottom = 20
 [node name="FormatList" type="VBoxContainer" parent="VarietyPannelMain" unique_id=1395687159]
 layout_mode = 2
 
+[node name="VarieteInfosContainer" type="PanelContainer" parent="VarietyPannelMain/FormatList" unique_id=1734078393]
+visible = false
+layout_mode = 2
+
+[node name="VarieteInfosLabel" type="Label" parent="VarietyPannelMain/FormatList/VarieteInfosContainer" unique_id=887678085]
+layout_mode = 2
+
 [node name="HBoxContainer" type="HBoxContainer" parent="VarietyPannelMain/FormatList" unique_id=527985351]
 layout_mode = 2
 
@@ -38,39 +45,20 @@ text = "Afficher une variété"
 
 [node name="Varieties" type="OptionButton" parent="VarietyPannelMain/FormatList" unique_id=887231446]
 layout_mode = 2
+item_count = 1
+popup/item_0/text = "Séléctionnez"
+popup/item_0/id = 0
 
-[node name="VarieteInfosContainer" type="ScrollContainer" parent="VarietyPannelMain/FormatList" unique_id=12211079]
-unique_name_in_owner = true
+[node name="HBoxContainer2" type="HBoxContainer" parent="VarietyPannelMain/FormatList" unique_id=1646758497]
+layout_mode = 2
+
+[node name="Modifier" type="Button" parent="VarietyPannelMain/FormatList/HBoxContainer2" unique_id=1511317741]
 visible = false
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="VBoxContainer" type="VBoxContainer" parent="VarietyPannelMain/FormatList/VarieteInfosContainer" unique_id=10022999]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="VarieteInfosLabel" type="RichTextLabel" parent="VarietyPannelMain/FormatList/VarieteInfosContainer/VBoxContainer" unique_id=1964665463]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_colors/default_color = Color(0.22745098, 0.42745098, 0.30588236, 1)
-theme_override_font_sizes/normal_font_size = 50
-theme_override_font_sizes/bold_font_size = 55
-bbcode_enabled = true
-text = "
-"
-fit_content = true
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="VarietyPannelMain/FormatList/VarieteInfosContainer/VBoxContainer" unique_id=1646758497]
-layout_mode = 2
-
-[node name="Modifier" type="Button" parent="VarietyPannelMain/FormatList/VarieteInfosContainer/VBoxContainer/HBoxContainer2" unique_id=1511317741]
-unique_name_in_owner = true
 layout_mode = 2
 text = "Modifier la variété"
 
-[node name="Supprimer" type="Button" parent="VarietyPannelMain/FormatList/VarieteInfosContainer/VBoxContainer/HBoxContainer2" unique_id=576888265]
-unique_name_in_owner = true
+[node name="Supprimer" type="Button" parent="VarietyPannelMain/FormatList/HBoxContainer2" unique_id=576888265]
+visible = false
 layout_mode = 2
 text = "Supprimer la varitété"
 

@@ -4,6 +4,9 @@ extends PanelContainer
 @onready var nombre_deshydrateurs: SpinBox = %NombreDeshydrateurs
 @onready var variete: OptionButton = %Variete
 @onready var envoyer: Button = $VBoxContainer/Envoyer
+@onready var deshydratage_infos: PanelContainer = %DeshydratageInfos
+@onready var protocol: VBoxContainer = %Protocol
+@onready var protocol_infos: RichTextLabel = %ProtocolInfos
 
 
 # Called when the node enters the scene tree for the first time.
@@ -12,6 +15,7 @@ func _ready() -> void:
 	for x : Variety in Globals.varieties:
 		variete.add_item(x.name, x.id)
 	num_lot.add_item("Sélectionnez une variété")
+	
 
 func _on_variete_item_selected(index: int) -> void:
 	num_lot.clear()
@@ -23,10 +27,10 @@ func _on_variete_item_selected(index: int) -> void:
 func _on_envoyer_pressed() -> void:
 	envoyer.disabled = true
 	
-	if variete.selected == null:
+	if variete.selected == 0:
 		ErrorService.display_error("Une ou plusieurs entrés sont invalides")
 		return
-	elif num_lot.selected == null:
+	elif num_lot.selected == 0:
 		ErrorService.display_error("Une ou plusieurs entrés sont invalides")
 		return
 	elif nombre_deshydrateurs == null:
@@ -53,3 +57,19 @@ func _on_envoyer_pressed() -> void:
 		print(JSON.parse_string(result.body.get_string_from_utf8()))
 		envoyer.disabled = false
 		return
+
+
+func _on_protocol_pressed() -> void:
+	if variete.selected == 0:
+		ErrorService.display_error("Aucune Variété Sélectionner")
+		return
+	for x : Variety in Globals.varieties:
+		if x.id == variete.selected:
+			protocol_infos.text = "[b]Deshydratage:[/b] \n%s\n" % x.get_protocol_description(Activity.ActivityType.Deshydratage)
+	deshydratage_infos.hide()
+	protocol.show()
+
+
+func _on_return_pressed() -> void:
+	protocol.hide()
+	deshydratage_infos.show()

@@ -22,5 +22,10 @@ static func from_response_list(a : Array) -> Array[Variety]:
 			av.append(Variety.from_response(v))
 	return av
 
+func get_protocol_description(type : Activity.ActivityType)-> String:
+	if protocols.has(type):
+		return protocols[type].description
+	return "Non assigné"
+
 func to_request() -> Dictionary:
 	return {"Name" : name}

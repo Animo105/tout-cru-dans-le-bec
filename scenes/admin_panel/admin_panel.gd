@@ -1,14 +1,16 @@
 extends PanelContainer
 
-@onready var format_panel: PanelContainer = $MarginContainer/VBoxContainer/PanelContainer/FormatPanel
-@onready var user_panel: PanelContainer = $MarginContainer/VBoxContainer/PanelContainer/UserPanel
+@onready var format_panel: PanelContainer = %FormatPanel
+@onready var user_panel: PanelContainer = %UserPanel
+@onready var variety_panel: PanelContainer = %VarietyPanel
 
 var panels : Array[Control] = []
 
 func _ready() -> void:
 	panels = [
 		format_panel,
-		user_panel
+		user_panel,
+		variety_panel
 	]
 
 func hide_all():
@@ -16,7 +18,8 @@ func hide_all():
 		p.hide()
 
 func _on_variety_button_pressed() -> void:
-	pass # Replace with function body.
+	hide_all()
+	variety_panel.show()
 
 
 func _on_fromat_button_pressed() -> void:

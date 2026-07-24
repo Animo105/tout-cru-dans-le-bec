@@ -22,7 +22,7 @@ func _on_variete_item_selected(index: int) -> void:
 func _on_envoyer_pressed() -> void:
 	envoyer.disabled = true
 	
-	if variete.selected == null:
+	if variete.selected == 0:
 		ErrorService.display_error("Une ou plusieurs entrés sont invalides")
 		return
 	elif num_lot.selected == null:

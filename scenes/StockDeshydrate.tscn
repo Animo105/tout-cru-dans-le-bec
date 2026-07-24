@@ -51,4 +51,5 @@ layout_mode = 2
 
 [node name="Envoyer" type="Button" parent="VBoxContainer" unique_id=138291829]
 layout_mode = 2
+size_flags_horizontal = 3
 text = "Envoyer"
