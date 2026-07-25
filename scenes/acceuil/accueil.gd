@@ -6,7 +6,18 @@ extends PanelContainer
 
 var activity_views : Dictionary[int, ActivityView] = {}
 
+func on_open():
+	for a : Activity in Globals.activities:
+		if a.activity_status == Activity.ActivityStatus.Completed:
+			continue
+		if not activity_views.has(a.id):
+			var view : ActivityView = ActivityView.instanciate(a)
+			activities_list.add_child(view)
+			activity_views[a.id] = view
+			view.pressed.connect(_on_activity_completed.bind(a.id))
+
 func _ready() -> void:
+	Globals.show_acceuil.connect(on_open)
 	for a : Activity in Globals.activities:
 		if a.activity_status == Activity.ActivityStatus.Completed:
 			continue

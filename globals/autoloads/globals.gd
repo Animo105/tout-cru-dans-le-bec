@@ -1,6 +1,6 @@
 extends Node
 
-signal activity_updated
+signal show_acceuil
 
 var is_admin : bool = false
 

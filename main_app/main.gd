@@ -20,6 +20,7 @@ var current_scene : Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Globals.show_acceuil.connect(_on_accueil_pressed)
 	admin_button.visible = Globals.is_admin
 	scenes = [
 		accueil,
@@ -39,8 +40,6 @@ func hideAll() -> void:
 func _on_accueil_pressed() -> void:
 	hideAll()
 	accueil.show()
-	#current_scene.queue_free()
-	#var new_scene = ACCUEIL.instantiate()
 
 
 func _on_deshydratage_pressed() -> void:

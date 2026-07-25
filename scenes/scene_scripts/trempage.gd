@@ -53,5 +53,9 @@ func _on_envoyer_pressed() -> void:
 		ErrorService.display_error("Information entrée invalide. CODE : " + str(result.response_code))
 		envoyer.disabled = false
 		return
+	var activity : Activity = Activity.from_response(JSON.parse_string(result.body.get_string_from_utf8()))
+	Globals.activities.append(activity)
 	envoyer.disabled = false
 	notice_pop_up.open_popup_with_text("Succès", "Trempage enregistré")
+	await notice_pop_up.answered
+	Globals.show_acceuil.emit()
