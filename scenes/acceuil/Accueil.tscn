@@ -44,6 +44,10 @@ size_flags_horizontal = 3
 layout_mode = 2
 size_flags_vertical = 3
 
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer" unique_id=31969397]
+layout_mode = 2
+text = "Produits actifs"
+
 [node name="ProductScroll" type="ScrollContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer" unique_id=1568895880]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -55,12 +59,12 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/ProductScroll/ProductList" unique_id=31969397]
-layout_mode = 2
-text = "Produits actifs"
-
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer" unique_id=687759751]
 layout_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer" unique_id=381717181]
+layout_mode = 2
+text = "Production du jour"
 
 [node name="ProductionScroll" type="ScrollContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer" unique_id=1154271854]
 layout_mode = 2
@@ -71,10 +75,6 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-
-[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/ProductionScroll/Production" unique_id=381717181]
-layout_mode = 2
-text = "Production du jour"
 
 [node name="VSeparator" type="VSeparator" parent="VBoxContainer/MarginContainer/HBoxContainer" unique_id=681998114]
 layout_mode = 2

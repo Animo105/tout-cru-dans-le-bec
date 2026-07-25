@@ -7,6 +7,7 @@ extends PanelContainer
 @onready var deshydratage_infos: VBoxContainer = %DeshydratageInfos
 @onready var protocol: VBoxContainer = %Protocol
 @onready var protocol_infos: RichTextLabel = %ProtocolInfos
+@onready var notice_pop_up: NoticePopup = $NoticePopUp
 
 
 # Called when the node enters the scene tree for the first time.
@@ -61,7 +62,12 @@ func _on_envoyer_pressed() -> void:
 		print(JSON.parse_string(result.body.get_string_from_utf8()))
 		envoyer.disabled = false
 		return
+	var activity : Activity = Activity.from_response(JSON.parse_string(result.body.get_string_from_utf8()))
+	Globals.activities.append(activity)
 	envoyer.disabled = false
+	notice_pop_up.open_popup_with_text("Succès", "Trempage enregistré")
+	await notice_pop_up.answered
+	Globals.show_acceuil.emit()
 
 
 func _on_protocol_pressed() -> void:

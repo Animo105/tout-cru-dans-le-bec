@@ -25,7 +25,6 @@ func _ready() -> void:
 		activities_list.add_child(view)
 		activity_views[a.id] = view
 		view.pressed.connect(_on_activity_completed.bind(a.id))
-		
 
 func _on_activity_completed(id : int):
 	pop_up.open_popup_with_text("Complété l'activitée", "Voulez vous complété l'activitée?")
