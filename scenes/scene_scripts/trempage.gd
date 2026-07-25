@@ -2,8 +2,12 @@ extends PanelContainer
 @onready var num_lot: OptionButton = %NumLot
 @onready var quantite_trempage: SpinBox = %QuantiteTrempage
 @onready var variete: OptionButton = %Variete
-@onready var envoyer: Button = $VBoxContainer/Envoyer
+@onready var envoyer: Button = %envoyer
 @onready var notice_pop_up: NoticePopup = $NoticePopUp
+@onready var protocol: VBoxContainer = %Protocol
+@onready var protocol_infos: RichTextLabel = %ProtocolInfos
+@onready var trempage_infos: VBoxContainer = $VBoxContainer/TrempageInfos
+
 
 
 
@@ -59,3 +63,19 @@ func _on_envoyer_pressed() -> void:
 	notice_pop_up.open_popup_with_text("Succès", "Trempage enregistré")
 	await notice_pop_up.answered
 	Globals.show_acceuil.emit()
+
+
+func _on_return_pressed() -> void:
+	protocol.hide()
+	trempage_infos.show()
+
+
+func _on_protocol_button_pressed() -> void:
+	if variete.selected == 0:
+		ErrorService.display_error("Aucune Variété Sélectionner")
+		return
+	for x : Variety in Globals.varieties:
+		if x.id == variete.selected:
+			protocol_infos.text = "[b]Deshydratage:[/b] \n%s\n" % x.get_protocol_description(Activity.ActivityType.Deshydratage)
+	trempage_infos.hide()
+	protocol.show()
