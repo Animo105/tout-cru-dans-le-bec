@@ -2,10 +2,9 @@
 
 [ext_resource type="Script" uid="uid://ehd7iy0a2i55" path="res://scenes/acceuil/accueil.gd" id="1_phinh"]
 [ext_resource type="Theme" uid="uid://cbrmgvtgi1by7" path="res://assets/themes/label_title.tres" id="2_me4gc"]
-[ext_resource type="PackedScene" uid="uid://c512kt248fv6q" path="res://pop_up/pop_up.tscn" id="3_me4gc"]
+[ext_resource type="PackedScene" uid="uid://c512kt248fv6q" path="res://pop_up/confirm_popup/confirm_pop_up.tscn" id="3_me4gc"]
 
 [node name="Accueil" type="PanelContainer" unique_id=828102580]
-anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
@@ -43,23 +42,35 @@ size_flags_horizontal = 3
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="ProductList" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer" unique_id=2054606167]
-unique_name_in_owner = true
+[node name="ProductScroll" type="ScrollContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer" unique_id=1568895880]
 layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/ProductList" unique_id=31969397]
+[node name="ProductList" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/ProductScroll" unique_id=2054606167]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/ProductScroll/ProductList" unique_id=31969397]
 layout_mode = 2
 text = "Produits actifs"
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer" unique_id=687759751]
 layout_mode = 2
 
-[node name="Production" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer" unique_id=257641325]
+[node name="ProductionScroll" type="ScrollContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer" unique_id=1154271854]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/Production" unique_id=381717181]
+[node name="Production" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/ProductionScroll" unique_id=257641325]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/ProductionScroll/Production" unique_id=381717181]
 layout_mode = 2
 text = "Production du jour"
 

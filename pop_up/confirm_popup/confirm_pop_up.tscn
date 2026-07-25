@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://c512kt248fv6q"]
 
-[ext_resource type="Theme" uid="uid://baf6xmff37gsi" path="res://assets/themes/dark_theme.tres" id="1_sctb4"]
-[ext_resource type="Script" uid="uid://dag10khhg04sb" path="res://pop_up/pop_up.gd" id="2_h5bqt"]
+[ext_resource type="Script" uid="uid://dag10khhg04sb" path="res://pop_up/confirm_popup/confirm_pop_up.gd" id="1_k8rpv"]
+[ext_resource type="Theme" uid="uid://baf6xmff37gsi" path="res://assets/themes/dark_theme.tres" id="2_molxh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4v7s"]
 bg_color = Color(0, 0, 0, 0.12156863)
 
-[node name="PopUp" type="CanvasLayer" unique_id=1916853674]
-script = ExtResource("2_h5bqt")
+[node name="ConfirmPopUp" type="CanvasLayer" unique_id=1916853674]
+script = ExtResource("1_k8rpv")
 
 [node name="Panel" type="Panel" parent="." unique_id=18879720]
 anchors_preset = 15
@@ -26,7 +26,7 @@ grow_vertical = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="CenterContainer" unique_id=486526588]
 layout_mode = 2
-theme = ExtResource("1_sctb4")
+theme = ExtResource("2_molxh")
 
 [node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer" unique_id=278190599]
 layout_mode = 2
