@@ -89,11 +89,13 @@ layout_mode = 2
 
 [node name="Protocol" type="Button" parent="VBoxContainer/DeshydratageInfos/HBoxContainer" unique_id=1308658038]
 layout_mode = 2
+size_flags_horizontal = 3
 text = "Protocol"
 
 [node name="Envoyer" type="Button" parent="VBoxContainer/DeshydratageInfos/HBoxContainer" unique_id=785078132]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 3
 text = "Envoyer"
 
 [connection signal="pressed" from="VBoxContainer/Protocol/Return" to="." method="_on_return_pressed"]
