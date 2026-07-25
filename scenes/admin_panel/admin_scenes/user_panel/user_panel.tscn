@@ -1,8 +1,7 @@
 [gd_scene format=3 uid="uid://0mxd8tmv50nd"]
 
 [ext_resource type="Theme" uid="uid://baf6xmff37gsi" path="res://assets/themes/dark_theme.tres" id="1_06gjd"]
-[ext_resource type="Script" uid="uid://c5gd8h52aglb3" path="res://scenes/admin_panel/admin_scenes/user_panel.gd" id="1_wawl8"]
-[ext_resource type="PackedScene" uid="uid://b77nghwkq1twn" path="res://scenes/admin_panel/admin_scenes/user_sub_scene.tscn" id="3_vpl4p"]
+[ext_resource type="Script" uid="uid://c5gd8h52aglb3" path="res://scenes/admin_panel/admin_scenes/user_panel/user_panel.gd" id="1_wawl8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_06gjd"]
 bg_color = Color(0, 0, 0, 0.47843137)
@@ -127,19 +126,25 @@ theme_override_constants/separation = 30
 layout_mode = 2
 text = "Utilisateurs"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="FormatList" unique_id=1811879408]
+[node name="UserTable" type="GridContainer" parent="FormatList" unique_id=1638579476]
+unique_name_in_owner = true
 layout_mode = 2
+columns = 4
 
-[node name="UsernameLabel" type="Label" parent="FormatList/HBoxContainer2" unique_id=1454807573]
+[node name="UsernameLabel" type="Label" parent="FormatList/UserTable" unique_id=1454807573]
 layout_mode = 2
+size_flags_horizontal = 3
 text = "Username:"
 
-[node name="PermissionsLabel" type="Label" parent="FormatList/HBoxContainer2" unique_id=1107482727]
+[node name="PermissionsLabel" type="Label" parent="FormatList/UserTable" unique_id=1107482727]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Permissions:"
 
-[node name="UserSubScene" parent="FormatList" unique_id=682151104 instance=ExtResource("3_vpl4p")]
+[node name="Control" type="Control" parent="FormatList/UserTable" unique_id=1428477786]
+layout_mode = 2
+
+[node name="Control2" type="Control" parent="FormatList/UserTable" unique_id=46954630]
 layout_mode = 2
 
 [connection signal="pressed" from="PopUpUser/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Confirmer" to="." method="_on_confirmer_pressed"]

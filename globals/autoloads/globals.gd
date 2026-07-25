@@ -10,6 +10,12 @@ var stocks : Array[Stock] = []
 var activities : Array[Activity] = []
 var users : Array[User] = []
 
+func get_user_by_id(id : int) -> User:
+	for user : User in users:
+		if user.id == id:
+			return user
+	return null
+
 func get_stock(id : int, is_raw : bool = true) -> Stock:
 	var type : Stock.StockType = Stock.StockType.Cru if is_raw else Stock.StockType.Deshydrate
 	for stock in stocks:

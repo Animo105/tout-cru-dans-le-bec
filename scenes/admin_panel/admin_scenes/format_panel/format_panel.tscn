@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dlcqpc2aaay8f"]
+
+[ext_resource type="Script" uid="uid://c1e0mbecg3rhf" path="res://scenes/admin_panel/admin_scenes/format_panel/format_panel.gd" id="1_awkre"]
+[ext_resource type="PackedScene" uid="uid://c512kt248fv6q" path="res://pop_up/confirm_popup/confirm_pop_up.tscn" id="2_thgcg"]
+
+[node name="FormatPanel" type="PanelContainer" unique_id=1670210616]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_awkre")
+
+[node name="PopUp" parent="." unique_id=519498358 instance=ExtResource("2_thgcg")]
+visible = false
+
+[node name="FormatList" type="VBoxContainer" parent="." unique_id=1390501849]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="FormatList" unique_id=1353633245]
+layout_mode = 2
+
+[node name="NewFormatButton" type="Button" parent="FormatList/HBoxContainer" unique_id=837344334]
+layout_mode = 2
+text = "Nouveau Format"
+
+[node name="HSeparator" type="HSeparator" parent="FormatList" unique_id=1183651355]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[connection signal="pressed" from="FormatList/HBoxContainer/NewFormatButton" to="." method="_on_new_format_button_pressed"]

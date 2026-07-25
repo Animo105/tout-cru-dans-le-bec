@@ -15,20 +15,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_n5gwl")
 
-[node name="Button" type="Button" parent="." unique_id=515828297]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -228.0
-offset_top = 30.0
-offset_right = -30.0
-offset_bottom = 86.0
-grow_horizontal = 0
-theme_override_font_sizes/font_size = 30
-toggle_mode = true
-text = "AppOptions"
-
 [node name="Login" type="CenterContainer" parent="." unique_id=145877602]
 layout_mode = 0
 offset_right = 2560.0
@@ -109,6 +95,20 @@ autowrap_mode = 3
 layout_mode = 2
 text = "Connecter en admin"
 
+[node name="Button" type="Button" parent="." unique_id=515828297]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -228.0
+offset_top = 30.0
+offset_right = -30.0
+offset_bottom = 86.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 30
+toggle_mode = true
+text = "AppOptions"
+
 [node name="UrlOption" type="PanelContainer" parent="." unique_id=1193223957]
 visible = false
 custom_minimum_size = Vector2(1300, 0)
@@ -163,7 +163,7 @@ theme_override_font_sizes/font_size = 70
 text = "APP ERROR"
 script = ExtResource("5_teisc")
 
-[connection signal="toggled" from="Button" to="." method="_on_button_toggled"]
 [connection signal="pressed" from="Login/PanelContainer/MarginContainer/VBoxContainer/LoginButton" to="." method="_on_login_button_pressed"]
 [connection signal="pressed" from="Login/PanelContainer/MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="toggled" from="Button" to="." method="_on_button_toggled"]
 [connection signal="pressed" from="UrlOption/MarginContainer/IP/SetUrlButton" to="." method="_on_set_url_button_pressed"]

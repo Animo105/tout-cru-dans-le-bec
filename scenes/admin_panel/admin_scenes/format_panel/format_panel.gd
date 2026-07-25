@@ -1,7 +1,7 @@
 extends PanelContainer
 
 @onready var pop_up: ConfirmPanel = $PopUp
-@onready var format_list: VBoxContainer = $MarginContainer/FormatList
+@onready var format_list: VBoxContainer = $FormatList
 
 var fields : Dictionary[int, Field] = {}
 

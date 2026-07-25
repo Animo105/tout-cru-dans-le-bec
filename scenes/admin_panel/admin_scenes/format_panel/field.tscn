@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b5kw1d6r8tm0e"]
 
-[ext_resource type="Script" uid="uid://be3arpmh76r8m" path="res://scenes/admin_panel/field.gd" id="1_68k0w"]
+[ext_resource type="Script" uid="uid://be3arpmh76r8m" path="res://scenes/admin_panel/admin_scenes/format_panel/field.gd" id="1_68k0w"]
 
 [node name="Field" type="HBoxContainer" unique_id=2135590530]
 anchors_preset = 10
