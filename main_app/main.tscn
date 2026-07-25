@@ -121,36 +121,63 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="Accueil" parent="VBoxContainer/MarginContainer/HBoxContainer/MarginContainer" unique_id=950256363 instance=ExtResource("4_7mycd")]
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/MarginContainer" unique_id=338578203]
 layout_mode = 2
 
-[node name="Deshydratage" parent="VBoxContainer/MarginContainer/HBoxContainer/MarginContainer" unique_id=1615760622 instance=ExtResource("5_272bh")]
-visible = false
+[node name="Accueil" parent="VBoxContainer/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer" unique_id=950256363 instance=ExtResource("4_7mycd")]
+unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="Historique" parent="VBoxContainer/MarginContainer/HBoxContainer/MarginContainer" unique_id=615198526 instance=ExtResource("7_dg77c")]
+[node name="Deshydratage" parent="VBoxContainer/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer" unique_id=1615760622 instance=ExtResource("5_272bh")]
+unique_name_in_owner = true
 visible = false
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="Reception" parent="VBoxContainer/MarginContainer/HBoxContainer/MarginContainer" unique_id=388938240 instance=ExtResource("8_ycdy4")]
+[node name="Historique" parent="VBoxContainer/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer" unique_id=615198526 instance=ExtResource("7_dg77c")]
+unique_name_in_owner = true
 visible = false
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="StockDeshydrate" parent="VBoxContainer/MarginContainer/HBoxContainer/MarginContainer" unique_id=1760376167 instance=ExtResource("9_w48qg")]
+[node name="Reception" parent="VBoxContainer/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer" unique_id=388938240 instance=ExtResource("8_ycdy4")]
+unique_name_in_owner = true
 visible = false
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="Transformation" parent="VBoxContainer/MarginContainer/HBoxContainer/MarginContainer" unique_id=1222127248 instance=ExtResource("10_vivmo")]
+[node name="StockDeshydrate" parent="VBoxContainer/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer" unique_id=1760376167 instance=ExtResource("9_w48qg")]
+unique_name_in_owner = true
 visible = false
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="Trempage" parent="VBoxContainer/MarginContainer/HBoxContainer/MarginContainer" unique_id=1520563989 instance=ExtResource("11_2cqfq")]
+[node name="Transformation" parent="VBoxContainer/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer" unique_id=1222127248 instance=ExtResource("10_vivmo")]
+unique_name_in_owner = true
 visible = false
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="AdminPanel" parent="VBoxContainer/MarginContainer/HBoxContainer/MarginContainer" unique_id=1385802005 instance=ExtResource("11_4myji")]
+[node name="Trempage" parent="VBoxContainer/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer" unique_id=1520563989 instance=ExtResource("11_2cqfq")]
+unique_name_in_owner = true
 visible = false
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="AdminPanel" parent="VBoxContainer/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer" unique_id=1385802005 instance=ExtResource("11_4myji")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [connection signal="pressed" from="VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer/Accueil" to="." method="_on_accueil_pressed"]
 [connection signal="pressed" from="VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer/Reception" to="." method="_on_reception_pressed"]

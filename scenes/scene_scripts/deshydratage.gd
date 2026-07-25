@@ -3,8 +3,8 @@ extends PanelContainer
 @onready var quantite_deshydrate: SpinBox = %QuantiteDeshydrate
 @onready var nombre_deshydrateurs: SpinBox = %NombreDeshydrateurs
 @onready var variete: OptionButton = %Variete
-@onready var envoyer: Button = $VBoxContainer/Envoyer
-@onready var deshydratage_infos: PanelContainer = %DeshydratageInfos
+@onready var envoyer: Button = %Envoyer
+@onready var deshydratage_infos: VBoxContainer = %DeshydratageInfos
 @onready var protocol: VBoxContainer = %Protocol
 @onready var protocol_infos: RichTextLabel = %ProtocolInfos
 
@@ -29,15 +29,19 @@ func _on_envoyer_pressed() -> void:
 	
 	if variete.selected == 0:
 		ErrorService.display_error("Une ou plusieurs entrés sont invalides")
+		envoyer.disabled = false
 		return
 	elif num_lot.selected == 0:
 		ErrorService.display_error("Une ou plusieurs entrés sont invalides")
+		envoyer.disabled = false
 		return
 	elif nombre_deshydrateurs == null:
 		ErrorService.display_error("Une ou plusieurs entrés sont invalides")
+		envoyer.disabled = false
 		return
 	elif quantite_deshydrate.value == null:
 		ErrorService.display_error("Une ou plusieurs entrés sont invalides")
+		envoyer.disabled = false
 		return
 	
 	var deshydratage : Activity = Activity.new()

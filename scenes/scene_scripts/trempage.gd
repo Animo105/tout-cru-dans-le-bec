@@ -26,12 +26,15 @@ func _on_envoyer_pressed() -> void:
 	
 	if variete.selected == 0:
 		ErrorService.display_error("Une ou plusieurs entrés sont invalides")
+		envoyer.disabled = false
 		return
 	elif num_lot.selected == 0:
 		ErrorService.display_error("Une ou plusieurs entrés sont invalides")
+		envoyer.disabled = false
 		return
 	elif quantite_trempage.value == null:
 		ErrorService.display_error("Une ou plusieurs entrés sont invalides")
+		envoyer.disabled = false
 		return
 	
 	var trempage : Activity = Activity.new()

@@ -19,21 +19,27 @@ func _on_envoyer_pressed() -> void:
 	
 	if variete.selected == 0:
 		ErrorService.display_error("Une ou plusieurs entrés sont invalides")
+		envoyer.disabled = false
 		return
 	elif num_fournisseur.text == null:
 		ErrorService.display_error("Une ou plusieurs entrés sont invalides")
+		envoyer.disabled = false
 		return
 	elif quantite_recus.value == null:
 		ErrorService.display_error("Une ou plusieurs entrés sont invalides")
+		envoyer.disabled = false
 		return
 	elif poid_recus.value == null:
 		ErrorService.display_error("Une ou plusieurs entrés sont invalides")
+		envoyer.disabled = false
 		return
 	elif package_type.selected == null:
 		ErrorService.display_error("Une ou plusieurs entrés sont invalides")
+		envoyer.disabled = false
 		return
 	elif batch_number.text == null:
 		ErrorService.display_error("Une ou plusieurs entrés sont invalides")
+		envoyer.disabled = false
 		return
 	
 	if type_poid.selected == 0:

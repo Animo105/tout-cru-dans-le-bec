@@ -1,13 +1,13 @@
 extends Control
-@onready var accueil: Control = $VBoxContainer/MarginContainer/HBoxContainer/MarginContainer/Accueil
-@onready var deshydratage: Control = $VBoxContainer/MarginContainer/HBoxContainer/MarginContainer/Deshydratage
-@onready var ensachage: Control = $VBoxContainer/MarginContainer/HBoxContainer/MarginContainer/Ensachage
-@onready var historique: Control = $VBoxContainer/MarginContainer/HBoxContainer/MarginContainer/Historique
-@onready var reception: Control = $VBoxContainer/MarginContainer/HBoxContainer/MarginContainer/Reception
-@onready var stock_deshydrate: Control = $VBoxContainer/MarginContainer/HBoxContainer/MarginContainer/StockDeshydrate
-@onready var transformation: Control = $VBoxContainer/MarginContainer/HBoxContainer/MarginContainer/Transformation
-@onready var trempage: Control = $VBoxContainer/MarginContainer/HBoxContainer/MarginContainer/Trempage
-@onready var admin_panel: PanelContainer = $VBoxContainer/MarginContainer/HBoxContainer/MarginContainer/AdminPanel
+@onready var accueil: PanelContainer = %Accueil
+@onready var deshydratage: PanelContainer = %Deshydratage
+@onready var historique: PanelContainer = %Historique
+@onready var reception: PanelContainer = %Reception
+@onready var stock_deshydrate: PanelContainer = %StockDeshydrate
+@onready var transformation: PanelContainer = %Transformation
+@onready var trempage: PanelContainer = %Trempage
+@onready var admin_panel: PanelContainer = %AdminPanel
+
 
 
 @onready var admin_button: Button = $VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer/AdminButton
