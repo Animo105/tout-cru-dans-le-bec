@@ -1,6 +1,7 @@
 extends PanelContainer
 
-@onready var activities_list: VBoxContainer = $VBoxContainer/MarginContainer/ScrollContainer/ActivitiesList
+@onready var activities_list: VBoxContainer = %ActivitiesList
+@onready var pop_up: ConfirmPanel = $PopUp
 
 var activity_views : Dictionary[int, ActivityView] = {}
 
@@ -14,6 +15,15 @@ func _ready() -> void:
 		
 
 func _on_activity_completed(id : int):
+	pop_up.open_popup_with_text("Complété l'activitée", "Voulez vous complété l'activitée?")
+	await pop_up.answered
+	if not pop_up.is_confirmed: return
 	var res = await HttpHelper.request("/api/activity/complete/%s" % id, HTTPClient.METHOD_POST)
 	if res.result != 0:
-		ErrorService.display_error("")
+		ErrorService.display_error("Serveur injoignable")
+	if res.response_code != 200:
+		ErrorService.display_error("Erreur %s" % res.response_code)
+	pop_up.open_popup_with_text("Complété l'activitée", "Activité complété")
+	activity_views[id].queue_free()
+	activity_views.erase(id)
+	
