@@ -24,7 +24,6 @@ func _ready() -> void:
 	scenes = [
 		accueil,
 		deshydratage,
-		ensachage,
 		historique,
 		reception,
 		stock_deshydrate,
@@ -62,11 +61,6 @@ func _on_trempage_pressed() -> void:
 func _on_stock_deshydrate_pressed() -> void:
 	hideAll()
 	stock_deshydrate.show()
-
-
-func _on_ensachage_pressed() -> void:
-	hideAll()
-	ensachage.show()
 
 func _on_transformation_pressed() -> void:
 	hideAll()

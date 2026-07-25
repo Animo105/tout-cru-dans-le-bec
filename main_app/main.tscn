@@ -4,7 +4,6 @@
 [ext_resource type="Theme" uid="uid://baf6xmff37gsi" path="res://assets/themes/dark_theme.tres" id="2_ikebo"]
 [ext_resource type="PackedScene" uid="uid://gk3umo4mao5w" path="res://scenes/acceuil/Accueil.tscn" id="4_7mycd"]
 [ext_resource type="PackedScene" uid="uid://daq6bwyqxr7wr" path="res://scenes/Deshydratage.tscn" id="5_272bh"]
-[ext_resource type="PackedScene" uid="uid://670l234tn18h" path="res://scenes/Ensachage.tscn" id="6_efxa6"]
 [ext_resource type="PackedScene" uid="uid://dmo0elifwre2w" path="res://scenes/Historique.tscn" id="7_dg77c"]
 [ext_resource type="PackedScene" uid="uid://cs1ohgrur8u8d" path="res://scenes/Reception.tscn" id="8_ycdy4"]
 [ext_resource type="PackedScene" uid="uid://b0l45878o5ckr" path="res://scenes/StockDeshydrate.tscn" id="9_w48qg"]
@@ -129,14 +128,9 @@ theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
 [node name="Accueil" parent="VBoxContainer/MarginContainer/HBoxContainer/MarginContainer" unique_id=950256363 instance=ExtResource("4_7mycd")]
-visible = false
 layout_mode = 2
 
 [node name="Deshydratage" parent="VBoxContainer/MarginContainer/HBoxContainer/MarginContainer" unique_id=1615760622 instance=ExtResource("5_272bh")]
-visible = false
-layout_mode = 2
-
-[node name="Ensachage" parent="VBoxContainer/MarginContainer/HBoxContainer/MarginContainer" unique_id=1544240026 instance=ExtResource("6_efxa6")]
 visible = false
 layout_mode = 2
 
@@ -161,6 +155,7 @@ visible = false
 layout_mode = 2
 
 [node name="AdminPanel" parent="VBoxContainer/MarginContainer/HBoxContainer/MarginContainer" unique_id=1385802005 instance=ExtResource("11_4myji")]
+visible = false
 layout_mode = 2
 
 [connection signal="pressed" from="VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer/Accueil" to="." method="_on_accueil_pressed"]

@@ -96,9 +96,11 @@ text = "Nom de la variété"
 
 [node name="NouvelleVarieteNom" type="TextEdit" parent="NouvelleVariétéPopUp/ScrollContainer/VBoxContainer" unique_id=1001646985]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("2_hvwgl")
+wrap_mode = 1
 
 [node name="ProtocolTrempageLabel" type="Label" parent="NouvelleVariétéPopUp/ScrollContainer/VBoxContainer" unique_id=691575242]
 layout_mode = 2
@@ -106,9 +108,11 @@ text = "Protocol trempage"
 
 [node name="TrempageProtocol" type="TextEdit" parent="NouvelleVariétéPopUp/ScrollContainer/VBoxContainer" unique_id=1176501635]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 400)
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("2_hvwgl")
+wrap_mode = 1
 
 [node name="ProtocolDeshydratageLabel" type="Label" parent="NouvelleVariétéPopUp/ScrollContainer/VBoxContainer" unique_id=149836055]
 layout_mode = 2
@@ -116,9 +120,11 @@ text = "Protocol deshydratage"
 
 [node name="DeshaydratageProtocol" type="TextEdit" parent="NouvelleVariétéPopUp/ScrollContainer/VBoxContainer" unique_id=904153448]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 400)
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("2_hvwgl")
+wrap_mode = 1
 
 [node name="ProtocolEnsachageLabel3" type="Label" parent="NouvelleVariétéPopUp/ScrollContainer/VBoxContainer" unique_id=1126159091]
 layout_mode = 2
@@ -126,9 +132,11 @@ text = "Protocol ensachage"
 
 [node name="EnsachageProtocol" type="TextEdit" parent="NouvelleVariétéPopUp/ScrollContainer/VBoxContainer" unique_id=1101360830]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 400)
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("2_hvwgl")
+wrap_mode = 1
 
 [node name="ProtocolTransformationLabel" type="Label" parent="NouvelleVariétéPopUp/ScrollContainer/VBoxContainer" unique_id=788835426]
 layout_mode = 2
@@ -136,9 +144,11 @@ text = "Protocol transformation"
 
 [node name="TransformationProtocol" type="TextEdit" parent="NouvelleVariétéPopUp/ScrollContainer/VBoxContainer" unique_id=822293075]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 400)
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("2_hvwgl")
+wrap_mode = 1
 
 [node name="AddVarietyButton" type="Button" parent="NouvelleVariétéPopUp/ScrollContainer/VBoxContainer" unique_id=1551559273]
 layout_mode = 2

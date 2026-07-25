@@ -1,14 +1,73 @@
 [gd_scene format=3 uid="uid://btbsibkhf616m"]
 
+[ext_resource type="Script" uid="uid://d3cw21bk6dlx0" path="res://scenes/scene_scripts/transformation.gd" id="1_pr80s"]
+
 [node name="Transformation" type="PanelContainer" unique_id=475772806]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_pr80s")
 
-[node name="Label" type="Label" parent="." unique_id=1356822143]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1983359742]
+layout_mode = 2
+
+[node name="NomScene" type="Label" parent="VBoxContainer" unique_id=1551272607]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-text = "Transformation"
+text = "Transormation"
+
+[node name="NumLotLabel" type="Label" parent="VBoxContainer" unique_id=234111735]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Numéro de lot"
+
+[node name="NumLot" type="OptionButton" parent="VBoxContainer" unique_id=1872934628]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="VarieteLabel" type="Label" parent="VBoxContainer" unique_id=622375779]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Variété"
+
+[node name="Variete" type="OptionButton" parent="VBoxContainer" unique_id=1117422346]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="BoutonProduitLabel" type="Label" parent="VBoxContainer" unique_id=2076499517]
+layout_mode = 2
+text = "Produit"
+
+[node name="BoutonProduit" type="OptionButton" parent="VBoxContainer" unique_id=1292749516]
+layout_mode = 2
+
+[node name="QuantiteProduiteLabel" type="Label" parent="VBoxContainer" unique_id=1817796348]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Quantité produite"
+
+[node name="QuantiteProduite" type="SpinBox" parent="VBoxContainer" unique_id=740237731]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="TailleProduitLabel" type="Label" parent="VBoxContainer" unique_id=1092658075]
+layout_mode = 2
+text = "Taille du produit"
+
+[node name="TailleProduit" type="OptionButton" parent="VBoxContainer" unique_id=162250324]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Envoyer" type="Button" parent="VBoxContainer" unique_id=1466195039]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Envoyer"
+
+[connection signal="item_selected" from="VBoxContainer/Variete" to="." method="_on_variete_item_selected"]
+[connection signal="pressed" from="VBoxContainer/Envoyer" to="." method="_on_envoyer_pressed"]

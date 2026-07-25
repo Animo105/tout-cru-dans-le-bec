@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://c5gd8h52aglb3" path="res://scenes/admin_panel/admin_scenes/user_panel.gd" id="1_wawl8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_06gjd"]
-bg_color = Color(0, 0, 0, 0.12156863)
+bg_color = Color(0, 0, 0, 0.47843137)
 
 [node name="UserPanel" type="PanelContainer" unique_id=1238810685]
 anchors_preset = 15
@@ -16,10 +16,11 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_wawl8")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=575034424]
+[node name="PopUpUser" type="CanvasLayer" parent="." unique_id=575034424]
+unique_name_in_owner = true
 visible = false
 
-[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=821686734]
+[node name="Panel" type="Panel" parent="PopUpUser" unique_id=821686734]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -27,61 +28,65 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_06gjd")
 
-[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer" unique_id=1296143892]
+[node name="CenterContainer" type="CenterContainer" parent="PopUpUser" unique_id=1296143892]
 offset_right = 2560.0
 offset_bottom = 1600.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/CenterContainer" unique_id=2081073958]
+[node name="PanelContainer" type="PanelContainer" parent="PopUpUser/CenterContainer" unique_id=2081073958]
 layout_mode = 2
 theme = ExtResource("1_06gjd")
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/CenterContainer/PanelContainer" unique_id=349052582]
+[node name="MarginContainer" type="MarginContainer" parent="PopUpUser/CenterContainer/PanelContainer" unique_id=349052582]
 layout_mode = 2
 theme_override_constants/margin_left = 30
 theme_override_constants/margin_top = 30
 theme_override_constants/margin_right = 30
 theme_override_constants/margin_bottom = 30
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/CenterContainer/PanelContainer/MarginContainer" unique_id=2086661909]
+[node name="VBoxContainer" type="VBoxContainer" parent="PopUpUser/CenterContainer/PanelContainer/MarginContainer" unique_id=2086661909]
 layout_mode = 2
 theme_override_constants/separation = 30
 
-[node name="Title" type="Label" parent="CanvasLayer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=31914773]
+[node name="Title" type="Label" parent="PopUpUser/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=31914773]
 layout_mode = 2
 text = "Créer un utilisateur"
 
-[node name="NameLabel" type="Label" parent="CanvasLayer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=40704045]
+[node name="NameLabel" type="Label" parent="PopUpUser/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=40704045]
 layout_mode = 2
 text = "Nom: "
 
-[node name="NameLineEdit" type="LineEdit" parent="CanvasLayer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=597471844]
+[node name="NameLineEdit" type="LineEdit" parent="PopUpUser/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=597471844]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(700, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="UserNameLabel" type="Label" parent="CanvasLayer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1250243164]
+[node name="UserNameLabel" type="Label" parent="PopUpUser/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1250243164]
 layout_mode = 2
 text = "Nom d'utilisateur:"
 
-[node name="UserNameLineEdit" type="LineEdit" parent="CanvasLayer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=121043227]
+[node name="UserNameLineEdit" type="LineEdit" parent="PopUpUser/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=121043227]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(700, 0)
 layout_mode = 2
 
-[node name="PasswordLabel" type="Label" parent="CanvasLayer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=2108112638]
+[node name="PasswordLabel" type="Label" parent="PopUpUser/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=2108112638]
 layout_mode = 2
 text = "Mot de passe:"
 
-[node name="PasswordLineEdit" type="LineEdit" parent="CanvasLayer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=162136233]
+[node name="PasswordLineEdit" type="LineEdit" parent="PopUpUser/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=162136233]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(700, 0)
 layout_mode = 2
 
-[node name="PasswordLabel2" type="Label" parent="CanvasLayer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1609801354]
+[node name="PasswordLabel2" type="Label" parent="PopUpUser/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1609801354]
 layout_mode = 2
 text = "Type d'utilisateur:"
 
-[node name="OptionButton" type="OptionButton" parent="CanvasLayer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1281816460]
+[node name="OptionButton" type="OptionButton" parent="PopUpUser/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1281816460]
+unique_name_in_owner = true
 layout_mode = 2
 item_count = 2
 popup/item_0/text = "Utilisateur"
@@ -89,16 +94,38 @@ popup/item_0/id = 0
 popup/item_1/text = "Super utilisateur"
 popup/item_1/id = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1473953873]
+[node name="HBoxContainer" type="HBoxContainer" parent="PopUpUser/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1473953873]
 layout_mode = 2
 theme_override_constants/separation = 30
 
-[node name="Confirmer" type="Button" parent="CanvasLayer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=873284565]
+[node name="Confirmer" type="Button" parent="PopUpUser/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=873284565]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 text = "Confirmer"
 
-[node name="Annuler" type="Button" parent="CanvasLayer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=488934293]
+[node name="Annuler" type="Button" parent="PopUpUser/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=488934293]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 text = "Annuler"
+
+[node name="FormatList" type="VBoxContainer" parent="." unique_id=904013723]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="FormatList" unique_id=698765297]
+layout_mode = 2
+
+[node name="NewUserButton" type="Button" parent="FormatList/HBoxContainer" unique_id=2032244664]
+layout_mode = 2
+text = "Crée un utilisateur"
+
+[node name="HSeparator" type="HSeparator" parent="FormatList" unique_id=386237569]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Label" type="Label" parent="FormatList" unique_id=1889726738]
+layout_mode = 2
+text = "Utilisateurs"
+
+[connection signal="pressed" from="PopUpUser/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Confirmer" to="." method="_on_confirmer_pressed"]
+[connection signal="pressed" from="PopUpUser/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Annuler" to="." method="_on_annuler_pressed"]
+[connection signal="pressed" from="FormatList/HBoxContainer/NewUserButton" to="." method="_on_new_user_button_pressed"]
