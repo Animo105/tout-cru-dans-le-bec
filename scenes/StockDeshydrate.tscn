@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b0l45878o5ckr"]
 
 [ext_resource type="Script" uid="uid://jiuckgi3mcew" path="res://scenes/scene_scripts/stock_deshydrate.gd" id="1_57wsa"]
+[ext_resource type="Theme" uid="uid://cbrmgvtgi1by7" path="res://assets/themes/label_title.tres" id="2_4tvxq"]
 
 [node name="StockDeshydrate" type="PanelContainer" unique_id=1029227698]
 anchors_preset = 15
@@ -17,6 +18,7 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
+theme = ExtResource("2_4tvxq")
 text = "Stock deshydraté"
 
 [node name="NumLotLabel" type="Label" parent="VBoxContainer" unique_id=2102252633]

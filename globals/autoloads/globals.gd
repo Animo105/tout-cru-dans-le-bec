@@ -1,5 +1,7 @@
 extends Node
 
+signal activity_updated
+
 var is_admin : bool = false
 
 var formats : Array[Format] = []

@@ -2,6 +2,7 @@ extends PanelContainer
 
 @onready var activities_list: VBoxContainer = %ActivitiesList
 @onready var pop_up: ConfirmPanel = $PopUp
+@onready var notice_pop_up: NoticePopup = $NoticePopUp
 
 var activity_views : Dictionary[int, ActivityView] = {}
 
@@ -11,6 +12,7 @@ func _ready() -> void:
 			continue
 		var view : ActivityView = ActivityView.instanciate(a)
 		activities_list.add_child(view)
+		activity_views[a.id] = view
 		view.pressed.connect(_on_activity_completed.bind(a.id))
 		
 
@@ -23,7 +25,7 @@ func _on_activity_completed(id : int):
 		ErrorService.display_error("Serveur injoignable")
 	if res.response_code != 200:
 		ErrorService.display_error("Erreur %s" % res.response_code)
-	pop_up.open_popup_with_text("Complété l'activitée", "Activité complété")
+	notice_pop_up.open_popup_with_text("Complété l'activitée", "Activité complété")
 	activity_views[id].queue_free()
 	activity_views.erase(id)
 	

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://ehd7iy0a2i55" path="res://scenes/acceuil/accueil.gd" id="1_phinh"]
 [ext_resource type="Theme" uid="uid://cbrmgvtgi1by7" path="res://assets/themes/label_title.tres" id="2_me4gc"]
 [ext_resource type="PackedScene" uid="uid://c512kt248fv6q" path="res://pop_up/confirm_popup/confirm_pop_up.tscn" id="3_me4gc"]
+[ext_resource type="PackedScene" uid="uid://dm1jn52ji11od" path="res://pop_up/notice_popup/notice_pop_up.tscn" id="4_54ca8"]
 
 [node name="Accueil" type="PanelContainer" unique_id=828102580]
 anchors_preset = 15
@@ -98,4 +99,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="PopUp" parent="." unique_id=1916853674 instance=ExtResource("3_me4gc")]
+visible = false
+
+[node name="NoticePopUp" parent="." unique_id=529097726 instance=ExtResource("4_54ca8")]
 visible = false
