@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b8shh4tfv0o53"]
 
 [ext_resource type="Script" uid="uid://d4dpbsdjq0iat" path="res://scenes/scene_scripts/trempage.gd" id="1_wpwrp"]
+[ext_resource type="PackedScene" uid="uid://dm1jn52ji11od" path="res://pop_up/notice_popup/notice_pop_up.tscn" id="2_j67cc"]
 
 [node name="Trempage" type="PanelContainer" unique_id=625498146]
 anchors_preset = 15
@@ -52,6 +53,9 @@ layout_mode = 2
 [node name="Envoyer" type="Button" parent="VBoxContainer" unique_id=1510291163]
 layout_mode = 2
 text = "Envoyer"
+
+[node name="NoticePopUp" parent="." unique_id=1916853674 instance=ExtResource("2_j67cc")]
+visible = false
 
 [connection signal="item_selected" from="VBoxContainer/Variete" to="." method="_on_variete_item_selected"]
 [connection signal="pressed" from="VBoxContainer/Envoyer" to="." method="_on_envoyer_pressed"]

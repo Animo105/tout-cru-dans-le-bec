@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dlcqpc2aaay8f"]
 
 [ext_resource type="Script" uid="uid://c1e0mbecg3rhf" path="res://scenes/admin_panel/admin_scenes/format_panel.gd" id="1_awkre"]
-[ext_resource type="PackedScene" uid="uid://c512kt248fv6q" path="res://pop_up/pop_up.tscn" id="2_thgcg"]
+[ext_resource type="PackedScene" uid="uid://c512kt248fv6q" path="res://pop_up/confirm_popup/confirm_pop_up.tscn" id="2_thgcg"]
 
 [node name="FormatPanel" type="PanelContainer" unique_id=1670210616]
 anchors_preset = 15

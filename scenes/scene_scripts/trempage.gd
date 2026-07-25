@@ -3,6 +3,8 @@ extends PanelContainer
 @onready var quantite_trempage: SpinBox = %QuantiteTrempage
 @onready var variete: OptionButton = %Variete
 @onready var envoyer: Button = $VBoxContainer/Envoyer
+@onready var notice_pop_up: NoticePopup = $NoticePopUp
+
 
 
 # Called when the node enters the scene tree for the first time.
@@ -49,3 +51,4 @@ func _on_envoyer_pressed() -> void:
 		envoyer.disabled = false
 		return
 	envoyer.disabled = false
+	notice_pop_up.open_popup_with_text("Succes", "Trempage enregistré")

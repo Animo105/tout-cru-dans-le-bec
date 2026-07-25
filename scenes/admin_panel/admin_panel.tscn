@@ -4,7 +4,7 @@
 [ext_resource type="Theme" uid="uid://cbrmgvtgi1by7" path="res://assets/themes/label_title.tres" id="1_tvw0j"]
 [ext_resource type="PackedScene" uid="uid://dlcqpc2aaay8f" path="res://scenes/admin_panel/admin_scenes/format_panel.tscn" id="2_cqc4f"]
 [ext_resource type="PackedScene" uid="uid://0mxd8tmv50nd" path="res://scenes/admin_panel/admin_scenes/user_panel.tscn" id="4_g4htw"]
-[ext_resource type="PackedScene" uid="uid://c512kt248fv6q" path="res://pop_up/pop_up.tscn" id="5_smfo1"]
+[ext_resource type="PackedScene" uid="uid://c512kt248fv6q" path="res://pop_up/confirm_popup/confirm_pop_up.tscn" id="5_smfo1"]
 [ext_resource type="PackedScene" uid="uid://c4wqkti8sbbmt" path="res://scenes/admin_panel/admin_scenes/variety_panel.tscn" id="5_ykh32"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_et5tc"]
