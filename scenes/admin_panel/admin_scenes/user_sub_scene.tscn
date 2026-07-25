@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://b77nghwkq1twn"]
+
+[ext_resource type="Script" uid="uid://db7d6etbow6il" path="res://scenes/admin_panel/admin_scenes/user_sub_scene.gd" id="1_1u1gs"]
+
+[node name="UserSubScene" type="PanelContainer" unique_id=682151104]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 120.0
+grow_horizontal = 2
+script = ExtResource("1_1u1gs")
+
+[node name="VBoxContainer" type="HBoxContainer" parent="." unique_id=589129400]
+layout_mode = 2
+
+[node name="UserName" type="Label" parent="VBoxContainer" unique_id=1240843172]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Not Set"
+
+[node name="Permissions" type="Label" parent="VBoxContainer" unique_id=1070612309]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Not Set"
+
+[node name="Modifier" type="Button" parent="VBoxContainer" unique_id=684547077]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+text = "Modifier"
+
+[node name="Supprimer" type="Button" parent="VBoxContainer" unique_id=1732735763]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+text = "Supprimer"

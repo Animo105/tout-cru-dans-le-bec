@@ -98,12 +98,6 @@ text = "Transformation
 "
 alignment = 0
 
-[node name="Ensachage" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer" unique_id=1917313536]
-layout_mode = 2
-text = "Ensachage
-"
-alignment = 0
-
 [node name="Historique" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer" unique_id=1281685113]
 layout_mode = 2
 text = "Historique
@@ -164,7 +158,6 @@ layout_mode = 2
 [connection signal="pressed" from="VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer/Deshydratage" to="." method="_on_deshydratage_pressed"]
 [connection signal="pressed" from="VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer/Stock deshydrate" to="." method="_on_stock_deshydrate_pressed"]
 [connection signal="pressed" from="VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer/transformation" to="." method="_on_transformation_pressed"]
-[connection signal="pressed" from="VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer/Ensachage" to="." method="_on_ensachage_pressed"]
 [connection signal="pressed" from="VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer/Historique" to="." method="_on_historique_pressed"]
 [connection signal="pressed" from="VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer/AdminButton" to="." method="_on_admin_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/MarginContainer/HBoxContainer/NavBarContainer/MarginContainer/VBoxContainer/Deconexion" to="." method="_on_deconexion_pressed"]
