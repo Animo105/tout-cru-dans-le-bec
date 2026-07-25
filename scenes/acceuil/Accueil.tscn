@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c512kt248fv6q" path="res://pop_up/confirm_popup/confirm_pop_up.tscn" id="3_me4gc"]
 
 [node name="Accueil" type="PanelContainer" unique_id=828102580]
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
@@ -77,19 +78,24 @@ text = "Production du jour"
 [node name="VSeparator" type="VSeparator" parent="VBoxContainer/MarginContainer/HBoxContainer" unique_id=681998114]
 layout_mode = 2
 
-[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/MarginContainer/HBoxContainer" unique_id=1774378954]
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer" unique_id=1231735691]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ActivitiesList" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/ScrollContainer" unique_id=1571335426]
-unique_name_in_owner = true
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1639571014]
+layout_mode = 2
+text = "Activitées en cours"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1774378954]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/ScrollContainer/ActivitiesList" unique_id=1639571014]
+[node name="ActivitiesList" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/ScrollContainer" unique_id=1571335426]
+unique_name_in_owner = true
 layout_mode = 2
-text = "Activitées en cours"
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="PopUp" parent="." unique_id=1916853674 instance=ExtResource("3_me4gc")]
 visible = false

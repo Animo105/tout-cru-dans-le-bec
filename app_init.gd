@@ -104,6 +104,7 @@ func _on_login_button_pressed() -> void:
 	if err != OK:
 		ErrorService.display_error("Scene error: %s" % err)
 
+
 func parse_array_response(res, nom: String) -> Variant:
 	if res.result != 0:
 		erreurs_label.text += "%s: Serveur injoignable\n" % nom
@@ -145,7 +146,14 @@ func load_some_stuff_up():
 	
 	if data != null and not data == []:
 		Globals.activities = Activity.from_response_list(data)
-
+	
+	if not Globals.is_admin: return
+	
+	res = await HttpHelper.request("/api/users", HTTPClient.METHOD_GET)
+	data = parse_array_response(res, "Utilisateurs")
+	print(data)
+	if data != null and not data == []:
+		Globals.users = User.from_response_list(data)
 
 func _on_button_pressed() -> void:
 	username_line_edit.text = "admin"

@@ -21,15 +21,15 @@ func _reset():
 	_edit_line.text = ""
 
 func open_popup_with_text(title : String, text : String):
-	_title.text = title
 	_reset()
+	_title.text = title
 	_text_label.text = text
 	_text_label.show()
 	show()
 
 func open_popup_with_edit_line(title : String, value : String):
-	_title.text = title
 	_reset()
+	_title.text = title
 	_edit_line.text = value
 	_edit_line.show()
 	show()

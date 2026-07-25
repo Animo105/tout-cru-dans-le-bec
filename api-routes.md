@@ -2,39 +2,39 @@
 ```c#
 public enum ActivityStatus
 {
-    InProcess,
-    Completed,
+	InProcess,
+	Completed,
 }
 public enum ActivityType {
-    Soaking = 0,
-    Dehydrating = 1,
-    StockingMaterial = 2,
-    Transformation = 3,
-    Bagging = 4
+	Soaking = 0,
+	Dehydrating = 1,
+	StockingMaterial = 2,
+	Transformation = 3,
+	Bagging = 4
 }
 public enum LogAction
 {
-    Create = 0,
-    Update = 1,
-    Delete = 2
+	Create = 0,
+	Update = 1,
+	Delete = 2
 }
 public enum StockType
 {
-    Raw = 0,
-    Soaked = 1,
-    Dehydrating = 2,
-    Dehydrated = 3
-    
+	Raw = 0,
+	Soaked = 1,
+	Dehydrating = 2,
+	Dehydrated = 3
+	
 }
 public enum ProductType
 {
-    Jar = 0,
-    Bag = 1
+	Jar = 0,
+	Bag = 1
 }
 public enum UserType
 {
-    User = 0,
-    SuperUser = 1,
+	User = 0,
+	SuperUser = 1,
 }
 ```
 
@@ -57,8 +57,8 @@ get un token de connexion
 - ``OK (200)`` retourne un token dans le body 
    ```json
    {
-      "token": "string",
-      "isAdmin" : "bool" 
+	  "token": "string",
+	  "isAdmin" : "bool" 
    }
    ```
 - ``Bad Request (400)`` : Mot de passe ou username invalide
@@ -85,9 +85,9 @@ Authentification requise (JWT). **Administrateur uniquement.**
 ```json
 [
   {
-    "Id": "int",
-    "Name": "string",
-    "UserType": "UserType (enum)"
+	"Id": "int",
+	"Name": "string",
+	"UserType": "UserType (enum)"
   }
 ]
 ```
@@ -145,9 +145,9 @@ Authentification requise (JWT).
 ```json
 [
   {
-    "VarietyId": "int",
-    "Description": "string",
-    "ActivityType": "ActivityType (enum)"
+	"VarietyId": "int",
+	"Description": "string",
+	"ActivityType": "ActivityType (enum)"
   }
 ]
 ```
@@ -213,14 +213,14 @@ Authentification requise (JWT).
 ```json
 [
   {
-    "Id": "int",
-    "Name": "string",
-    "Protocols": [
-      {
-        "Description": "string",
-        "ActivityType": "ActivityType (enum)"
-      }
-    ]
+	"Id": "int",
+	"Name": "string",
+	"Protocols": [
+	  {
+		"Description": "string",
+		"ActivityType": "ActivityType (enum)"
+	  }
+	]
   }
 ]
 ```
@@ -252,11 +252,11 @@ Authentification requise (JWT).
   "Id": "int",
   "Name": "string",
   "Protocols": [
-    {
-      "VarietyId" : "int"
-      "Description": "string",
-      "ActivityType": "ActivityType (enum)"
-    }
+	{
+	  "VarietyId" : "int"
+	  "Description": "string",
+	  "ActivityType": "ActivityType (enum)"
+	}
   ]
 }
 ```
@@ -318,14 +318,14 @@ Authentification requise (JWT).
 ```json
 [
   {
-    "Id": "int",
-    "SupplierName": "string",
-    "PackageType": "DeliveryPackageType (enum)",
-    "PackageWeightKg": "float",
-    "PackageQuantity": "int",
-    "VarietyName": "string",
-    "BatchNumber": "string",
-    "DeliveryDate": "string (ISO 8601)"
+	"Id": "int",
+	"SupplierName": "string",
+	"PackageType": "DeliveryPackageType (enum)",
+	"PackageWeightKg": "float",
+	"PackageQuantity": "int",
+	"VarietyName": "string",
+	"BatchNumber": "string",
+	"DeliveryDate": "string (ISO 8601)"
   }
 ]
 ```
@@ -436,20 +436,20 @@ Authentification requise (JWT).
 ```json
 [
   {
-    "Id": "int",
-    "Variety": {
-      "Id": "int",
-      "Name": "string",
-      "Protocols": [
-        {
-          "Description": "string",
-          "ActivityType": "ActivityType (enum)"
-        }
-      ]
-    },
-    "BatchNumber": "string",
-    "QuantityKg": "float",
-    "StockType": "StockType (enum)"
+	"Id": "int",
+	"Variety": {
+	  "Id": "int",
+	  "Name": "string",
+	  "Protocols": [
+		{
+		  "Description": "string",
+		  "ActivityType": "ActivityType (enum)"
+		}
+	  ]
+	},
+	"BatchNumber": "string",
+	"QuantityKg": "float",
+	"StockType": "StockType (enum)"
   }
 ]
 ```
@@ -477,20 +477,20 @@ Authentification requise (JWT).
 ```json
 [
   {
-    "Id": "int",
-    "Variety": {
-      "Id": "int",
-      "Name": "string",
-      "Protocols": [
-        {
-          "Description": "string",
-          "ActivityType": "ActivityType (enum)"
-        }
-      ]
-    },
-    "BatchNumber": "string",
-    "QuantityKg": "float",
-    "StockType": "StockType (enum)"
+	"Id": "int",
+	"Variety": {
+	  "Id": "int",
+	  "Name": "string",
+	  "Protocols": [
+		{
+		  "Description": "string",
+		  "ActivityType": "ActivityType (enum)"
+		}
+	  ]
+	},
+	"BatchNumber": "string",
+	"QuantityKg": "float",
+	"StockType": "StockType (enum)"
   }
 ]
 ```
@@ -528,14 +528,14 @@ Authentification requise (JWT).
 {
   "Id": "int",
   "Variety": {
-    "Id": "int",
-    "Name": "string",
-    "Protocols": [
-      {
-        "Description": "string",
-        "ActivityType": "ActivityType (enum)"
-      }
-    ]
+	"Id": "int",
+	"Name": "string",
+	"Protocols": [
+	  {
+		"Description": "string",
+		"ActivityType": "ActivityType (enum)"
+	  }
+	]
   },
   "BatchNumber": "string",
   "QuantityKg": "float",
@@ -627,8 +627,8 @@ Authentification requise (JWT).
 ```json
 [
   {
-    "Id": "int",
-    "Format": "string"
+	"Id": "int",
+	"Format": "string"
   }
 ]
 ```

@@ -110,6 +110,7 @@ layout_mode = 2
 text = "Connecter en admin"
 
 [node name="UrlOption" type="PanelContainer" parent="." unique_id=1193223957]
+visible = false
 custom_minimum_size = Vector2(1300, 0)
 layout_mode = 0
 offset_left = 30.0

@@ -6,6 +6,7 @@ var formats : Array[Format] = []
 var varieties : Array[Variety] = []
 var stocks : Array[Stock] = []
 var activities : Array[Activity] = []
+var users : Array[User] = []
 
 func get_stock(id : int, is_raw : bool = true) -> Stock:
 	var type : Stock.StockType = Stock.StockType.Cru if is_raw else Stock.StockType.Deshydrate

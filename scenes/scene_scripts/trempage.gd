@@ -51,4 +51,4 @@ func _on_envoyer_pressed() -> void:
 		envoyer.disabled = false
 		return
 	envoyer.disabled = false
-	notice_pop_up.open_popup_with_text("Succes", "Trempage enregistré")
+	notice_pop_up.open_popup_with_text("Succès", "Trempage enregistré")

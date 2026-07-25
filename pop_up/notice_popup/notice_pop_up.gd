@@ -12,8 +12,8 @@ func _reset():
 	_text_label.text = ""
 
 func open_popup_with_text(title : String, text : String):
-	_title.text = title
 	_reset()
+	_title.text = title
 	_text_label.text = text
 	show()
 

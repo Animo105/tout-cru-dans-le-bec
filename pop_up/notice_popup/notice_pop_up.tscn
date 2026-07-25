@@ -4,7 +4,7 @@
 [ext_resource type="Theme" uid="uid://baf6xmff37gsi" path="res://assets/themes/dark_theme.tres" id="2_i25gj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4v7s"]
-bg_color = Color(0, 0, 0, 0.12156863)
+bg_color = Color(0, 0, 0, 0.45490196)
 
 [node name="NoticePopUp" type="CanvasLayer" unique_id=1916853674]
 script = ExtResource("1_kqqnr")
@@ -55,6 +55,6 @@ theme_override_constants/separation = 30
 [node name="Confirmer" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=756220278]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
-text = "Fermer"
+text = "OK"
 
 [connection signal="pressed" from="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Confirmer" to="." method="_on_confirmer_pressed"]
