@@ -15,16 +15,28 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_n5gwl")
 
-[node name="Login" type="CenterContainer" parent="." unique_id=145877602]
+[node name="Button" type="Button" parent="." unique_id=515828297]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = 1
+anchor_left = 1.0
 anchor_right = 1.0
-anchor_bottom = 1.0
+offset_left = -228.0
+offset_top = 30.0
+offset_right = -30.0
+offset_bottom = 86.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 30
+toggle_mode = true
+text = "AppOptions"
+
+[node name="Login" type="CenterContainer" parent="." unique_id=145877602]
+layout_mode = 0
+offset_right = 2560.0
+offset_bottom = 1600.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Login" unique_id=1410548019]
-visible = false
 layout_mode = 2
 
 [node name="TitleLabel" type="Label" parent="Login/VBoxContainer" unique_id=1972711334]
@@ -41,7 +53,6 @@ ERREURS
 ERREURS"
 
 [node name="ProceedButton" type="Button" parent="Login/VBoxContainer" unique_id=19017409]
-visible = false
 layout_mode = 2
 text = "Continuer"
 
@@ -98,31 +109,20 @@ autowrap_mode = 3
 layout_mode = 2
 text = "Connecter en admin"
 
-[node name="Button" type="Button" parent="." unique_id=515828297]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -137.0
-offset_bottom = 31.0
-grow_horizontal = 0
-theme_override_font_sizes/font_size = 30
-toggle_mode = true
-text = "AppOptions"
-
 [node name="UrlOption" type="PanelContainer" parent="." unique_id=1193223957]
-visible = false
 custom_minimum_size = Vector2(1300, 0)
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 30.0
+offset_top = 30.0
+offset_right = 1330.0
+offset_bottom = 220.0
 
 [node name="MarginContainer" type="MarginContainer" parent="UrlOption" unique_id=1108080980]
 layout_mode = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
 
 [node name="IP" type="HBoxContainer" parent="UrlOption/MarginContainer" unique_id=704035759]
 layout_mode = 2
@@ -147,18 +147,22 @@ text = "Changer"
 
 [node name="ErrorAppLabel" type="Label" parent="." unique_id=1962808505]
 layout_mode = 1
-anchors_preset = 2
+anchors_preset = 12
 anchor_top = 1.0
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -96.0
-offset_right = 546.0
+offset_left = 30.0
+offset_top = -113.0
+offset_right = -30.0
+offset_bottom = -30.0
+grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(0.99999994, 0.1943762, 0.14415282, 1)
 theme_override_font_sizes/font_size = 70
 text = "APP ERROR"
 script = ExtResource("5_teisc")
 
+[connection signal="toggled" from="Button" to="." method="_on_button_toggled"]
 [connection signal="pressed" from="Login/PanelContainer/MarginContainer/VBoxContainer/LoginButton" to="." method="_on_login_button_pressed"]
 [connection signal="pressed" from="Login/PanelContainer/MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
-[connection signal="toggled" from="Button" to="." method="_on_button_toggled"]
 [connection signal="pressed" from="UrlOption/MarginContainer/IP/SetUrlButton" to="." method="_on_set_url_button_pressed"]

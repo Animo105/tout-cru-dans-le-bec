@@ -112,6 +112,10 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rcvp8"]
+content_margin_left = 20.0
+content_margin_top = 20.0
+content_margin_right = 20.0
+content_margin_bottom = 20.0
 bg_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
@@ -144,6 +148,11 @@ thickness = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q034a"]
 bg_color = Color(0.23921569, 0.3372549, 0.30588236, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_11dqm"]
+color = Color(0.22745098, 0.42745098, 0.30588236, 1)
+thickness = 3
+vertical = true
 
 [resource]
 Button/colors/font_disabled_color = Color(0.42745098, 0.70980394, 0.53333336, 1)
@@ -193,4 +202,4 @@ RichTextLabel/font_sizes/normal_font_size = 50
 TextEdit/colors/font_color = Color(0.22745098, 0.42745098, 0.30588236, 1)
 TextEdit/font_sizes/font_size = 50
 TextEdit/styles/normal = SubResource("StyleBoxFlat_q034a")
-VSeparator/styles/separator = SubResource("StyleBoxLine_g4v7s")
+VSeparator/styles/separator = SubResource("StyleBoxLine_11dqm")
