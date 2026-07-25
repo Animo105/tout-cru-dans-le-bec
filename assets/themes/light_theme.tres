@@ -142,6 +142,9 @@ corner_radius_bottom_left = 10
 color = Color(0.22745098, 0.42745098, 0.30588236, 1)
 thickness = 5
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q034a"]
+bg_color = Color(0.23921569, 0.3372549, 0.30588236, 1)
+
 [resource]
 Button/colors/font_disabled_color = Color(0.42745098, 0.70980394, 0.53333336, 1)
 Button/colors/font_hover_pressed_color = Color(0.42745098, 0.70980394, 0.53333336, 1)
@@ -187,3 +190,7 @@ PopupMenu/styles/separator = SubResource("StyleBoxLine_brfwj")
 RichTextLabel/colors/default_color = Color(0.22745098, 0.42745098, 0.30588236, 1)
 RichTextLabel/font_sizes/bold_font_size = 55
 RichTextLabel/font_sizes/normal_font_size = 50
+TextEdit/colors/font_color = Color(0.22745098, 0.42745098, 0.30588236, 1)
+TextEdit/font_sizes/font_size = 50
+TextEdit/styles/normal = SubResource("StyleBoxFlat_q034a")
+VSeparator/styles/separator = SubResource("StyleBoxLine_g4v7s")

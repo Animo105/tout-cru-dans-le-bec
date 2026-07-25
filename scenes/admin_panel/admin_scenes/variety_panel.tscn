@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c4wqkti8sbbmt"]
 
 [ext_resource type="Script" uid="uid://cvhy00pd304l0" path="res://scenes/admin_panel/admin_scenes/variety_panel.gd" id="1_hvwgl"]
-[ext_resource type="PackedScene" uid="uid://c512kt248fv6q" path="res://pop_up/pop_up.tscn" id="1_i0bvc"]
+[ext_resource type="Theme" uid="uid://d0o2whuhbsw6p" path="res://assets/themes/light_theme.tres" id="2_hvwgl"]
 
 [node name="VarietyPanel" type="PanelContainer" unique_id=1328346088]
 anchors_preset = 15
@@ -74,55 +74,77 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "Supprimer la varitété"
 
-[node name="PopUp" parent="." unique_id=1916853674 instance=ExtResource("1_i0bvc")]
-visible = false
-
 [node name="NouvelleVariétéPopUp" type="MarginContainer" parent="." unique_id=1399543130]
 visible = false
 layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="NouvelleVariétéPopUp" unique_id=665155327]
+[node name="ScrollContainer" type="ScrollContainer" parent="NouvelleVariétéPopUp" unique_id=618689980]
 layout_mode = 2
 
-[node name="NouvelleVareteLabel" type="Label" parent="NouvelleVariétéPopUp/VBoxContainer" unique_id=948556157]
+[node name="VBoxContainer" type="VBoxContainer" parent="NouvelleVariétéPopUp/ScrollContainer" unique_id=665155327]
 layout_mode = 2
-text = "Nom de la nouvelle variété"
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="NouvelleVarieteNom" type="LineEdit" parent="NouvelleVariétéPopUp/VBoxContainer" unique_id=326053190]
+[node name="NouvelleVareteLabel" type="Label" parent="NouvelleVariétéPopUp/ScrollContainer/VBoxContainer" unique_id=948556157]
 layout_mode = 2
+text = "Nom de la variété"
 
-[node name="ProtocolTrempageLabel" type="Label" parent="NouvelleVariétéPopUp/VBoxContainer" unique_id=691575242]
+[node name="NouvelleVarieteNom" type="TextEdit" parent="NouvelleVariétéPopUp/ScrollContainer/VBoxContainer" unique_id=1001646985]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_hvwgl")
+
+[node name="ProtocolTrempageLabel" type="Label" parent="NouvelleVariétéPopUp/ScrollContainer/VBoxContainer" unique_id=691575242]
 layout_mode = 2
 text = "Protocol trempage"
 
-[node name="TrempageProtocol" type="LineEdit" parent="NouvelleVariétéPopUp/VBoxContainer" unique_id=1379388764]
+[node name="TrempageProtocol" type="TextEdit" parent="NouvelleVariétéPopUp/ScrollContainer/VBoxContainer" unique_id=1176501635]
+unique_name_in_owner = true
 layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_hvwgl")
 
-[node name="ProtocolDeshydratageLabel" type="Label" parent="NouvelleVariétéPopUp/VBoxContainer" unique_id=149836055]
+[node name="ProtocolDeshydratageLabel" type="Label" parent="NouvelleVariétéPopUp/ScrollContainer/VBoxContainer" unique_id=149836055]
 layout_mode = 2
 text = "Protocol deshydratage"
 
-[node name="DeshaydratageProtocol" type="LineEdit" parent="NouvelleVariétéPopUp/VBoxContainer" unique_id=1891585500]
+[node name="DeshaydratageProtocol" type="TextEdit" parent="NouvelleVariétéPopUp/ScrollContainer/VBoxContainer" unique_id=904153448]
+unique_name_in_owner = true
 layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_hvwgl")
 
-[node name="ProtocolEnsachageLabel3" type="Label" parent="NouvelleVariétéPopUp/VBoxContainer" unique_id=1126159091]
+[node name="ProtocolEnsachageLabel3" type="Label" parent="NouvelleVariétéPopUp/ScrollContainer/VBoxContainer" unique_id=1126159091]
 layout_mode = 2
 text = "Protocol ensachage"
 
-[node name="EnsachageProtocol" type="LineEdit" parent="NouvelleVariétéPopUp/VBoxContainer" unique_id=1906697910]
+[node name="EnsachageProtocol" type="TextEdit" parent="NouvelleVariétéPopUp/ScrollContainer/VBoxContainer" unique_id=1101360830]
+unique_name_in_owner = true
 layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_hvwgl")
 
-[node name="ProtocolTransformationLabel" type="Label" parent="NouvelleVariétéPopUp/VBoxContainer" unique_id=788835426]
+[node name="ProtocolTransformationLabel" type="Label" parent="NouvelleVariétéPopUp/ScrollContainer/VBoxContainer" unique_id=788835426]
 layout_mode = 2
 text = "Protocol transformation"
 
-[node name="TransformationProtocol" type="LineEdit" parent="NouvelleVariétéPopUp/VBoxContainer" unique_id=468056353]
+[node name="TransformationProtocol" type="TextEdit" parent="NouvelleVariétéPopUp/ScrollContainer/VBoxContainer" unique_id=822293075]
+unique_name_in_owner = true
 layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_hvwgl")
 
-[node name="AddVarietyButton" type="Button" parent="NouvelleVariétéPopUp/VBoxContainer" unique_id=1551559273]
+[node name="AddVarietyButton" type="Button" parent="NouvelleVariétéPopUp/ScrollContainer/VBoxContainer" unique_id=1551559273]
 layout_mode = 2
 text = "Ajouté la nouvelle variété"
 
 [connection signal="pressed" from="VarietyPannelMain/FormatList/HBoxContainer/NewVarietyButton" to="." method="_on_new_variety_button_pressed"]
 [connection signal="item_selected" from="VarietyPannelMain/FormatList/Varieties" to="." method="_on_varieties_item_selected"]
-[connection signal="pressed" from="NouvelleVariétéPopUp/VBoxContainer/AddVarietyButton" to="." method="_on_add_variety_button_pressed"]
+[connection signal="pressed" from="VarietyPannelMain/FormatList/VarieteInfosContainer/VBoxContainer/HBoxContainer2/Modifier" to="." method="_on_modifier_pressed"]
+[connection signal="pressed" from="NouvelleVariétéPopUp/ScrollContainer/VBoxContainer/AddVarietyButton" to="." method="_on_add_variety_button_pressed"]

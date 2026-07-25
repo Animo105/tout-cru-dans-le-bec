@@ -57,6 +57,7 @@ func _on_envoyer_pressed() -> void:
 		print(JSON.parse_string(result.body.get_string_from_utf8()))
 		envoyer.disabled = false
 		return
+	envoyer.disabled = false
 
 
 func _on_protocol_pressed() -> void:

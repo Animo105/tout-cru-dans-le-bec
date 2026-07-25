@@ -1,11 +1,17 @@
 extends PanelContainer
-@onready var margin_container_2: MarginContainer = $"NouvelleVariétéPopUp"
+@onready var NouvelleVariétéPopUp: MarginContainer = $"NouvelleVariétéPopUp"
 @onready var variety_pannel_main: MarginContainer = $VarietyPannelMain
 @onready var modifier: Button = %Modifier
 @onready var supprimer: Button = %Supprimer
 @onready var variete_infos_container: ScrollContainer = %VarieteInfosContainer
 @onready var variete_infos_label: RichTextLabel = %VarieteInfosLabel
 @onready var varieties: OptionButton = $VarietyPannelMain/FormatList/Varieties
+
+@onready var nouvelle_variete_nom: TextEdit = %NouvelleVarieteNom
+@onready var trempage_protocol: TextEdit = %TrempageProtocol
+@onready var deshaydratage_protocol: TextEdit = %DeshaydratageProtocol
+@onready var ensachage_protocol: TextEdit = %EnsachageProtocol
+@onready var transformation_protocol: TextEdit = %TransformationProtocol
 
 func _ready() -> void:
 	varieties.add_item("Sélectionnez", 0)
@@ -14,11 +20,12 @@ func _ready() -> void:
 
 func _on_new_variety_button_pressed() -> void:
 	variety_pannel_main.hide()
-	margin_container_2.show()
+	NouvelleVariétéPopUp.show()
 
 
 func _on_add_variety_button_pressed() -> void:
-	margin_container_2.hide()
+	#fuck that shit
+	NouvelleVariétéPopUp.hide()
 	variety_pannel_main.show()
 
 
@@ -37,3 +44,15 @@ func _on_varieties_item_selected(index: int) -> void:
 	modifier.show()
 	supprimer.show()
 	
+
+
+func _on_modifier_pressed() -> void:
+	for x : Variety in Globals.varieties:
+		if x.id == varieties.selected:
+			nouvelle_variete_nom.text = x.name
+			trempage_protocol.text = x.get_protocol_description(Activity.ActivityType.Trempage)
+			deshaydratage_protocol.text = x.get_protocol_description(Activity.ActivityType.Deshydratage)
+			ensachage_protocol.text = x.get_protocol_description(Activity.ActivityType.Transformation)
+			transformation_protocol.text = x.get_protocol_description(Activity.ActivityType.Ensachage)
+	variety_pannel_main.hide()
+	NouvelleVariétéPopUp.show()

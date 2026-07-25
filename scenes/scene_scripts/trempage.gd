@@ -48,3 +48,4 @@ func _on_envoyer_pressed() -> void:
 		ErrorService.display_error("Information entrée invalide. CODE : " + str(result.response_code))
 		envoyer.disabled = false
 		return
+	envoyer.disabled = false
