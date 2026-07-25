@@ -19,8 +19,9 @@ func _ready() -> void:
 	for user : User in Globals.users:
 		var row = UserTableRow.new(user)
 		row.insert_in_grid_container(user_table)
-		row.delete_button.pressed(_on_delete_user_pressed.bind(user.id))
-		row.edit_button.pressed(_on_edit_user_pressed.bind(user.id))
+		row.delete_button.pressed.connect(_on_delete_user_pressed.bind(user.id))
+		row.edit_button.pressed.connect(_on_edit_user_pressed.bind(user.id))
+		table_rows[user.id] = row
 
 func _on_edit_user_pressed(id : int):
 	var row = table_rows[id]
